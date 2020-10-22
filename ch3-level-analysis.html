@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js rust">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -48,7 +48,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -74,7 +74,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('rust')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html" class="active"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-improvements.html"><strong aria-hidden="true">12.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch11-api-design.html"><strong aria-hidden="true">13.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch12-temporal-locality.html"><strong aria-hidden="true">14.</strong> Temporal Locality</a></li><li class="chapter-item expanded "><a href="ch13-statically-known-axis.html"><strong aria-hidden="true">15.</strong> Statically Known Axis</a></li><li class="chapter-item expanded "><a href="ch14-algorithm-in-depth.html"><strong aria-hidden="true">16.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch15-time_analysis_WIP.html"><strong aria-hidden="true">17.</strong> Time Analysis</a></li><li class="chapter-item expanded "><a href="ch16-general-thoughts.html"><strong aria-hidden="true">18.</strong> General Thoughts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html" class="active"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-improvements.html"><strong aria-hidden="true">12.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch11-api-design.html"><strong aria-hidden="true">13.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch13-statically-known-axis.html"><strong aria-hidden="true">14.</strong> Statically Known Axis</a></li><li class="chapter-item expanded "><a href="ch14-algorithm-in-depth.html"><strong aria-hidden="true">15.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch15-general-thoughts.html"><strong aria-hidden="true">16.</strong> General Thoughts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -112,8 +112,8 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>

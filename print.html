@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js rust">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -50,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -76,7 +76,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('rust')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-improvements.html"><strong aria-hidden="true">12.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch11-api-design.html"><strong aria-hidden="true">13.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch12-temporal-locality.html"><strong aria-hidden="true">14.</strong> Temporal Locality</a></li><li class="chapter-item expanded "><a href="ch13-statically-known-axis.html"><strong aria-hidden="true">15.</strong> Statically Known Axis</a></li><li class="chapter-item expanded "><a href="ch14-algorithm-in-depth.html"><strong aria-hidden="true">16.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch15-time_analysis_WIP.html"><strong aria-hidden="true">17.</strong> Time Analysis</a></li><li class="chapter-item expanded "><a href="ch16-general-thoughts.html"><strong aria-hidden="true">18.</strong> General Thoughts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-improvements.html"><strong aria-hidden="true">12.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch11-api-design.html"><strong aria-hidden="true">13.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch13-statically-known-axis.html"><strong aria-hidden="true">14.</strong> Statically Known Axis</a></li><li class="chapter-item expanded "><a href="ch14-algorithm-in-depth.html"><strong aria-hidden="true">15.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch15-general-thoughts.html"><strong aria-hidden="true">16.</strong> General Thoughts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -114,8 +114,8 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
@@ -236,9 +236,35 @@ what you plan on doing with every colliding pair (it could be an expensive user 
 <img alt="Construction vs Query" src="graphs/construction_vs_query_num_bench.svg" class="center" style="width: 100%;" />
 <h2><a class="header" href="#construction-cost-vs-querying-cost" id="construction-cost-vs-querying-cost">Construction Cost vs Querying Cost</a></h2>
 <p>If you are simulating moving elements, it might seem slow to rebuild the tree every iteration. But from benching, most of the time querying is the cause of the slowdown. Rebuilding is always a constant load, but the load of the query can vary wildly depending on how many elements are overlapping.</p>
+<p>Any kind of heuristics or caching strategy to speed up construction will result in a sub optimal partitioning of the space which the querying side will pay for. Therefore it is not worth it. Instead focus on speeding up the construction of an optimal partitioning. This can be done via parallelism. Sorting the bots that sit on dividing lines may seem slow, but we can get this for 'free' essentially because it can be done after we have already split up the children nodes. So we can finish sorting a node while the children are being worked on.</p>
 <p>For example, in a bench where inside of the collision call-back function I do a reasonable collision response with 80_000 bots, if there are 0.8 times (or 65_000 ) collisions or more, querying takes longer than rebuilding. For your system, it might be impossible for there to even be 0.8 * n collisions, in which case building the tree will always be the slower part. For many systems, 0.8 * n collisions can happen. For example if you were to simulate a 2d ball-pit, every ball could be touching 6 other balls <a href="https://en.wikipedia.org/wiki/Circle_packing">Circle Packing</a>. So in that system, there are around 3 * n collisions. So in that case, querying is the bottle neck. With liquid or soft-body physics, the number can be every higher. up to n * n.</p>
 <p>Rebuilding the first level of the tree does take some time, but it is still just a fraction of the entire building algorithm in some crucial cases, provided that it was able to partition almost all the bots into two planes. </p>
 <p>Additionally, we have been assuming that once we build the tree, we are just finding all the colliding pairs of the elements. In reality, there might be many different queries we want to do on the same tree. So this is another reason we want the tree to be built to make querying as fast as possible, because we don't know how many queries the user might want to do on it. In addition to finding all colliding pairs, its quite reasonable the user might want to do some k_nearest querying, some rectangle area querying, or some raycasting.</p>
+<h2><a class="header" href="#exploiting-temporal-locality-with-loose-bounding-boxes" id="exploiting-temporal-locality-with-loose-bounding-boxes">Exploiting Temporal Locality (with loose bounding boxes)</a></h2>
+<p>The main reason against exploiting temporal locality is that adding any kind of &quot;memory&quot; to the tree where you save the positions of the dividers to use as good heuristic positions for next iterations will come at a cost of a sub optimal tree layout which will hurt the query algorithm. Our goal is to make the query algorithm as fast as possible since that is what can dominate.</p>
+<p>One strategy to exploit temporal locality is by inserting looser bounding boxes into the tree and caching the results of a query for longer than one step. The upside to this is that you only have to build and query the tree every couple of iterations. There are a number of downsides, though:</p>
+<ul>
+<li>
+<p>Your system performance now depends on the speed of the bots. The faster your bots move, the bigger their loose bounding boxes, the slower the querying becomes. This isnt a big deal considering the ammount that a bot moves between two frames is expected to be extremely small. But still, there are some corner cases where performance would deteriorate. For example, if every bot was going so fast it would just from one end of you screen to the other between world steps. So you would also need to bound the velocity of your bots to a small value.</p>
+</li>
+<li>
+<p>You have to implement all the useful geometry tree functions all over again, or you can only use the useful geometry functions at the key world steps where the tree actually is constructed. For example, if you want to query a rectanlge area, the tree provides a nice function to do this, but you only have the tree every couple of iterations. The result is that you have to somehow implement a way to query all the bots in the rectangle area using your cached lists of colliding bots, or simply only query on the world steps in which you do have the built tree. Those queries will also be slower since you are working on a tree with loose boxes.</p>
+</li>
+<li>
+<p>Every bot needs to have a member variable that is its index. This isnt ideal to have since its redundant information. You can figure out a bots index from its position within the list fed into the tree. So it is just wasted space. For a very intestive algorithms like collision querying, having the memory footprint being operated being small is crucial. We can't rely on pointer offsets to determine the indicies of which bots are colliding when using the tree since we reordered the bots directly to make the tree to avoid a level of indirection. This increases the separation between the other fields.</p>
+</li>
+<li>
+<p>The maximum load on a world step is greater. Sure amortised, this caching system may computation, but the times you do construct and query the tree, you are doing so with loose bounding boxes. On top of that, while querying, you also have to build up a seperate data structure that caches the colliding pairs you find. </p>
+</li>
+<li>
+<p>The api of the broccoli is flexible enough that you can implement loose bounding box + caching on top of it (without sacrificing parallelism) if desired.</p>
+</li>
+</ul>
+<p>So in short, this system doesnt take advantage of temporal locality, but the user can still take advantage of it by inserting loose bounding boxes and then querying less frequently to amortize the cost. I didnt explore this since I need to construct the tree every iteration anyway in my android demo, because I wanted the feedback of the user moving his finger around to be imeddiate. So to find all the bots touching the finger i need the tree to be up to date every single iteration. This is because I have no way of know where the user is going to put his finger down. I cant bound it by velocity or acceleration or anything. If I were to bound the touches &quot;velocity&quot;, it would feel more slugish i think. It would also delay the user putting a new touch down for one iteration possibly.</p>
+<h2><a class="header" href="#expoiting-temporal-locality-caching-medians" id="expoiting-temporal-locality-caching-medians">Expoiting Temporal Locality (caching medians)</a></h2>
+<p>I would love to try the following: Instead of finding the median at every level, find an approximate median. Additionally, keep a weighted average of the medians from previous tree builds and let it degrade with time. Get an approximate median using median of medians. This would ensure worst case linear time when building one level of the tree. This would allow the rest of the algorithm to be parallelized sooner.</p>
+<p>This would mean that query would be slower since we are not using heuristics and not using the true median, but this might be a small slowdown and it might speed of construction significatly.</p>
+<p>For a while I had the design where the dividers would move as those they had mass. They would gently be pushed to which ever side had more bots. The problem with this approach is that the divider locations will mostly of the time be sub optimial. And the cost saved in rebalancing just isnt enough for the cost added to querying with a suboptimal partitioning. By always partitioning optimally, we get guarentees of the maximum number of bots in a node. Remember querying is the bottleneck, not rebalancing.</p>
 <h1><a class="header" href="#level-comparison" id="level-comparison">Level Comparison</a></h1>
 <p>The below charts show the load balance between the different levels of the tree.</p>
 <p>Some observations:</p>
@@ -259,7 +285,7 @@ into a leaf.</li>
 <p>Below are a bunch of diagrams that highlight differences between a couple variable:
 Whether the elements inserted into the tree are made up of:</p>
 <ul>
-<li><code>(Rect&lt;Num&gt;,&amp;mut T)</code> (Default)</li>
+<li><code>(Rect&lt;Num&gt;,&amp;mut T)</code> (Semi-Direct)</li>
 <li><code>(Rect&lt;Num&gt;,T)</code> (Direct)</li>
 <li><code>&amp;mut (Rect&lt;Num&gt;,T)</code> (Indirect)</li>
 </ul>
@@ -271,7 +297,7 @@ argument which influnces the size of <code>T</code>.</p>
 <p>There are a couple of observations to make.</p>
 <ul>
 <li>Direct is the faster at querying, but the slowest at construction</li>
-<li>Default is the best all-around.</li>
+<li>Semi-Direct is the best all-around.</li>
 <li>Indirect isn't far behind Default.</li>
 <li>Direct is greatly influenced by the size of <code>T</code>.</li>
 </ul>
@@ -359,123 +385,67 @@ The scale of the xaxis shows that the difference isn't really noticeable until x
 you can still notice a clear difference between the two in the graph.</p>
 <img alt="Bounds Checking" src="graphs/checked_vs_unchecked_binning.svg" class="center" style="width: 100%;" />
 <h1><a class="header" href="#comparison-of-primitive-types" id="comparison-of-primitive-types">Comparison of primitive types</a></h1>
-<p>The below chart shows performance using different primitive types for the aabbs. Notice that once parallelism is brought in, the differences between the types is not as big. It is interesting how much faster integers are than floats. 
-The black line shows that it is faster to spend the time to convert the floats to integers, than
-to use floats. This might not be true on all CPU architectures that might have better floating point hardware acceleration. However, intuitively, it makes sense for integer comparisons to be faster as there is just less work to do. A float is made up of a exponent and a mantisa, both of which are numbers that need to be compared against another float. An integer is just one number.</p>
+<p>The below chart shows performance using different primitive types for the aabbs. Notice that once parallelism is brought in, the differences between the types is not as big. It is interesting how much faster integers are than floats. </p>
+<p>The black line shows that it can be faster to spend the time to convert the floats to integers, than to use floats. This might not be true on all CPU architectures that might have better floating point hardware acceleration. However, intuitively, it makes sense for integer comparisons to be faster as there is just less work to do. A float is made up of a exponent and a mantisa, both of which are numbers that need to be compared against another float. An integer is just one number.</p>
 <p>If you do convert your floats to integers, make sure to normalize it over all possible values of the integer to make it as accurate as possible. If it is important to you to not miss any interesections, then you'd also have make sure that the rouding is conservative always producing a bounding box that is slightly bigger than it needs to be.</p>
+<p>One thing that surprised me is that <code>ordered_float::OrderedFloat&lt;T&gt;</code> is only slightly slower than <code>ordered_float::NotNan&lt;T&gt;</code>. I thought that because we are doing a lot of comparisons, the extra
+overhead of the comparison function for <code>OrderedFloat</code> would add up, but it only slightly affects it. </p>
 <img alt="Float vs Integer" src="graphs/float_vs_integer.svg" class="center" style="width: 100%;" />
-<h1><a class="header" href="#when-inserting-float-based-aabbs-prefer-notnan-over-orderedfloat" id="when-inserting-float-based-aabbs-prefer-notnan-over-orderedfloat">When inserting float based AABBs, prefer NotNaN&lt;&gt; over OrderedFloat&lt;&gt;.</a></h1>
-<p>If you want to use this for floats, NotNaN has no overhead for comparisions, but has overhead for computation, the opposite is true for OrderedFloat.
-For querying the tree colliding pairs, since no calculations are done, just a whole lot of comparisions, prefer NotNaN&lt;&gt;.
-Other queries do require arithmatic, like raycast and knearest. So in those cases maybe ordered float is preferred.</p>
-<h2><a class="header" href="#liquid" id="liquid">Liquid.</a></h2>
-<p>In liquid simulations the cost of querying dominates EVEN MORE than rebalancing since as opposed to particles that always repel, liquid particles repel if close to each other, but all attract if somewhat close. This means that the aabb's will intersect more often as the system tends to have overlapping aabbs.</p>
-<h2><a class="header" href="#rigid-bodies" id="rigid-bodies">Rigid Bodies</a></h2>
-<p>If you want to use this tree for rigid bodies you have to overcome an obvious problem. You cannot move the bounding boxes once the tree it constructed. So while you are querying the tree to find bots that collide, you cannot move them then and there. An option is to insert loose bounding boxes and allow the bots to be moved within the loose bounding boxes. And then if the move need to be moved so much that they have to be moved out of the loose bounding boxes, re-construct the tree and query again until all the bots have finished moving, or you have done a set number of physics iterations, at which point you have some soft-body collision resolution fallback.</p>
-<p>Ironically, even though to have a rigid body system you would need to have looser bounding boxes, performance of the system overall could improve. This is because rigid body systems enforce a level of spareness. In soft body, it is possible for literally every bot to be on touching each other causing many colliding pairs to be handled. A rigid body physics system would not allow this state to happen.</p>
-<h2><a class="header" href="#continuous-collision-detection" id="continuous-collision-detection">Continuous Collision detection</a></h2>
-<p>In order to use broccoli for continuous collision detection (suitable for very fast objects, for example), the aabbs that you insert into it must be big enough to contain the position of a bot before and after the time step. This way, upon aabb collisions, you can do fine grained contiuous collision detection and resolution.</p>
-<h2><a class="header" href="#3d" id="3d">3D</a></h2>
-<p>What about 3d? Making this library multi dimensional would have added to the complexity, so the design desision was made to only target 2d. Its much easier for me as a developer to visualize 2d. So as a good first iteration of this library, targeting just 2d simplifies things. Expanding it to 3d, shouldnt take too much effort. The hard part would be over. Code architecture would hopefully not need to be changed much.</p>
-<p>That's not to say one couldn't still take advantage of this system in a 3d simulation. Every bot could store a height field that you do an extra check against in the collision function. The downside is that imagine if there were many bots stacked on top of each other, but you only wanted to query a small cube. Then doing it this way, your query function would have to consider all those bots that were stacked. If there are only a few different height values, one could maintain a seperte 2d broccoli for each level. Looking at the real world though, and most usecases, your potential z values are much less than our potetial x and y values. So for many cases, it probably actually better to use the tree for 2 dimentions, and then naively handling the 3rd. Then you dont suffer from the &quot;curse of dimensionality&quot;? An even better 3d solution might be to use sweep-and-prune in the z dimesion, and the 2d broccoli for x and y.</p>
 <h2><a class="header" href="#pipelining" id="pipelining">Pipelining</a></h2>
-<p>It might be possible to pipeline the process so that rebalancing and querying happen at the same time with the only downside being that bots react to their collisions one step later. To account for that the aabb's could be made slightly bigger and predict what they will hit the next step. This system could almost double the performance if the system wasnt using all its cores for each stage (rebalancing/querying), but we're talking a lot of added complexity, but probably more systems don't have that many cores.</p>
-<p>TODO talk about general usecase. 
-Different types of entities. collision checking groups of entities instead of
-collision checking all at once.</p>
+<p>It might be possible to pipeline the process so that rebalancing and querying happen at the same time with the only downside being that bots react to their collisions one step later. To account for that the aabb's could be made slightly bigger and predict what they will hit the next step. 
+However, the construction and querying phase are already parallelized. Making those happen in parallel will probably confused the rayon's work stealer.</p>
+<h2><a class="header" href="#liquid" id="liquid">Liquid.</a></h2>
+<p>In liquid simulations the cost of querying dominates even more than construction since as opposed to particles that repel when touching, liquid particles react even when just close to each other. This means that the aabb's will intersect more often as the system tends to have overlapping aabbs.</p>
+<h2><a class="header" href="#rigid-bodies" id="rigid-bodies">Rigid Bodies</a></h2>
+<p>If you want to use this tree for rigid bodies you have to deal with an obvious problem. You cannot move the bounding boxes once the tree it constructed. So while you are querying the tree to find bots that collide, you cannot move them then and there. An option is to insert loose bounding boxes and allow the bots to be moved within the loose bounding boxes. And then if the move need to be moved so much that they have to be moved out of the loose bounding boxes, re-construct the tree and query again until all the bots have finished moving, or you have done a set number of physics iterations, at which point you have some soft-body collision resolution fallback.</p>
+<p>Ironically, even though to have a rigid body system you would need to have looser bounding boxes, performance of the system overall could improve. This is because rigid body systems enforce a level of spareness. In soft body, it is possible for literally every bot to be on touching each other causing many colliding pairs to be handled. A rigid body physics system would not allow this state to happen.</p>
+<p>However, you should ignore everything I just said. A much better solution is to not move the bots at all. You can still have rigid body physics by just doing many passes on the velocities. Check out Erin Catto's Box2D library, as well as some of his <a href="https://www.youtube.com/watch?v=SHinxAhv1ZE&amp;t=2042s">talks</a>.</p>
+<h2><a class="header" href="#continuous-collision-detection" id="continuous-collision-detection">Continuous Collision detection</a></h2>
+<p>In order to use broccoli for continuous collision detection (suitable for very fast objects, for example), the aabbs that you insert into it must be big enough to contain the position of a bot before and after the time step. This way, upon aabb collisions, you can do fine grained contiuous collision detection and resolution. broccoli is well suited for this use-case because it makes no assumptions about the sizes of the aabbs. There is no rule that they must all be the same size or have a maximum size.</p>
+<h2><a class="header" href="#3d" id="3d">3D</a></h2>
+<p>What about 3D? Making this library multi dimensional would have added to the complexity, so I only targeted 2D. </p>
+<p>That said, you could certainly use broccoli to partition 2 dimensions, and then use another method to partition the last dimension (perhaps a 1D version of sweep and prune).</p>
 <h2><a class="header" href="#mutable-vs-mutable--read-only-api" id="mutable-vs-mutable--read-only-api">Mutable vs Mutable + Read-Only api</a></h2>
-<p>Most of the query algorithms only provide an api where they operate on a mutable reference
-to the broccoli and return mutable reference results.
-Ideally there would be sibling query functions that take a read-only broccoli
-and produce read-only reference results. 
-The main benefit would be that you could run different types of query algorithms on the tree
-simulatiously safely. 
-In rust right now, there isn't a easy way to re-use code
-between two versions of an algorithm where one uses mutable references and one uses read-only references.
-In the rust source code, you can see they do this using macros. From rust core's slice code:</p>
-<pre><code class="language-ignore">// The shared definition of the `Iter` and `IterMut` iterators
-macro_rules! iterator {
-	...
-}
-</code></pre>
-<p>But I didnt want to make these already complicated query algorithms even harder to read by
-wrapping them all in macros. The simplest query algorithm, rect querying, does provide read-only versions.
-I'm hoping that eventualy you will be able to 'parameterize over mutability' in rust so that i dont have to use macros.</p>
-<p>In any-case, there arn't many use-cases that I can think of where you'd want read-only versions of certain 
-query algorithms. For example, finding all colliding pairs. What would the user do with only read-only references
-to all the colliding pairs? There may be some cases where the user would just want to draw or list all the colliding pairs,
-but most use-cases I can think of, you want to actually mutate the pairs in some way.</p>
-<p>Other query algorithms I can see some benefits. For example, raycasting. In raycasting the user might just want to
-draw a line to the element that is returned from the raycast, in which case the user wouldn't need a mutable reference
-to the result. So if I were to provide a read-only raycast api, and the user wanted to raycast many times, then that could
-be easily be parallelized. For now, the user must use the mutable raycast api and handle each raycast sequentially. This
-is simplier to implement (no macros), and the raycast algorithm is already very fast compared to other algrithms such
-as constructing the tree and finding colliding pairs.</p>
-<h2><a class="header" href="#making-hasaabb-an-unsafe-trait-vs-not" id="making-hasaabb-an-unsafe-trait-vs-not">Making HasAabb an unsafe trait vs Not</a></h2>
-<p>Making a trait unsafe is something nobody wants to do, but in this instance it lets as make some simple assumptions
-that lets us do interesting things safely. </p>
+<p>A lot of the query algorithms don't actually care what kind of reference is in the tree.
+They don't actually mutate the elements, they just retrieve them.</p>
+<p>In this way, it would be nice if the query algorithms were generic of the type of reference they held. This way you could have a raycast(&amp;mut Tree) function that allows you to mutate the elements it finds, or you could have a rayacst(&amp;Tree) function that allows you to call it multiple times in parallel.</p>
+<p>To do this you can go down one of two paths, macros or generic associated types. GATs <a href="https://github.com/rust-lang/rfcs/blob/master/text/1598-generic_associated_types.md">don't exist yet</a>, and macros are hard to read and can be a head ache. Check out our rust reuses code between Iter and IterMut for slices for an example of macro solution.</p>
+<p>So for now, we will just support mutable api.</p>
+<h2><a class="header" href="#making-aabb-an-unsafe-trait-vs-not" id="making-aabb-an-unsafe-trait-vs-not">Making <code>Aabb</code> an unsafe trait vs Not</a></h2>
+<p>Making a trait unsafe is something nobody wants to do, but in this instance it lets as make some simple assumptions that lets us do interesting things safely. If rust had <a href="https://github.com/rust-lang/rfcs/pull/1546#issuecomment-304033345">trait member fields</a> we could avoid unsafe.</p>
 <p>The key idea is the following:
 If two rectangle queries do not intersect, then it is guarenteed that the elements are mutually exclusive.
 This means that we can safely return mutable references to all the elements in the first rectangle,
 and all the elements in the second rectangle simultaneously. </p>
-<p>For this to work the user must uphold the contract of HasAabb such that the aabb returned is always the same
-while it is inserted in the tree.
+<p>For this to work the user must uphold the contract of <code>Aabb</code> such that the aabb returned is always the same while it is inserted in the tree.
 This is hard for the user not to do since they only have read-only reference to self, but still possible using
 RefCell or Mutex. If the user violates this, then despite two query rectangles being mutually exclusive,
 the same bot might be in both. So at the cost of making HasAabb unsafe, we can make the MultiRect Api not unsafe.</p>
-<h2><a class="header" href="#forbidding-the-user-from-violating-the-invariants-of-the-tree" id="forbidding-the-user-from-violating-the-invariants-of-the-tree">Forbidding the user from violating the invariants of the tree</a></h2>
+<h2><a class="header" href="#forbidding-the-user-from-violating-the-invariants-of-the-tree-statically" id="forbidding-the-user-from-violating-the-invariants-of-the-tree-statically">Forbidding the user from violating the invariants of the tree statically</a></h2>
 <p>We have an interesting problem with our tree. We want the user to be able to mutate the elements directly in the tree,
 but we also do not want to let them mutate the aabb's of each of the elements of the tree. Doing so would
 mean we'd need to re-construct the tree.</p>
-<p>So when iterating over the tree, we can't return &amp;mut T. So to get around that, there is ProtectedBBox that wraps
-around a &amp;mut T that also implements HasAabb. </p>
-<p>So that makes the user unable to get a &amp;mut T, but even if we just give the user a &amp;mut [ProtectedBBox<T>] where is another problem. The user could swap two node's slices around. So to get around that we have ProtectedBBoxSlice that wraps
-around a &amp;mut [ProtectedBBox<T>] and provides an interator who Item is a ProtectedBBox<T>.</p>
-<p>But there is still another problem, we can't return a &amp;mut Node either. Because then the user could swap the entire node
-between two nodes in the tree. So to get around that we have a ProtectedNode that wraps around a &amp;mut Node.</p>
-<p>So that's alot of work, but now the user is physically unable to violate the invariants of the tree and at the same time
-we do not have a level of indirection. It is tempting
-to just let it be the user's responsibility to not violate the invariants of the tree, and that would be a fine design
-choice if it weren't for the fact that HasAabb is unsafe (See Making HasAabb an unsafe trait vs Not Section).</p>
-<h2><a class="header" href="#exploiting-temporal-locality-with-loose-bounding-boxes" id="exploiting-temporal-locality-with-loose-bounding-boxes">Exploiting Temporal Locality (with loose bounding boxes)</a></h2>
-<p>The main reason against exploiting temporal locality is that adding any kind of &quot;memory&quot; to the tree where you save the positions of the dividers to use as good heuristic positions for next iterations will come at a cost of a sub optimal tree layout which will hurt the query algorithm. Our goal is to make the query algorithm as fast as possible since that is what can dominate.</p>
-<p>One strategy to exploit temporal locality is by inserting looser bounding boxes into the tree and caching the results of a query for longer than one step. The upside to this is that you only have to build and query the tree every couple of iterations. There are a number of downsides, though:</p>
-<ul>
-<li>
-<p>Your system performance now depends on the speed of the bots. The faster your bots move, the bigger their loose bounding boxes, the slower the querying becomes. This isnt a big deal considering the ammount that a bot moves between two frames is expected to be extremely small. But still, there are some corner cases where performance would deteriorate. For example, if every bot was going so fast it would just from one end of you screen to the other between world steps. So you would also need to bound the velocity of your bots to a small value.</p>
-</li>
-<li>
-<p>You have to implement all the useful geometry tree functions all over again, or you can only use the useful geometry functions at the key world steps where the tree actually is constructed. For example, if you want to query a rectanlge area, the tree provides a nice function to do this, but you only have the tree every couple of iterations. The result is that you have to somehow implement a way to query all the bots in the rectangle area using your cached lists of colliding bots, or simply only query on the world steps in which you do have the built tree. Those queries will also be slower since you are working on a tree with loose boxes.</p>
-</li>
-<li>
-<p>Every bot needs to have a member variable that is its index. This isnt ideal to have since its redundant information. You can figure out a bots index from its position within the list fed into the tree. So it is just wasted space. For a very intestive algorithms like collision querying, having the memory footprint being operated being small is crucial. We can't rely on pointer offsets to determine the indicies of which bots are colliding when using the tree since we reordered the bots directly to make the tree to avoid a level of indirection. This increases the separation between the other fields.</p>
-</li>
-<li>
-<p>The maximum load on a world step is greater. Sure amortised, this caching system may computation, but the times you do construct and query the tree, you are doing so with loose bounding boxes. On top of that, while querying, you also have to build up a seperate data structure that caches the colliding pairs you find. </p>
-</li>
-<li>
-<p>The api of the broccoli is flexible enough that you can implement loose bounding box + caching on top of it (without sacrificing parallelism) if desired.</p>
-</li>
-</ul>
-<p>So in short, this system doesnt take advantage of temporal locality, but the user can still take advantage of it by inserting loose bounding boxes and then querying less frequently to amortize the cost. I didnt explore this since I need to construct the tree every iteration anyway in my android demo, because I wanted the feedback of the user moving his finger around to be imeddiate. So to find all the bots touching the finger i need the tree to be up to date every single iteration. This is because I have no way of know where the user is going to put his finger down. I cant bound it by velocity or acceleration or anything. If I were to bound the touches &quot;velocity&quot;, it would feel more slugish i think. It would also delay the user putting a new touch down for one iteration possibly.</p>
-<h2><a class="header" href="#expoiting-temporal-locality-caching-medians" id="expoiting-temporal-locality-caching-medians">Expoiting Temporal Locality (caching medians)</a></h2>
-<p>I would love to try the following: Instead of finding the median at every level, find an approximate median. Additionally, keep a weighted average of the medians from previous tree builds and let it degrade with time. Get an approximate median using median of medians. This would ensure worst case linear time when building one level of the tree. This would allow the rest of the algorithm to be parallelized sooner.</p>
-<p>This would mean that query would be slower since we are not using heuristics and not using the true median, but this might be a small slowdown and it might speed of construction significatly.</p>
-<p>For a while I had the design where the dividers would move as those they had mass. They would gently be pushed to which ever side had more bots. The problem with this approach is that the divider locations will mostly of the time be sub optimial. And the cost saved in rebalancing just isnt enough for the cost added to querying with a suboptimal partitioning. By always partitioning optimally, we get guarentees of the maximum number of bots in a node. Remember querying is the bottleneck, not rebalancing.</p>
+<p>So when iterating over the tree, we can't return <code>&amp;mut T</code>. So to get around that, there is <code>PMut&lt;T&gt;</code> that wraps around a <code>&amp;mut T</code> and hides it but does exposes the <code>Aabb</code> and <code>HasInner</code> interfaces. </p>
+<p>So that makes the user unable to get a <code>&amp;mut T</code>, but even if we just give the user a <code>&amp;mut [PMut&lt;T&gt;]</code> where is another problem. The user could swap two node's slices around. So to get around that we use <code>PMut&lt;[T]&gt;</code> and <code>PMutIter&lt;T&gt;</code>.</p>
+<p>But there is still another problem, we can't return a <code>&amp;mut Node</code> either. Because then the user could swap the entire node
+between two nodes in the tree. So to get around that we have a <code>PMut&lt;Node&gt;</code> that wraps around a <code>&amp;mut Node</code>.</p>
+<p>So that's alot of work, but now the user is physically unable to violate the invariants of the tree at compile time and at the same time
+we do not have a level of indirection. </p>
 <h2><a class="header" href="#knowing-the-axis-at-compile-time" id="knowing-the-axis-at-compile-time">Knowing the axis at compile time</a></h2>
-<p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid, this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. A downside to this is that the starting axis of the tree
-must be chosen at compile time. It is certainly possible to create a wrapper around two specialized versions of the tree, one for each axis, but this would leads to alot of generated code, for benefit. Not much time is spent handling the root node anyway, so even if the suboptimal starting axis is picked it is not that big of a deal.</p>
-<h1><a class="header" href="#in-depth-algorithm-overview" id="in-depth-algorithm-overview">In depth algorithm overview:</a></h1>
-<h2><a class="header" href="#construction" id="construction">Construction</a></h2>
-<p>Construction works as follows, Given: a list of bots.</p>
+<p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid, this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. </p>
+<p>A downside to this is that the starting axis of the tree
+must be chosen at compile time. It is certainly possible to create a wrapper around two specialized versions of the tree, one for each axis, but this would leads to alot of generated code, for little benefit. Not much time is spent handling the root node anyway, so even if the suboptimal starting axis is picked it is not that big of a deal.</p>
+<h3><a class="header" href="#in-depth-algorithm-overview" id="in-depth-algorithm-overview">In depth algorithm overview:</a></h3>
+<h4><a class="header" href="#construction" id="construction">Construction</a></h4>
+<p>Construction works as follows, Given: a list of elements.</p>
 <p>For every node we do the following:</p>
 <ol>
-<li>First we find the median of the remaining bots (using pattern defeating quick select) and use its position as this nodes divider.</li>
+<li>First we find the median of the remaining elements (using pattern defeating quick select) and use its position as this nodes divider.</li>
 <li>Then we bin the bots into three bins. Those strictly to the left of the divider, those strictly to the right, and those that intersect.</li>
 <li>Then we sort the bots that intersect the divider along the opposite axis that was used to finding the median. These bots now live in this node.</li>
 <li>Now this node is fully set up. Recurse left and right with the bots that were binned left and right. This can be done in parallel.</li>
 </ol>
-<h2><a class="header" href="#finding-all-intersecting-pairs" id="finding-all-intersecting-pairs">Finding all intersecting pairs</a></h2>
+<h4><a class="header" href="#finding-all-intersecting-pairs" id="finding-all-intersecting-pairs">Finding all intersecting pairs</a></h4>
 <p>Done via divide and conquer. For every node we do the following:</p>
 <ol>
 <li>First we find all intersections with bots in that node using sweep and prune..</li>
@@ -486,7 +456,7 @@ with this nodes aabb.</li>
 and treat them as two entirely seperate trees. Since these are two completely disjoint trees, they can be handling in
 parallel.</li>
 </ol>
-<h2><a class="header" href="#nbody-experimental" id="nbody-experimental">Nbody (experimental)</a></h2>
+<h4><a class="header" href="#nbody-experimental" id="nbody-experimental">Nbody (experimental)</a></h4>
 <p>Here we use divide and conquer.</p>
 <p>The nbody algorithm works in three steps. First a new version tree is built with extra data for each node. Then the tree is traversed taking advantage of this data. Then the tree is traversed again applying the changes made to the extra data from the construction in the first step.</p>
 <p>The extra data that is stored in the tree is the sum of the masses of all the bots in that node and all the bots under it. The idea is that if two nodes are sufficiently far away from one another, they can be treated as a single body of mass.</p>
@@ -505,172 +475,22 @@ At this point we can safely exclude this node and handle the children and comple
 <p>TODO explain</p>
 <h2><a class="header" href="#rect" id="rect">Rect</a></h2>
 <p>TODO explain.</p>
-<p>Collision finding is the only one that actually takes advantage of the sorted property.</p>
-<h1><a class="header" href="#" id=""></a></h1>
-<p>let X be the random variable destrbing whether or not two bots collide.
-Becuase the two bots are indenentantly placed in the word uniformly, we can say:
-P(X)=(bot_width/dim_x)^2*(bot_height/dim_y)^2
-Because X only has the values true or false, E[X]=P(X).</p>
-<p>let Y be the random variable describing the number of bots colliding.
-So Y=X1+X2+X3..Xn where n is the number of pairs of bots.
-Or Y=X*(n choose 2) where n is the number of bots.
-Each of these events is independant, and identical to each other.
-Exploiting the linearity property of the expected value, 
-E[Y]=E[X*(n choose 2)]=(n choose 2)*E[X]</p>
-<p>What we want to find is the average number of bots colliding for a particular point
-in the 2d space (lets call this L). So we simply divide the number of bots colliding by the area.
-E[L]=E[Y]/(dim_x*dim_y)</p>
-<p>E[L]=(n choose 2)<em>E[X]/(dim_x</em>dim_y)
-E[L]=(n choose 2)<em>( (bot_width/dim_x)^2</em>(bot_height/dim_y)^2 ) /( dim_x<em>dim_y)
-Simplifying this much further is hard.
-Let as make an assumption that the word and the bots are square.
-E[L]=(n choose 2)</em>( (bot_width/dim_x)^2*(bot_width/dim_x)^2 ) /(dim_x<em>dim_x)
-E[L]=(n choose 2)</em>( (bot_width/dim_x)^4 ) /(dim_x^2)
-E[L]=(n choose 2)* bot_width^4 / dim_x^2</p>
-<p>So now if we fix any of the 3 variabes, we can calculate the third.
-Lets solve for the dim.</p>
-<p>dim_x^2=(n choose 2)* bot_width^4 /E[L]
-dim_x=sqrt((n choose 2)* bot_width^4 /E[L])</p>
-<p>Now lets sanity check.
-If we plug in:
-n=100*100.
-bot_width=1;
-E[L]=1;
-we should get 100 back.</p>
-<h1><a class="header" href="#space-and-time-complexity" id="space-and-time-complexity">Space and Time Complexity</a></h1>
-<p>I dont know what the theoretical average time compleity of this algorithm would be. The performance depends so wildly on the distribution of the position and sizes of the bots that are fed into it. And in more usecases, there would be certain patterns to the input data. For example, in most cases, I would hope that the bots are mostly not intersecting, (because presumably the user is using this system to keep the bots apart). And another presumption might be that size of the bounding boxes would tend to be small relative to the world in which all the bots live. </p>
-<p>In the average case, if you thought of all the bots as nodes, and then added edges to the nodes whose bots intersected, you'd hope that your graph was planar. This might be another way of figuring out the time complexity. The number of edges of a planar graph is bounded from above by 3<em>v-6. This is much smaller than the naive v</em>v edges of a complete graph.</p>
-<p>That said bounding it by the worst case is easy, because in the worst case every single bot is colliding with every other bot. So the worst case is that all the bots are directly ontop of each other. Then the tree nor the mark and sweep algorithm could take any adantage of the situation and it would degenerate into the naive algorithm.</p>
-<p>In the best case, all the bots live in only leaf nodes, and none of the bots intersect. Interestingly by the pigeon principle, if you have more bots than there are leaf nodes then this best case scenario isnt possible. And this is the case. We are picking the height of the tree such that every leaf node will have a specific amount of bots. We also know that every non leaf node will most likely have at least one bot in it since it was used as the median. The non leaf nodes that dont have any bots in them, must not have any because none of its children have bots either.</p>
-<h1><a class="header" href="#epsilon" id="epsilon">Epsilon</a></h1>
-<p>Before we analyze the rebalance and query algorithms, lets come up with an approximation of how often bots would intersect a divider. Lets first look at the root. If you had a bunch of bots randomly and uniformly distrubuted in a 2d space, how many of them would intersect the median divider? The answer to this depends on the sizes of the bots. If all the bots were points, then hopefully only one bot would intersect with the divider. The only case this wouldnt be true is if multiple bots had the same x position as the median bot. If we're talking about real numbers, then I think the likelyhood of two bots randomly sharing the exact same x value is next to impossible. Since we are not dealing with real numbers, its more likely. On some bounded interval, there are only so many values that a floating point can have inbetween them, and even less so for integers. But it would still be a small enough chance that we can ignore. So for the cases where the bot is a point, I think its safe to say that epsilon is around 1 for the root.</p>
-<p>As the sizes of the bots increases, epsilon would also grow. By how much I'm not sure. But thats not the real concern. We are only concerned about the complexity as n grows. We can just assume that the bot size is constant, whatever it may be. 
-For our purposes, its simpler to just think of the bots as points since it doesnt effect our n complexity.</p>
-<p>So the question is as n grows, how is episolon effected?</p>
-<p>It clearly must also grow somewhat. The more bots there are, the greater the likelyhood that any bot will have the same value as the median bot.<br />
-So we have:
-1/x + 1/x +1/x +1/x + ... =  n/x
-where x is the possible x values.</p>
-<p>probability a bot intersects median:p(bot)=d/s
-let random variable be whether or not bot touches x. So it either is or it isnt.
-It happens with probability d/s. It doesnt happen with probably 1-d/s.
-So E[X]=1<em>d/s+0</em>(1-d/s)=d/s.</p>
-<p>Expected value is additive. so E[x1+x2+..]=E[x1]+E[x2]+E[x3]...</p>
-<p>so we have: (nd)/s=expected value of each bot touching.</p>
-<p>So that is just for the root. For the other levels, I couldn't come up with a nice closed form equation. Just recursve ones that depend on the acencetors. So lets just assume that each level is just as bad as the root. In reality, each level would have less bots to consider. </p>
-<p>So we're saying that for any level, we expect  (n*d)/s to intersect the divider.</p>
-<p>Again we are assuming uniform distribution.</p>
-<p>So below algorithms are only efficient if d&lt;&lt;s. </p>
-<p>So e=(n*d)/s.  and we assume d &lt;&lt; s.</p>
-<h1><a class="header" href="#construction-time-complexity" id="construction-time-complexity">construction time complexity</a></h1>
-<p>Lets looking at rebalancing. For each node, there are three steps that need to be done:
-binning process
-sort middile
-recurse left,right</p>
-<p>As you go down the tree, less time is spent binning, and more time is spent sorting.</p>
-<p>at the root, binning would have an input of N, and sorting would take e1 (the amount intersecting the divider. The hope is that this is  asmall number).
-at the second level, binning would have an input of (N-e1), and sorting would take 2*e2, so if we write this out:</p>
-<p>level1  =  1*bin(n)+sort(e)</p>
-<p>level2  =  2*(bin((n-1*e)/2)+sort(e/2))</p>
-<p>level3  =  4*(bin((n-2*e)/4)+sort(e/4)) </p>
-<p>level4  =  8*(bin((n-4*e)/8)+sort(e/8))</p>
-<p>The total running time is the sum of all of these.</p>
-<p>Sorting is done using rust's built in sorting, which has big(o) of log(n)*n like any sorting algoritm.
-So for the purposes of finding the O(n) we can replace sort(n) with log(n)*n.
-The binning process first finds the median at each level using pdqselect which has an average running time of O(n). 
-Once it finds the median, it then binns all the bots into three bins. This is also O(n).
-So for the purposes of finding the O(n) we can replace bin(n) with simply n.</p>
-<p>First lets just replace the binning:</p>
-<p>level1  =  1*n+sort(e)</p>
-<p>level2  =  2*(n-1*e)/2+sort(e/2))</p>
-<p>level3  =  4*(n-2*e)/4+sort(e/4)) </p>
-<p>level4  =  8*(n-4*e)/8+sort(e/8))</p>
-<p>Lets split them into two series. One for binning and one for sorting.</p>
-<p>complete binning running time = 1<em>n + 2</em>(n-1<em>e)/2 + 4</em>(n-2<em>e)/4 + 8</em>(n-4*e)/8 + .... </p>
-<p>= n + n-1<em>e + n-2</em>e  + n-4*e + ...</p>
-<p>= (n + n + n + n + ...) - e( 1 + 2 + 4 + 8 + ..)</p>
-<p>lets assume the tree height is h.</p>
-<p>= n<em>h - e</em>(sum(2^k,0,h))</p>
-<p>= n<em>h - e</em>(1-2^h)/-1</p>
-<p>= n<em>h - e</em>(-1 + 2^h)</p>
-<p>= n*h + e-2^h </p>
-<p>complete sorting running time = 1<em>sort(e) + 2</em>sort(e/2) + 4<em>sort(e/4) + 8</em>sort(e/8) + ...</p>
-<p>=e<em>log(e) + 2</em>(e/2)<em>log(e/2) + 4</em>(e/4)<em>log(e/4) + 8</em>(e/8)*log(e/8) + ...</p>
-<p>=e<em>log(e) + e</em>log(e/2) + e<em>log(e/4) + e</em>log(e/8) + ...</p>
-<p>=e*(log(e) + log(e/2) + log(e/4) + log(e/8) + ...)</p>
-<p>=e*(log(e) + log(e) - log(2) + log(e) - log(4) + log(e) - log(8) + ...)</p>
-<p>=e*(h*log(e) -log(2)-log(4) -log(8) - ... )</p>
-<p>=e*(h*log(e) - (log(2)+log(4)+log(8)+...)  )</p>
-<p>=e*(h<em>log(e) - (log(2</em>4*8...)     ) )</p>
-<p>=e*(h*log(e) - log(2^h))</p>
-<p>=h<em>e</em>log(e) - e*log(2^h)</p>
-<p>So complete running time is binning and sorting complete times combined</p>
-<p>(n<em>h + e-2^h) + (h</em>e<em>log(e) - h</em>e*log(2))</p>
-<p>= n<em>h + e + h</em>e<em>log(e) - 2^h - h</em>e*log(2)</p>
-<p>Notice how many terms depend on e. The hope is that e is very small to bein with. 
-The dominating term is n<em>h. We choose the height of the complete tree based off of the number of bots,
-so we can replace h with log(n) leaving n</em>log(n) for the dominating term. </p>
-<p>So assuming e is small, we running time of creating the tree is n*log(n). </p>
-<h1><a class="header" href="#collision-pair-query-time-complexity" id="collision-pair-query-time-complexity">collision pair query time complexity</a></h1>
-<p>Lets make some sweeping (no pun intended) assumptions. Every node has around the same number of bots,
-and we will call it e (same as rebalancing)</p>
-<p>Level 1: from the root we have to recurse all the way down until we visit all nodes that touch the root divider.
-sweep(e)+bjsweep(e)*h
-level 2:
-sweep(e)<em>2+bjsweep(e)</em>(h-1)*2
-level 3:
-sweep(e)<em>4+bjsweep(e)</em>(h-2)*4</p>
-<p>so we have:</p>
-<p>(se+be<em>h) + 2</em>(se+be*(h-1)) + 2^2(se+be*(h-2)) + ...</p>
-<p>Lets split it into two terms</p>
-<p>(se+2<em>se+4</em>se+....)+(be<em>h  + 2</em>be*(h-1)+4*be(h-2)+..)</p>
-<p>now lets distribute:</p>
-<p>se*(2^0+2^1+2^2+2^3+...)   + be*(1h +2(h-1)+4(h-2)+8(h-3)+...)</p>
-<p>The first term is a geometric series, so is equal to:
-se*(2^h-1)
-or roughly:
-se*(2^h)</p>
-<p>The second term, is more complicated, but a geometric series can be broken off and you are left with a summation
-over ia^i. After some simplifying the second term is close to:
-be(h*2^h)</p>
-<p>I'm dropping small constants left and right since we only care about the complexity at a large scale.</p>
-<p>so we have:
-se*(2^h)+be(h*2^h)</p>
-<p>here:
-2^h(se+be*h);</p>
-<p>We want to bound it by a function that takes n as input, not h.</p>
-<p>2^(log2(n/10))<em>(se+be</em>log2(n/10))</p>
-<p>(n/10)(se+be*log2(n/10))</p>
-<p>So I think the complexity of the querying is also O(n*log2(n)), but it is clearly more expensive than rebalancing.</p>
-<p>So overall we have to functions that bound complexity:</p>
-<p>rebalance_cost=(bin(n)+sort(e))*log2(n/bots_per_node);
-query_cost=(n/bots_per_node)(sweep_sort(e)+bi_sweep(e)*log2(n/bots_per_node))</p>
-<p>The bijective sweep algorithm is less expensive than the sweep sort. The sweep sort algorithm has to check every body against every other in theslice that is passed to it. By contrast, the bi_sweep() algorithm checks two slices of bots only against each other. </p>
-<h1><a class="header" href="#space-complexity" id="space-complexity">Space Complexity</a></h1>
-<p>The space complexity, on the other hand, is much easier to figure out. 
-The height of the tree is=log2(num/10).
-The num of nodes=2^height.
-So the number of nodes as a function of bots is nodes=2^(log2(num/10))=num/10.
-So the number of nodes created is linear to the number of bots.
-So I think space complexity is O(n).</p>
-<h2><a class="header" href="#sometimes-slow-things-can-be-a-tool-to-make-things-fast" id="sometimes-slow-things-can-be-a-tool-to-make-things-fast">Sometimes slow things can be a tool to make things fast.</a></h2>
-<h3><a class="header" href="#level-of-indirection" id="level-of-indirection">Level of Indirection</a></h3>
-<p>Similar to dynamic allocation, a level of indirection can be seen as a tool that can speed up your program. If you have a data structure composed of (X,Y), and X is access frequently, but not Y, then
+<h4><a class="header" href="#level-of-indirection" id="level-of-indirection">Level of Indirection</a></h4>
+<p>Sometimes slow things can be a tool to make things fast. Normally people thinking adding a level of indirection is an automatic performance hit, but a level of indirection can be seen as a tool that can speed up your program. If you have a data structure composed of (X,Y), and X is accessed frequently but not Y, then
 if you add a level of indirection such that you have (X,&amp;mut Y), then your data structure is composed
-of smaller elements making more of it fit in memory at once. This ofcourse only makes sense if Y is big enough.</p>
-<h3><a class="header" href="#dynamic-allocation" id="dynamic-allocation">Dynamic Allocation</a></h3>
-<p>Sure dynamic allocation is &quot;slow&quot;, but that doesn't mean you should avoid it. You should use it as a tool to speed up a program. It has a cost, but the idea is that with that allocated memory you can get more performance gains.</p>
-<p>The problem is that everybody has to buy into the system for it to work. Anybody who allocated a bunch of memory and doesn't return it because they want to avoid allocating it again is hogging that space for longer than it needs it.</p>
-<p>Dynamic allocation is fast. Dynamically allocating large vecs in one allocation is fast. Its only when you're dynamically allocting thousands of small objects does it become bad. Even then, probably the allocations are fast, but because the memory will likely be fragmented, iterating over a list of those objects could be very slow. Concepually, I have to remind myself that if you dynamically allocate a giant block, its simply reserving that area in memory. There isnt any expensive zeroing out of all that memory unless you want to do it. That's not to say the complicated algorithms the allocator has to do arn't complicated, but still relatively cheap.</p>
-<p>Often times, its not the dynamic allocation that is slow, but some other residial of doing it in the first place. For example, dynamically allocating a bunch of pointers to an array, and then sorting that list of pointers. The allocation is fast, its just that there is no cache coherency. Two pointers in your list of pointers could very easily point to memory locations that are very far apart.</p>
-<p>Writing apis that don't do dynamic allocation is tough and can be cumbursome, since you probably have to have the user give you a slice of a certain size. On the other hand this lets the user know exactly how much memory your crate needs. But users should have some faith that a dynamic allocation system is good enough for most purposes to justify a more complicated api where users have to manually manage memory. </p>
+of smaller elements making more of it fit in memory at once. This of course only makes sense if Y is big enough.</p>
+<h4><a class="header" href="#dynamic-allocation" id="dynamic-allocation">Dynamic Allocation</a></h4>
+<p>Similarily you can use dynamic allocation as a tool to speed up your program. It has a cost, but the idea is that with that allocated memory you can get more performance gains. The problem is that everybody has to buy into the system for it to work. Anybody who allocated a bunch of memory and doesn't return it because they want to avoid allocating it again is hogging that space for longer than it needs it.</p>
+<p>Often times, its not the dynamic allocation that is slow, but some other residual of doing it in the first place. For example, dynamically allocating a bunch of pointers to an array, and then sorting that list of pointers. The allocation is fast, its just that there is no cache coherency. Two pointers in your list of pointers could very easily point to memory locations that are very far apart.</p>
+<p>Writing apis that don't do dynamic allocation is tough and can be cumbursome, since you probably have to have the user give you a slice of a certain size, but typically you need to first get the problem size from the user to figure out the amount of memory you want to request.
+On one hand the level of explicitness is great and users dont have to put any faith in allocation system. But on the other hand it adds a lot of logic to your api that makes it harder to see what your library actually does. </p>
 <h2><a class="header" href="#testing-correctness" id="testing-correctness">Testing correctness</a></h2>
 <p>Simply using rust has a big impact on testing. Because of its heavy use of static typing, many bugs are caught at compile time. This translates to less testing as there are fewer possible paths that the produced program can take. Also the fact that the api is generic over the underlying number type used is useful. This means that we can test the system using integers and we can expect it to work for floats. It is easier to test with integers since we can more easily construct specific scenarios where one number is one value more or less than another. So in this way we can expose corner cases.</p>
 <p>A good test is a test that tests with good certainty that a large portion of code is working properly and that is itself short.
 Maintaining tests comes at the cost of anchoring down the design of the production code in addition to having to be maintained themselves. As a result, making good abstractions between your crates and modules that have simple and well defined apis is very important. Then you can have a few simple tests to fully excersise an api and verify large amounts of code.</p>
 <p>This crate's sole purpose is to provide a method of providing collision detection that is faster than the naive method. So a good high level test would be to compare the query results from using this crate to the naive method (which is much easier to verify is correct). This one test can be performed on many different inputs of lists of bots to try to expose any corner cases. So this one test when fed with both random and specifically tailed inputs to expose corner cases, can show with a lot of certainty that the crate is satisfying the api. </p>
 <p>The tailored inputs is important. For example, a case where two bounding boxes collide but only at the corner is an extremely unlikely case that may never present themselves in random inputs. To test this case, we have to turn to more point-directed tests with specific constructed set up input bot lists. They can still be verified in the same manner, though.</p>
-<h2><a class="header" href="#benching" id="benching">Benching</a></h2>
+<h4><a class="header" href="#benching" id="benching">Benching</a></h4>
 <p>Always measure code before investing time in optimizing. As you design your program. You form in your mind ideas of what you think the bottle necks in your code are. When you actually measure your program, your hunches can be wildly off.</p>
 <p>When dealing with parallelism, benching small units can give you a warped sense of performance. Onces the units are combined, there may be more contention for work stealing. With small units, you have a false sense that the cpu's are not busy doing other things. For example, I parallalized creating the container range for each node. Benchmarks showed that it was faster. But when I benched the rebalancing as a whole, it was slower with the parallel container creation. So in this way, benching small units isnt quite as useful as testing small units is. That said, if you know that your code doesnt depend on some global resource like a threadpool, then benching small units is great.</p>
 <p>Platform dependance. Rust is a great language that strives for platform independant code. But at the end of the day, even though rust programs will behave the same on multiple platforms, their performance might be wildly different. And as soon as you start optimizing for one platform you have to wonder whether or not you are actually de-optimizing for another platform. For example, rebalancing is much slower on my android phone than querying. On my dell xps laptop, querying is the bottle neck instead. I have wondered why there is this disconnect. I think part of it is that rebalancing requires a lot of sorting, and sorting is something where it is hard to predict branches. So my laptop probably has a superior branch predictor. Another possible reason is memory writing. Rebalancing involves a lot of memory swapping, whereas querying does not involve any major writing to memory outside of what the user decides to do for each colliding pair. In any case, my end goal in creating this algorithm was to make the querying as fast as possible so as to get the most consistent performance regardless of how many bots were colliding.</p>
