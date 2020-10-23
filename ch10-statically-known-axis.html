@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Algorithm In-Depth - broccoli_report</title>
+        <title>Statically Known Axis - broccoli_report</title>
         
         
 
@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-improvements.html"><strong aria-hidden="true">12.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch11-api-design.html"><strong aria-hidden="true">13.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch13-statically-known-axis.html"><strong aria-hidden="true">14.</strong> Statically Known Axis</a></li><li class="chapter-item expanded "><a href="ch14-algorithm-in-depth.html" class="active"><strong aria-hidden="true">15.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch15-general-thoughts.html"><strong aria-hidden="true">16.</strong> General Thoughts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-statically-known-axis.html" class="active"><strong aria-hidden="true">12.</strong> Statically Known Axis</a></li><li class="chapter-item expanded "><a href="ch11-api-design.html"><strong aria-hidden="true">13.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch12-algorithm-in-depth.html"><strong aria-hidden="true">14.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch13-improvements.html"><strong aria-hidden="true">15.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch14-general-thoughts.html"><strong aria-hidden="true">16.</strong> General Thoughts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -159,59 +159,23 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h3><a class="header" href="#in-depth-algorithm-overview" id="in-depth-algorithm-overview">In depth algorithm overview:</a></h3>
-<h4><a class="header" href="#construction" id="construction">Construction</a></h4>
-<p>Construction works as follows, Given: a list of elements.</p>
-<p>For every node we do the following:</p>
-<ol>
-<li>First we find the median of the remaining elements (using pattern defeating quick select) and use its position as this nodes divider.</li>
-<li>Then we bin the bots into three bins. Those strictly to the left of the divider, those strictly to the right, and those that intersect.</li>
-<li>Then we sort the bots that intersect the divider along the opposite axis that was used to finding the median. These bots now live in this node.</li>
-<li>Now this node is fully set up. Recurse left and right with the bots that were binned left and right. This can be done in parallel.</li>
-</ol>
-<h4><a class="header" href="#finding-all-intersecting-pairs" id="finding-all-intersecting-pairs">Finding all intersecting pairs</a></h4>
-<p>Done via divide and conquer. For every node we do the following:</p>
-<ol>
-<li>First we find all intersections with bots in that node using sweep and prune..</li>
-<li>We recurse left and right finding all bots that intersect with bots in the node.
-Here we can quickly rule out entire nodes and their decendants if a node's aabb does not intersect
-with this nodes aabb.</li>
-<li>At this point the bots in this node have been completely handled. We can safely move on to the children nodes 
-and treat them as two entirely seperate trees. Since these are two completely disjoint trees, they can be handling in
-parallel.</li>
-</ol>
-<h4><a class="header" href="#nbody-experimental" id="nbody-experimental">Nbody (experimental)</a></h4>
-<p>Here we use divide and conquer.</p>
-<p>The nbody algorithm works in three steps. First a new version tree is built with extra data for each node. Then the tree is traversed taking advantage of this data. Then the tree is traversed again applying the changes made to the extra data from the construction in the first step.</p>
-<p>The extra data that is stored in the tree is the sum of the masses of all the bots in that node and all the bots under it. The idea is that if two nodes are sufficiently far away from one another, they can be treated as a single body of mass.</p>
-<p>So once the extra data is setup, for every node we do the following:
-Gravitate all the bots with each other that belong to this node.
-Recurse left and right gravitating all bots encountered with all the bots in this node.
-Here once we reach nodes that are sufficiently far away, we instead gravitate the node's extra data with this node's extra data, and at this point we can stop recursing.
-At this point it might appear we are done handling this node the problem has been reduced to two smaller ones, but we are not done yet. We additionally have to gravitate all the bots on the left of this node with all the bots on the right of this node.
-For all nodes encountered while recursing the left side,
-Recurse the right side, and handle all bots with all the bots on the left node.
-If a node is suffeciently far away, treat it as a node mass instead and we can stop recursing.
-At this point we can safely exclude this node and handle the children and completely independent problems.</p>
-<h2><a class="header" href="#raycasting" id="raycasting">Raycasting</a></h2>
-<p>TODO explain</p>
-<h2><a class="header" href="#knearest" id="knearest">Knearest</a></h2>
-<p>TODO explain</p>
-<h2><a class="header" href="#rect" id="rect">Rect</a></h2>
-<p>TODO explain.</p>
+                        <h3><a class="header" href="#knowing-the-axis-at-compile-time" id="knowing-the-axis-at-compile-time">Knowing the axis at compile time</a></h3>
+<p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid, this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. </p>
+<p>A downside to this is that the starting axis of the tree
+must be chosen at compile time. It is certainly possible to create a wrapper around two specialized versions of the tree, one for each axis, but this would leads to alot of generated code, for little benefit. Not much time is spent handling the root node anyway, so even if the suboptimal starting axis is picked it is not that big of a deal.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="ch13-statically-known-axis.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="ch9-primitive-types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="ch15-general-thoughts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="ch11-api-design.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -223,13 +187,13 @@ At this point we can safely exclude this node and handle the children and comple
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="ch13-statically-known-axis.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch9-primitive-types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="ch15-general-thoughts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch11-api-design.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
