@@ -167,23 +167,19 @@ Whether the elements inserted into the tree are made up of:</p>
 <li><code>(Rect&lt;Num&gt;,T)</code> (Direct)</li>
 <li><code>&amp;mut (Rect&lt;Num&gt;,T)</code> (Indirect)</li>
 </ul>
-<p>We also vary the size of <code>T</code> (8,32,128,or 256 bytes).
+<p>We also vary the size of <code>T</code> (8,16,32,128,or 256 bytes).
 We do not bother varying the size of <code>Num</code> since we assume the user is using a
 'normal' sized number type like a float or an integer.</p>
-<p>We define a more specialized abspiral(), abspiral-isize() that takes an additonal
+<p>We bench construction as well as one call to <code>find_colliding_pairs</code>.</p>
+<p>We define a more specialized <code>abspiral()</code>, <code>abspiral-isize()</code> that takes an additonal
 argument which influnces the size of <code>T</code>.</p>
 <p>There are a couple of observations to make.</p>
 <ul>
-<li>Direct is the faster at querying, but the slowest at construction</li>
 <li>Semi-Direct is the best all-around.</li>
-<li>Indirect isn't far behind Default.</li>
+<li>Direct is sometimes slightly faster then Semi-Direct at querying, but the slowest at construction</li>
+<li>Indirect isn't far behind Semi-Direct, but suffers in some high density distributions.</li>
 <li>Direct is greatly influenced by the size of <code>T</code>.</li>
 </ul>
-<p>Default in many cases beats Direct showing that sometimes a level of
-indirection actually speeds things up. This is because in most cases,
-the query algorithm just needs to check the aabb and doesnt need
-to derefence. It also shows that it is in most
-cases worth copying the aabb.</p>
 <img alt="Direct vs Indirect Query" src="graphs/dinotree_direct_indirect_query_0.1_128_bytes.svg" class="center" style="width: 100%;" />
 <img alt="Direct vs Indirect Query" src="graphs/dinotree_direct_indirect_query_1_128_bytes.svg" class="center" style="width: 100%;" />
 <img alt="Direct vs Indirect Query" src="graphs/dinotree_direct_indirect_query_0.1_32_bytes.svg" class="center" style="width: 100%;" />
@@ -203,7 +199,7 @@ cases worth copying the aabb.</p>
 <code>(Rect&lt;isize&gt;,&amp;mut T)</code>
 <code>(Rect&lt;isize&gt;,T)</code>
 <code>&amp;mut (Rect&lt;isize&gt;,T)</code></p>
-<p>Because the tree construction code is generic over the elements that are inserted (as long as they implement HasAabb),
+<p>Because the tree construction code is generic over the elements that are inserted (as long as they implement Aabb),
 The user can easily try all three data layouts.</p>
 <p>The default layout is almost always the fastest. 
 There are a few corner cases where if T is very small, and the bots are very dense, direct is faster, but it is marginal.</p>

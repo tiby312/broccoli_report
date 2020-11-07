@@ -159,13 +159,24 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h3><a class="header" href="#mutable-vs-mutable--read-only-api" id="mutable-vs-mutable--read-only-api">Mutable vs Mutable + Read-Only api</a></h3>
+                        <h3><a class="header" href="#mutable-vs-read-only-api" id="mutable-vs-read-only-api">Mutable vs Read-Only api</a></h3>
+<p>We could have just exposed read only versions of all the query functions where functions like
+<code>find_all_colliding_pairs</code> just returned a read only reference instead of a mutable reference.
+You could still use this api to mutate things by either inserting indexes or pointers. If you inserted
+indicies, then you would need to use unsafe to get mutable referneces to both elements simultaniously
+in an array since the fact that both indicies are distinct and don't alias is not known to the compiler.
+If you inserted pointers, then you would need to use unsafe to cast them to mutable references.
+So having to use unsafe is a downside.</p>
+<p>An upside is that you would be able to run multiple raycast() function queries simulaniously, for example.</p>
+<p>The main downside is loss of flexibility in cases where you want to store the actual elements inside the tree instead of just pointers or indicies. In those cases, you obviously need mutable references to each element.</p>
+<h3><a class="header" href="#mutable-vs-mutable--read-only-api" id="mutable-vs-mutable--read-only-api">Mutable vs Mutable + Read-Only api</a></h3>
+<p>Ideally, there would be both a <code>find_all_colliding_pairs</code> and a <code>find_all_colliding_pairs_mut</code>. </p>
 <p>A lot of the query algorithms don't actually care what kind of reference is in the tree.
 They don't actually mutate the elements, they just retrieve them.</p>
 <p>In this way, it would be nice if the query algorithms were generic of the type of reference they held. This way you could have a raycast(&amp;mut Tree) function that allows you to mutate the elements it finds, or you could have a rayacst(&amp;Tree) function that allows you to call it multiple times in parallel.</p>
 <p>To do this you can go down one of two paths, macros or generic associated types. GATs <a href="https://github.com/rust-lang/rfcs/blob/master/text/1598-generic_associated_types.md">don't exist yet</a>, and macros are hard to read and can be a head ache. Check out how rust reuses code between Iter and IterMut for slices for an example of macro solution. So for now, we will just support mutable api.</p>
 <h3><a class="header" href="#making-aabb-an-unsafe-trait-vs-not" id="making-aabb-an-unsafe-trait-vs-not">Making <code>Aabb</code> an unsafe trait vs Not</a></h3>
-<p>Making a trait unsafe is something nobody wants to do, but in this instance it lets as make some simple assumptions that lets us do interesting things safely. If rust had <a href="https://github.com/rust-lang/rfcs/pull/1546#issuecomment-304033345">trait member fields</a> we could avoid unsafe.</p>
+<p>Making 'Aabb' unsafe allows us to make some assumptions that lets us do interesting things safely. If rust had <a href="https://github.com/rust-lang/rfcs/pull/1546#issuecomment-304033345">trait member fields</a> we could avoid unsafe.</p>
 <p>The key idea is the following:
 If two rectangle queries do not intersect, then it is guarenteed that the elements are mutually exclusive.
 This means that we can safely return mutable references to all the elements in the first rectangle,

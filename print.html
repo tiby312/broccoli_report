@@ -164,6 +164,8 @@
                         <h2><a class="header" href="#for-the-reader" id="for-the-reader">For the reader</a></h2>
 <p>In this book I'll go over a bunch of design problems/decisions while developing the <a href="https://crates.io/crates/broccoli">broccoli crate</a> with performance analysis to back it up.</p>
 <p>The source code for this book is the repo <a href="https://github.com/tiby312/broccoli">broccoli</a> on github.</p>
+<h3><a class="header" href="#disclaimer" id="disclaimer">Disclaimer</a></h3>
+<p>All the benches in the graphs were generated on my laptop which is a quad-core dell linux laptop and all the commentary was made against those graphs. However, you can pull down <a href="https://github.com/tiby312/broccoli.git">github repo</a> and generate out the benches and this book again to get results specific to your platform. But keep in mind the commentary might not make sense then. </p>
 <h3><a class="header" href="#test-setup" id="test-setup">Test Setup</a></h3>
 <p>Before we can measure and compare performance of this algorithm, we have to come up with a good way to test it. We often want to see how performance degrades as the size of the problem increases, but we also do not want to influence other variables.</p>
 <p>For our tests lets use an archimedean spiral distribution. It gives us a lot of variation in how the aabbs intersects, and allows us to grow the size of the problem without affecting density too much. </p>
@@ -195,13 +197,15 @@ the same.</p>
 <p>The below chart shows how influencing the spiral_grow affects the number of bot intersections for abspiral(). This shows that we can influence the spiral grow to see how the performance of the tree degrades. We could influence how many bots are colliding with changing the separation, but the relationship to the grow rate and the number of intersection pairs makes a nice smooth downward graph.</p>
 <p>It is not entirely smooth, but it is smooth enough that we can use this function to change the load on the broccoli without having to sample multiple times.</p>
 <p>Its also clearly not linear, but all that really matters is that we have a way to increase/decrease
-the number of collisions easily.</p>
+the number of collisions easily. We just need something that will allow us to definitively see
+trends in how the algorithms stack up against each other.</p>
 <img alt="Spiral Data" src="graphs/spiral_data.svg" class="center" style="width: 100%;" />
 <h3><a class="header" href="#comparison-against-other-algorithms" id="comparison-against-other-algorithms">Comparison against other Algorithms</a></h3>
-<p>The below chart compares different algorithms both in terms of comparisons and benches. It is interesting to note that the real world bench times matche closely with the theoretical number of comparisons. So that means that the number of comparisons performed is proportional to the real world performance of this algorithm. Makes sense, but it is also nice to see the data line up. The lines are more smooth (and deterministic) than the benches since an everyday laptop has more tasks to do and might also throttle itself half way through a bench.</p>
+<p>The below chart compares different implementations of <code>find_colliding_pairs</code> both in terms of comparisons and benches. It is interesting to note that the real world bench times match closely with the theoretical number of comparisons. So that means that the number of comparisons performed is proportional to the real world performance of this algorithm. Makes sense, but it is also nice to see the data line up. </p>
 <p>The jumps that you see in the theoretical <code>broccoli</code> line are the points at which the trees height grows by one. It is a complete binary tree so a slight increase in the height by 1 causes a doubling of nodes so it is a drastic change. As the number of bots increases it is inevitable that sometimes the tree will be too tall or too short. </p>
 <p>It's also worth noting that the difference between <code>sweep and prune</code>/<code>kdtree</code> and <code>naive</code> is much bigger than the difference between <code>sweep and prune</code>/<code>kdtree</code> and <code>broccoli</code>. So using these simpler algorithms gets you big gains as it is. The gains you get from using <code>broccoli</code> are not as pronounced, but are noticeable with more elements.</p>
-<p>In the same vein, you can see what there arn't many gains to use <code>broccoli_par</code> over <code>broccoli</code>. It can double/quaduple your performance, but as you can see those gains pale in comparison to the gains from simply using the <code>broccoli</code> algorithm. Thats not to say multiplying your performance by the number of cores you have isnt great, its just that it isnt a big factor.</p>
+<p>In the same vein, you can see what there arn't many gains to use <code>broccoli_par</code> over <code>broccoli</code>. It can double/quaduple your performance, but as you can see those gains pale in comparison to the gains from simply using the <code>broccoli</code> algorithm. Thats not to say multiplying your performance by the number of cores you have isnt great, its just that it isnt a big factor. This to me means that typically, allocating effort on
+investigating if your algorithm is optimal sequentially may be better than spending effort in parallelizing what you have.</p>
 <img alt="Colfind Theory" src="graphs/colfind_theory.svg" class="center" style="width: 100%;" />
 <img alt="Colfind Bench" src="graphs/colfind_bench.svg" class="center" style="width: 100%;" />
 <p>The below chart shows a 3d view of the characteristics of <code>naive</code>, <code>sweep and prune</code>, and <code>broccoli</code>.</p>
@@ -219,15 +223,18 @@ every possible pair, it first checks if a pair of aabb's collides in one dimensi
 This means that during the query phase, the work-load will be fairly equal on both sides. It might not be truely equal because even though for a given node, you can expect both the left and right sub-trees to have an equal number of elements, they most likely will be distributed differently within each sub-tree. For example the left sub-tree might have all of its elements stuck in just one node, while the right sub-tree has all of its elements in its leaf nodes. However, the size of each sub-tree is a somewhat good estimate of the size of the problem of querying it. So this is a good property for a divide and conquer multithreaded style algorithm. With a quad tree, the load is not guarenteed to be even between the four children nodes. </p>
 <h3><a class="header" href="#tree-space-partitioning-vs-grid" id="tree-space-partitioning-vs-grid">Tree space partitioning vs grid</a></h3>
 <p>I wanted to make a collision system that could be used in the general case and did not need to be fine-tuned. Grid based collision systems suffer from the teapot-in-a-stadium problem. They also degenerate more rapidly as objects get more clumped up. If, however, you have a system where you have strict rules with how evenly distributed objects will be among the entire space you're checking collisions against, then I think a grid system can be better. But I think these systems are few and far in between. I think in most systems, for example, its perfectly possible for all the objects to exist entirely on one half of the space being collision checked leaving the other half empty. In such a case, half of the data structure of the grid system is not being used to partition anything. There are also difficulties in how to represent the data structure since every grid cell could have a variable number of bots in side of it. Having a Vec in each cell, for example, would hardly be efficient.</p>
+<p>The way <a href="https://google.github.io/liquidfun/">liquid fun</a> does collisions by using grids in one dimension and sweep and prune in the other. </p>
+<h3><a class="header" href="#broccoli-vs-bvt" id="broccoli-vs-bvt">broccoli vs BVT</a></h3>
+<p>I'm not sure how broccoli stacks up against a bounding volume tree. This is something I would like to investigate in the future. It would be interesting to compare against bottom up and top down constructions of BVT seeing as KD Tree are top down by nature.</p>
 <h3><a class="header" href="#rebalancing-vs-querying" id="rebalancing-vs-querying">Rebalancing vs Querying</a></h3>
-<p>The below charts show the load balance between the construction and querying on the broccoli.
+<p>The below charts show the load balance between the construction and querying through calling
+<code>find_colliding_pairs</code> on the broccoli.
 It's important to note that the comparison isnt really 'fair'. The cost of querying depends a lot on
 what you plan on doing with every colliding pair (it could be an expensive user calculation). Here we just use a 'reasonably' expensive calculation that repels the colliding pairs.</p>
 <p>Some observations:</p>
 <ul>
 <li>The cost of rebalancing does not change with the density of the objects</li>
-<li>The cost of querying does change with the density.</li>
-<li>If the bots are spread out enough, the cost of querying decreases enough to cost less than the cost of rebalancing.</li>
+<li>If the bots are spread out enough, the cost of querying decreases enough to be about the same as rebalancing.</li>
 <li>The cost of querying is reduced more by parallelizing than the cost of rebalancing.</li>
 </ul>
 <p>It makes sense that querying in more 'parallelilable' than rebalancing since the calculation that you have to perform for each node before you can divide and conquer the problem is more expensive for rebalancing. For rebalancing you need to find the median and bin the bots. For querying you only have to do sweep and prune. </p>
@@ -241,6 +248,12 @@ what you plan on doing with every colliding pair (it could be an expensive user 
 <p>For example, in a bench where inside of the collision call-back function I do a reasonable collision response with 80_000 bots, if there are 0.8 times (or 65_000 ) collisions or more, querying takes longer than rebuilding. For your system, it might be impossible for there to even be 0.8 * n collisions, in which case building the tree will always be the slower part. For many systems, 0.8 * n collisions can happen. For example if you were to simulate a 2d ball-pit, every ball could be touching 6 other balls <a href="https://en.wikipedia.org/wiki/Circle_packing">Circle Packing</a>. So in that system, there are around 3 * n collisions. So in that case, querying is the bottle neck. With liquid or soft-body physics, the number can be every higher. up to n * n.</p>
 <p>Rebuilding the first level of the tree does take some time, but it is still just a fraction of the entire building algorithm in some crucial cases, provided that it was able to partition almost all the bots into two planes. </p>
 <p>Additionally, we have been assuming that once we build the tree, we are just finding all the colliding pairs of the elements. In reality, there might be many different queries we want to do on the same tree. So this is another reason we want the tree to be built to make querying as fast as possible, because we don't know how many queries the user might want to do on it. In addition to finding all colliding pairs, its quite reasonable the user might want to do some k_nearest querying, some rectangle area querying, or some raycasting.</p>
+<h3><a class="header" href="#inserting-elements-after-construction" id="inserting-elements-after-construction">Inserting elements after construction</a></h3>
+<p>broccoli does not support inserting elements after construction. If you want to add more elements,
+you have to rebuild the tree. In most usecases, I think you want to do this anyway. In a dynamic
+particle system for example, most of the time, enough particles move about in one step to justify
+recreating the whole tree. Trying to avoid this using loose bounding boxes will make querying take
+longer. </p>
 <h3><a class="header" href="#exploiting-temporal-locality-with-loose-bounding-boxes" id="exploiting-temporal-locality-with-loose-bounding-boxes">Exploiting Temporal Locality (with loose bounding boxes)</a></h3>
 <p>The main reason against exploiting temporal locality is that adding any kind of &quot;memory&quot; to the tree where you save the positions of the dividers to use as good heuristic positions for next iterations will come at a cost of a sub optimal tree layout which will hurt the query algorithm. Our goal is to make the query algorithm as fast as possible since that is what can dominate.</p>
 <p>One strategy to exploit temporal locality is by inserting looser bounding boxes into the tree and caching the results of a query for longer than one step. The upside to this is that you only have to build and query the tree every couple of iterations. There are a number of downsides, though:</p>
@@ -267,7 +280,8 @@ what you plan on doing with every colliding pair (it could be an expensive user 
 <p>This would mean that query would be slower since we are not using heuristics and not using the true median, but this might be a small slowdown and it might speed of construction significatly.</p>
 <p>For a while I had the design where the dividers would move as those they had mass. They would gently be pushed to which ever side had more bots. The problem with this approach is that the divider locations will mostly of the time be sub optimial. And the cost saved in rebalancing just isnt enough for the cost added to querying with a suboptimal partitioning. By always partitioning optimally, we get guarentees of the maximum number of bots in a node. Remember querying is the bottleneck, not rebalancing.</p>
 <h3><a class="header" href="#level-comparison" id="level-comparison">Level Comparison</a></h3>
-<p>The below charts show the load balance between the different levels of the tree.</p>
+<p>The below charts show the load balance between the different levels of the tree. 
+Tree construction is compared against one call to <code>find_colliding_pairs</code>.</p>
 <p>Some observations:</p>
 <ul>
 <li>The cost of rebalancing the first level is the most erratic. 
@@ -290,23 +304,19 @@ Whether the elements inserted into the tree are made up of:</p>
 <li><code>(Rect&lt;Num&gt;,T)</code> (Direct)</li>
 <li><code>&amp;mut (Rect&lt;Num&gt;,T)</code> (Indirect)</li>
 </ul>
-<p>We also vary the size of <code>T</code> (8,32,128,or 256 bytes).
+<p>We also vary the size of <code>T</code> (8,16,32,128,or 256 bytes).
 We do not bother varying the size of <code>Num</code> since we assume the user is using a
 'normal' sized number type like a float or an integer.</p>
-<p>We define a more specialized abspiral(), abspiral-isize() that takes an additonal
+<p>We bench construction as well as one call to <code>find_colliding_pairs</code>.</p>
+<p>We define a more specialized <code>abspiral()</code>, <code>abspiral-isize()</code> that takes an additonal
 argument which influnces the size of <code>T</code>.</p>
 <p>There are a couple of observations to make.</p>
 <ul>
-<li>Direct is the faster at querying, but the slowest at construction</li>
 <li>Semi-Direct is the best all-around.</li>
-<li>Indirect isn't far behind Default.</li>
+<li>Direct is sometimes slightly faster then Semi-Direct at querying, but the slowest at construction</li>
+<li>Indirect isn't far behind Semi-Direct, but suffers in some high density distributions.</li>
 <li>Direct is greatly influenced by the size of <code>T</code>.</li>
 </ul>
-<p>Default in many cases beats Direct showing that sometimes a level of
-indirection actually speeds things up. This is because in most cases,
-the query algorithm just needs to check the aabb and doesnt need
-to derefence. It also shows that it is in most
-cases worth copying the aabb.</p>
 <img alt="Direct vs Indirect Query" src="graphs/dinotree_direct_indirect_query_0.1_128_bytes.svg" class="center" style="width: 100%;" />
 <img alt="Direct vs Indirect Query" src="graphs/dinotree_direct_indirect_query_1_128_bytes.svg" class="center" style="width: 100%;" />
 <img alt="Direct vs Indirect Query" src="graphs/dinotree_direct_indirect_query_0.1_32_bytes.svg" class="center" style="width: 100%;" />
@@ -326,7 +336,7 @@ cases worth copying the aabb.</p>
 <code>(Rect&lt;isize&gt;,&amp;mut T)</code>
 <code>(Rect&lt;isize&gt;,T)</code>
 <code>&amp;mut (Rect&lt;isize&gt;,T)</code></p>
-<p>Because the tree construction code is generic over the elements that are inserted (as long as they implement HasAabb),
+<p>Because the tree construction code is generic over the elements that are inserted (as long as they implement Aabb),
 The user can easily try all three data layouts.</p>
 <p>The default layout is almost always the fastest. 
 There are a few corner cases where if T is very small, and the bots are very dense, direct is faster, but it is marginal.</p>
@@ -394,13 +404,24 @@ overhead of the comparison function for <code>OrderedFloat</code> would add up, 
 <p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid, this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. </p>
 <p>A downside to this is that the starting axis of the tree
 must be chosen at compile time. It is certainly possible to create a wrapper around two specialized versions of the tree, one for each axis, but this would leads to alot of generated code, for little benefit. Not much time is spent handling the root node anyway, so even if the suboptimal starting axis is picked it is not that big of a deal.</p>
+<h3><a class="header" href="#mutable-vs-read-only-api" id="mutable-vs-read-only-api">Mutable vs Read-Only api</a></h3>
+<p>We could have just exposed read only versions of all the query functions where functions like
+<code>find_all_colliding_pairs</code> just returned a read only reference instead of a mutable reference.
+You could still use this api to mutate things by either inserting indexes or pointers. If you inserted
+indicies, then you would need to use unsafe to get mutable referneces to both elements simultaniously
+in an array since the fact that both indicies are distinct and don't alias is not known to the compiler.
+If you inserted pointers, then you would need to use unsafe to cast them to mutable references.
+So having to use unsafe is a downside.</p>
+<p>An upside is that you would be able to run multiple raycast() function queries simulaniously, for example.</p>
+<p>The main downside is loss of flexibility in cases where you want to store the actual elements inside the tree instead of just pointers or indicies. In those cases, you obviously need mutable references to each element.</p>
 <h3><a class="header" href="#mutable-vs-mutable--read-only-api" id="mutable-vs-mutable--read-only-api">Mutable vs Mutable + Read-Only api</a></h3>
+<p>Ideally, there would be both a <code>find_all_colliding_pairs</code> and a <code>find_all_colliding_pairs_mut</code>. </p>
 <p>A lot of the query algorithms don't actually care what kind of reference is in the tree.
 They don't actually mutate the elements, they just retrieve them.</p>
 <p>In this way, it would be nice if the query algorithms were generic of the type of reference they held. This way you could have a raycast(&amp;mut Tree) function that allows you to mutate the elements it finds, or you could have a rayacst(&amp;Tree) function that allows you to call it multiple times in parallel.</p>
 <p>To do this you can go down one of two paths, macros or generic associated types. GATs <a href="https://github.com/rust-lang/rfcs/blob/master/text/1598-generic_associated_types.md">don't exist yet</a>, and macros are hard to read and can be a head ache. Check out how rust reuses code between Iter and IterMut for slices for an example of macro solution. So for now, we will just support mutable api.</p>
 <h3><a class="header" href="#making-aabb-an-unsafe-trait-vs-not" id="making-aabb-an-unsafe-trait-vs-not">Making <code>Aabb</code> an unsafe trait vs Not</a></h3>
-<p>Making a trait unsafe is something nobody wants to do, but in this instance it lets as make some simple assumptions that lets us do interesting things safely. If rust had <a href="https://github.com/rust-lang/rfcs/pull/1546#issuecomment-304033345">trait member fields</a> we could avoid unsafe.</p>
+<p>Making 'Aabb' unsafe allows us to make some assumptions that lets us do interesting things safely. If rust had <a href="https://github.com/rust-lang/rfcs/pull/1546#issuecomment-304033345">trait member fields</a> we could avoid unsafe.</p>
 <p>The key idea is the following:
 If two rectangle queries do not intersect, then it is guarenteed that the elements are mutually exclusive.
 This means that we can safely return mutable references to all the elements in the first rectangle,
