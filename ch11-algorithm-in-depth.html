@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>How to make Aabb - broccoli_report</title>
+        <title>Algorithm In-Depth - broccoli_report</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-statically-known-axis.html"><strong aria-hidden="true">12.</strong> Statically Known Axis</a></li><li class="chapter-item expanded "><a href="ch11-api-design.html"><strong aria-hidden="true">13.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch12-algorithm-in-depth.html"><strong aria-hidden="true">14.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch13-improvements.html"><strong aria-hidden="true">15.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch14-how-to-make-aabb.html" class="active"><strong aria-hidden="true">16.</strong> How to make Aabb</a></li><li class="chapter-item expanded "><a href="ch15-general-thoughts.html"><strong aria-hidden="true">17.</strong> General Thoughts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-api-design.html"><strong aria-hidden="true">12.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch11-algorithm-in-depth.html" class="active"><strong aria-hidden="true">13.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch12-improvements.html"><strong aria-hidden="true">14.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch13-how-to-make-aabb.html"><strong aria-hidden="true">15.</strong> How to make Aabb</a></li><li class="chapter-item expanded "><a href="ch14-general-thoughts.html"><strong aria-hidden="true">16.</strong> General Thoughts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,57 +163,67 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h4><a class="header" href="#how-to-make-a-aabb" id="how-to-make-a-aabb">How to make a Aabb</a></h4>
-<p>So far we've talked about how aabbs can be stored in a Tree. For example we recommended
-populating it with <code>BBox&lt;N,&amp;mut T&gt;</code>.
-But we havent talked about how you would generate such a struct.</p>
-<p>In some dynamic systems, every particle has a position and maybe a radius, and then from the position and radius
-an aabb can be generated. So what you store in your tree might look something like this:</p>
-<p><code>BBox&lt;OrderedFloat&lt;f32&gt;,&amp;mut Particle&gt;</code></p>
-<p>where <code>Particle</code> might look like this:</p>
-<pre><code>struct Particle{
-    pos:[f32;2],
-    vel:[f32;2]
-}
-
-</code></pre>
-<p>and then in your main loop you might have something like this:</p>
-<pre><code>    tree.for_every_colliding_pair(|a,b|{
-        a.repel(b)
-    })
-</code></pre>
-<h4><a class="header" href="#an-optimization-idea" id="an-optimization-idea">An optimization idea</a></h4>
-<p>Provided all the particles are the same size, in order to save on space, your particle could just be :</p>
-<pre><code>struct Particle{
-    vel:[f32;2]
-}
-</code></pre>
-<p>And you could instead use one of the corners of the aabb:</p>
-<pre><code>    tree.for_every_colliding_pair_pmut(|a,b|{
-        let apos=[a.get().x.start,a.get().y.start];
-        let bpos=[b.get().x.start,b.get().y.start];
-        repel(apos,a.inner_mut(),bpos,b.inner_mut())
-    })
-</code></pre>
-<p>This works because for the repel() function we just need the relative offset position
-to determine the direction and magnitude of the repel force. So it doesnt matter that
-we used the top left corner instead of the center.</p>
-<p>This optimization might still work if your aabb was converted from floats to u32 provided 
-that you convert them back right before repelling. However if the aabbs are u16 converted from float,
-then the offset vectors might be too inaccurate.</p>
+                        <h3><a class="header" href="#algorithm-overview" id="algorithm-overview">Algorithm overview:</a></h3>
+<h4><a class="header" href="#construction" id="construction">Construction</a></h4>
+<p>Construction works as follows, Given: a list of elements.</p>
+<p>For every node we do the following:</p>
+<ol>
+<li>First we find the median of the remaining elements (using pattern defeating quick select) and use its position as this nodes divider.</li>
+<li>Then we bin the aabbs into three bins. Those strictly to the left of the divider, those strictly to the right, and those that intersect.</li>
+<li>Then we sort the aabbs that intersect the divider along the opposite axis that was used to finding the median. These aabbs now live in this node.</li>
+<li>Now this node is fully set up. Recurse left and right with the aabbs that were binned left and right. This can be done in parallel.</li>
+</ol>
+<h4><a class="header" href="#finding-all-intersecting-pairs" id="finding-all-intersecting-pairs">Finding all intersecting pairs</a></h4>
+<p>Done via divide and conquer. For every node we do the following:</p>
+<ol>
+<li>First we find all intersections with aabbs in that node using sweep and prune..</li>
+<li>We recurse left and right finding all aabbs that intersect with aabbs in the node.
+Here we can quickly rule out entire nodes and their decendants if a node's aabb does not intersect
+with this nodes aabb.</li>
+<li>At this point the aabbs in this node have been completely handled. We can safely move on to the children nodes 
+and treat them as two entirely seperate trees. Since these are two completely disjoint trees, they can be handling in
+parallel.</li>
+</ol>
+<h4><a class="header" href="#nbody-experimental" id="nbody-experimental">nbody (experimental)</a></h4>
+<p>Here we use divide and conquer.</p>
+<p>The nbody algorithm works in three steps. First a new version tree is built with extra data for each node. Then the tree is traversed taking advantage of this data. Then the tree is traversed again applying the changes made to the extra data from the construction in the first step.</p>
+<p>The extra data that is stored in the tree is the sum of the masses of all the aabbs in that node and all the aabbs under it. The idea is that if two nodes are sufficiently far away from one another, they can be treated as a single body of mass.</p>
+<p>So once the extra data is setup, for every node we do the following:
+Gravitate all the aabbs with each other that belong to this node.
+Recurse left and right gravitating all aabbs encountered with all the aabbs in this node.
+Here once we reach nodes that are sufficiently far away, we instead gravitate the node's extra data with this node's extra data, and at this point we can stop recursing.
+At this point it might appear we are done handling this node and the problem has been reduced to two smaller ones, but we are not done yet. We additionally have to gravitate all the aabbs on the left of this node with all the aabbs on the right of this node.
+For all nodes encountered while recursing the left side,
+Recurse the right side, and handle all aabbs with all the aabbs on the left node.
+If a node is suffeciently far away, treat it as a node mass instead and we can stop recursing.
+At this point we can safely exclude this node and handle the children and completely independent problems.</p>
+<h4><a class="header" href="#raycasting" id="raycasting">Raycasting</a></h4>
+<p>TODO explain now</p>
+<p>TODO improvement:
+right now the raycast algorithm naively checks all the elements that belong to a node provided
+it decides to look at a node. In reality, we could do better. We could figure out where the ray
+hits the divider line, and then only check AABBs that intersect that divider line. The problem
+with this improvement is that we can't just rely on the <code>Num</code> trait since we need to do some math.
+You lose the nice property of the algorithm not doing any number arithmatic. Therefore I didnt implement
+it. However it might be a good idea. That said, before any element is checked using the expensive raycast function, it will first check the abb
+raycast function to determine if it is even worth going further. This is probably a good enough speed up.</p>
+<h4><a class="header" href="#knearest" id="knearest">Knearest</a></h4>
+<p>TODO explain</p>
+<h4><a class="header" href="#rect" id="rect">Rect</a></h4>
+<p>TODO explain.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="ch13-improvements.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="ch10-api-design.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="ch15-general-thoughts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="ch12-improvements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -225,13 +235,13 @@ then the offset vectors might be too inaccurate.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="ch13-improvements.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch10-api-design.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="ch15-general-thoughts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch12-improvements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

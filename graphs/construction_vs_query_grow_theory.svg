@@ -153,14 +153,12 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 	<g id="gnuplot_plot_1" ><title>Rebalance</title>
-<g fill="none" color="#E1E1DB" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
-</g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(324.6,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Rebalance</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(  0,   0, 255)'  d='M332.9,63.1 L375.1,63.1 M80.2,411.2 L82.9,411.4 L85.7,411.4 L88.4,411.3 L91.2,410.9 L93.9,411.3
 		L96.7,411.4 L99.4,411.0 L102.2,411.1 L104.9,411.5 L107.7,411.4 L110.4,411.0 L113.2,411.2 L115.9,411.1
 		L118.7,411.1 L121.4,411.1 L124.2,411.2 L126.9,411.2 L129.7,411.2 L132.4,410.9 L135.2,411.2 L137.9,410.8
@@ -186,12 +184,12 @@
 		L558.5,410.1 L561.3,410.5 L564.0,409.9 L566.8,410.3 L569.5,410.2 L572.3,410.3  '/></g>
 	</g>
 	<g id="gnuplot_plot_2" ><title>Query</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(324.6,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Query</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(  0, 255,   0)'  d='M332.9,81.1 L375.1,81.1 M80.2,364.0 L82.9,365.8 L85.7,367.4 L88.4,369.0 L91.2,370.0 L93.9,371.6
 		L96.7,372.8 L99.4,373.6 L102.2,374.8 L104.9,376.0 L107.7,376.8 L110.4,377.3 L113.2,378.3 L115.9,379.0
 		L118.7,379.5 L121.4,380.2 L124.2,380.8 L126.9,381.5 L129.7,382.0 L132.4,382.2 L135.2,383.0 L137.9,383.1
@@ -217,12 +215,12 @@
 		L558.5,398.6 L561.3,399.0 L564.0,398.4 L566.8,398.9 L569.5,398.9 L572.3,398.9  '/></g>
 	</g>
 	<g id="gnuplot_plot_3" ><title>NoSort Rebalance</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(516.2,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >NoSort Rebalance</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(255,   0,   0)'  d='M524.5,63.1 L566.7,63.1 M80.2,412.7 L82.9,412.8 L85.7,412.8 L88.4,412.7 L91.2,412.4 L93.9,412.7
 		L96.7,412.8 L99.4,412.4 L102.2,412.4 L104.9,412.9 L107.7,412.7 L110.4,412.4 L113.2,412.6 L115.9,412.4
 		L118.7,412.4 L121.4,412.5 L124.2,412.6 L126.9,412.5 L129.7,412.6 L132.4,412.3 L135.2,412.5 L137.9,412.2
@@ -248,12 +246,12 @@
 		L558.5,411.5 L561.3,411.8 L564.0,411.2 L566.8,411.6 L569.5,411.6 L572.3,411.6  '/></g>
 	</g>
 	<g id="gnuplot_plot_4" ><title>NoSort Query</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(516.2,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >NoSort Query</tspan></text>
 	</g>
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<path stroke='rgb(165,  42,  42)'  d='M524.5,81.1 L566.7,81.1 M80.2,84.6 L82.9,97.1 L85.7,103.5 L88.4,114.2 L91.2,123.1 L93.9,127.2
 		L96.7,136.9 L99.4,142.4 L102.2,149.4 L104.9,154.6 L107.7,160.5 L110.4,164.0 L113.2,171.1 L115.9,176.0
 		L118.7,177.0 L121.4,184.8 L124.2,186.5 L126.9,191.3 L129.7,195.2 L132.4,197.7 L135.2,201.6 L137.9,205.7
@@ -278,6 +276,8 @@
 		L536.5,310.3 L539.3,310.4 L542.0,309.3 L544.8,309.6 L547.5,310.6 L550.3,310.1 L553.0,311.2 L555.8,311.4
 		L558.5,311.4 L561.3,311.0 L564.0,310.8 L566.8,311.6 L569.5,311.9 L572.3,312.7  '/></g>
 	</g>
+<g fill="none" color="#E1E1DB" stroke="rgb(165,  42,  42)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+</g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="black" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
