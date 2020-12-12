@@ -300,6 +300,11 @@ into a leaf.</li>
 <img alt="Level Analysis" src="graphs/level_analysis_theory_query.svg" class="center" style="width: 100%;" />
 <img alt="Level Analysis" src="graphs/level_analysis_bench_rebal.svg" class="center" style="width: 100%;" />
 <img alt="Level Analysis" src="graphs/level_analysis_bench_query.svg" class="center" style="width: 100%;" />
+<h3><a class="header" href="#evenness-of-load" id="evenness-of-load">Evenness of load</a></h3>
+<img alt="Level Analysis" src="graphs/query_evenness_theory.svg" class="center" style="width: 100%;" />
+<p>The above chart shows that the work load is pretty even between the left and right recursing of the algorithm.
+As aabbs get more clumped up, the right side starts to dominate more. This is because when we pick a median,
+we are using the left most value of the aabb as our median.</p>
 <h3><a class="header" href="#semi-direct-vs-direct-vs-indirect" id="semi-direct-vs-direct-vs-indirect">Semi-Direct vs Direct vs Indirect</a></h3>
 <p>Below are a bunch of diagrams that highlight differences between a couple variables:
 Whether the elements inserted into the tree are made up of:</p>
@@ -379,9 +384,8 @@ just comparisons. The downside, is that if you want the dimentions on the aabb, 
 <p>The below charts show the performance of building and querying colliding pairs when manually selecting a height other than the default one chosen.
 You can see that the theory is a downward curve, but the benching is more of a bowl. Theory would tell us to have a big enough height such that every leaf node had only one bot in it. But in the real world, this is overhead due to excessive recursive calls. Its not that pronounced, and I think it is because most of the aabbs don't make it to the bottom of the tree anyway. Most will intersect a divider somewhere in the tree. If we used smaller aabbs it might be more pronounced.</p>
 <img alt="Height heuristic" src="graphs/height_heuristic.svg" class="center" style="width: 100%;" />
-<h3><a class="header" href="#only-pick-odd-height-trees" id="only-pick-odd-height-trees">Only pick ODD height trees.</a></h3>
-<p>In the above graph, the even heights are always slower than the odds. This didnt make sense to me since if you have an even height, then each leaf is going to be more square than rectangle. However, you can't fight the data. I think it is faster with odds because the sweep and prune algorithm can take advantage of the more rectangle shaped leafs instead of the square ones.
-This might be different if the leafs were not sorted which I mention in the improvements section.</p>
+<h3><a class="header" href="#odd-vs-even-height-trees" id="odd-vs-even-height-trees">ODD vs Even height trees.</a></h3>
+<p>In the above graph, the even heights are barely better than the odds. This is because with odd trees, the direction that the root nodes aabbs are sorted is the same as the leaves. If its even the are different. When the direction's match, we can use sweep and prune to speed things up. When the directions don't match, its hopefuly. The sorted property can't be exploited since they are in different dimensions.</p>
 <p>The below chart compares the empirically best height against the height that our heuristic tree height function produces. </p>
 <img alt="Height Heuristic vs Optimal" src="graphs/height_heuristic_vs_optimal.svg" class="center" style="width: 100%;" />
 <h3><a class="header" href="#comparison-of-parallel-height" id="comparison-of-parallel-height">Comparison of Parallel Height</a></h3>
@@ -410,6 +414,7 @@ mean we'd need to re-construct the tree.</p>
 between two nodes in the tree. So to get around that we have a <code>PMut&lt;Node&gt;</code> that wraps around a <code>&amp;mut Node</code>.</p>
 <p>So that's alot of work, but now the user is physically unable to violate the invariants of the tree at compile time and at the same time
 we do not have a level of indirection. </p>
+<p>The downside to this static protection is the loss of the nice syntactic sugar using a regular <code>&amp;mut T</code> would provide. The user has to manually extract the mutable inner part by calling <code>unpack_inner()</code>. </p>
 <h3><a class="header" href="#knowing-the-axis-at-compile-time" id="knowing-the-axis-at-compile-time">Knowing the axis at compile time</a></h3>
 <p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid, this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. </p>
 <p>A downside to this is that the starting axis of the tree
@@ -451,7 +456,7 @@ the same bot might be in both. So at the cost of making HasAabb unsafe, we can m
 <li>Then we sort the aabbs that intersect the divider along the opposite axis that was used to finding the median. These aabbs now live in this node.</li>
 <li>Now this node is fully set up. Recurse left and right with the aabbs that were binned left and right. This can be done in parallel.</li>
 </ol>
-<h4><a class="header" href="#finding-all-intersecting-pairs" id="finding-all-intersecting-pairs">Finding all intersecting pairs</a></h4>
+<h4><a class="header" href="#finding-all-colliding-pairs" id="finding-all-colliding-pairs">Finding all colliding pairs</a></h4>
 <p>Done via divide and conquer. For every node we do the following:</p>
 <ol>
 <li>First we find all intersections with aabbs in that node using sweep and prune..</li>
@@ -462,6 +467,47 @@ with this nodes aabb.</li>
 and treat them as two entirely seperate trees. Since these are two completely disjoint trees, they can be handling in
 parallel.</li>
 </ol>
+<h4><a class="header" href="#profiling-construction--finding-all-colliding-pairs" id="profiling-construction--finding-all-colliding-pairs">Profiling Construction + Finding all colliding pairs.</a></h4>
+<p>Here are some profiling results running construction + finding on <code>abspiral(0.2,30_000)</code>.</p>
+<pre><code>-  99.99%        data_gen
+   -  83.20%        data_gen
+      +  16.61%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+      +  15.07%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+      +  14.06%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+      +   5.60%        [.] pdqselect::select_by
+      +   5.06%        [.] pdqselect::select_by
+      +   4.28%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+          3.68%        [.] ordered_float::&lt;impl core::convert::From&lt;ordered_float::NotNan&lt;f32&gt;&gt; for f32&gt;::from
+      +   1.70%        [.] broccoli::oned::bin_middle_left_right
+      +   1.61%        [.] broccoli::oned::bin_middle_left_right
+      +   1.55%        [.] broccoli::query::colfind::oned::find_perp_2d1
+      +   1.23%        [.] &lt;core::iter::adapters::Map&lt;I,F&gt; as core::iter::traits::iterator::Iterator&gt;::fold
+      +   1.23%        [.] broccoli::tree::analyze::builder::Recurser&lt;T,K,S&gt;::recurse_preorder_seq
+      +   1.22%        [.] broccoli::query::colfind::oned::find_perp_2d1
+      +   1.22%        [.] alloc::raw_vec::RawVec&lt;T,A&gt;::reserve
+      +   1.16%        [.] broccoli::query::colfind::oned::find_other_parallel
+      +   1.11%        [.] core::slice::sort::recurse
+      +   0.82%        [.] core::slice::sort::recurse
+      +   0.81%        [.] broccoli::query::colfind::oned::find_other_parallel
+          0.77%        [.] broccoli::query::colfind::oned::find_other_parallel
+      +   0.76%        [.] broccoli::query::colfind::oned::find
+          0.65%        [.] core::slice::sort::recurse
+          0.42%        [.] &lt;ordered_float::NotNan&lt;f32&gt; as core::convert::TryFrom&lt;f32&gt;&gt;::try_from
+          0.41%        [.] broccoli::query::colfind::oned::find
+          0.41%        [.] broccoli::query::colfind::oned::get_section_mut
+          0.41%        [.] broccoli::query::colfind::inner::InnerRecurser&lt;T,NN,B&gt;::recurse
+          0.41%        [.] core::ops::function::impls::&lt;impl core::ops::function::FnOnce&lt;A&gt; for &amp;mut F&gt;::call_once
+          0.41%        [.] broccoli::query::colfind::oned::find_perp_2d1
+          0.41%        [.] __rdl_realloc
+          0.11%        [.] std::sys::unix::stack_overflow::imp::make_handler
+   +   7.88%        [kernel.kallsyms]
+   +   4.17%        libm-2.31.so
+   +   3.85%        libc-2.31.so
+   +   0.87%        ld-2.31.so
+   +   0.03%        libpthread-2.31.so
++   0.01%        perf
+</code></pre>
+<p>As you can see the query releated functions take up the most time, as opposed to the construction functions.</p>
 <h4><a class="header" href="#nbody-experimental" id="nbody-experimental">nbody (experimental)</a></h4>
 <p>Here we use divide and conquer.</p>
 <p>The nbody algorithm works in three steps. First a new version tree is built with extra data for each node. Then the tree is traversed taking advantage of this data. Then the tree is traversed again applying the changes made to the extra data from the construction in the first step.</p>
@@ -491,8 +537,10 @@ raycast function to determine if it is even worth going further. This is probabl
 <p>TODO explain.</p>
 <h4><a class="header" href="#dont-sort-the-leafs" id="dont-sort-the-leafs">Don't sort the leafs</a></h4>
 <p>If you don't sort the leafs, there could be some potential speed up. By the time you get to the leafs, there are so few aabbs in a leaf that it may not be worth it. The aabbs also would not be strewn along a dividing line so sweep and prune would not be as fast.  However, this can only hurt the query algorithm so I didn't do it. However, if you want to make one (construct+query) sequence as fast as possible it might be better. But again, my goal was to make querying as fast as possible.</p>
+<h4><a class="header" href="#sort-away-from-the-divider" id="sort-away-from-the-divider">Sort away from the divider.</a></h4>
+<p>Currently, all elements are sorted using the left or top side of the aabb. It would be interesting if depending on the direction you recurse, you sorted along the left or right side of the aabb. This might help pruning elements from nodes on perpendicular axis. It also make the algorithm have a nice symmetry of behaving exactly the same in each half of a partition. The downside is more code generated and complexity.</p>
 <h4><a class="header" href="#pointer-compression" id="pointer-compression">Pointer Compression</a></h4>
-<p>The broccoli tree data structure can be very pointer heavy. There may be some gains from using pointer compression if only during construction. During the query phase, i'm almost certain that using pointer compression would be slow given the extra overhead of having to unpack each pointer. However, if the tree was constructed with <code>BBox&lt;N,u16&gt;</code> which was then converted to <code>BBox&lt;N,&amp;mut T&gt;</code> then maybe construction would be faster provided the conversion isnt too slow.
+<p>The broccoli tree data structure can be very pointer heavy. There may be some gains from using pointer compression if only during construction. During the query phase, i'm certain that using pointer compression would be slow given the extra overhead of having to unpack each pointer. However, if the tree was constructed with <code>BBox&lt;N,u16&gt;</code> which was then converted to <code>BBox&lt;N,&amp;mut T&gt;</code> then maybe construction would be faster provided the conversion isnt too slow.
 A cleaner solution would just be to target a 32bit arch instead of 64bit. (Sidenode: The webassembly arch is 
 32bit)</p>
 <h4><a class="header" href="#continuous-collision-detection" id="continuous-collision-detection">Continuous Collision detection</a></h4>

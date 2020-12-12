@@ -173,7 +173,7 @@
 <li>Then we sort the aabbs that intersect the divider along the opposite axis that was used to finding the median. These aabbs now live in this node.</li>
 <li>Now this node is fully set up. Recurse left and right with the aabbs that were binned left and right. This can be done in parallel.</li>
 </ol>
-<h4><a class="header" href="#finding-all-intersecting-pairs" id="finding-all-intersecting-pairs">Finding all intersecting pairs</a></h4>
+<h4><a class="header" href="#finding-all-colliding-pairs" id="finding-all-colliding-pairs">Finding all colliding pairs</a></h4>
 <p>Done via divide and conquer. For every node we do the following:</p>
 <ol>
 <li>First we find all intersections with aabbs in that node using sweep and prune..</li>
@@ -184,6 +184,47 @@ with this nodes aabb.</li>
 and treat them as two entirely seperate trees. Since these are two completely disjoint trees, they can be handling in
 parallel.</li>
 </ol>
+<h4><a class="header" href="#profiling-construction--finding-all-colliding-pairs" id="profiling-construction--finding-all-colliding-pairs">Profiling Construction + Finding all colliding pairs.</a></h4>
+<p>Here are some profiling results running construction + finding on <code>abspiral(0.2,30_000)</code>.</p>
+<pre><code>-  99.99%        data_gen
+   -  83.20%        data_gen
+      +  16.61%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+      +  15.07%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+      +  14.06%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+      +   5.60%        [.] pdqselect::select_by
+      +   5.06%        [.] pdqselect::select_by
+      +   4.28%        [.] &lt;alloc::vec::Vec&lt;T&gt; as broccoli::query::tools::RetainMutUnordered&lt;T&gt;&gt;::retain_mut_unordered
+          3.68%        [.] ordered_float::&lt;impl core::convert::From&lt;ordered_float::NotNan&lt;f32&gt;&gt; for f32&gt;::from
+      +   1.70%        [.] broccoli::oned::bin_middle_left_right
+      +   1.61%        [.] broccoli::oned::bin_middle_left_right
+      +   1.55%        [.] broccoli::query::colfind::oned::find_perp_2d1
+      +   1.23%        [.] &lt;core::iter::adapters::Map&lt;I,F&gt; as core::iter::traits::iterator::Iterator&gt;::fold
+      +   1.23%        [.] broccoli::tree::analyze::builder::Recurser&lt;T,K,S&gt;::recurse_preorder_seq
+      +   1.22%        [.] broccoli::query::colfind::oned::find_perp_2d1
+      +   1.22%        [.] alloc::raw_vec::RawVec&lt;T,A&gt;::reserve
+      +   1.16%        [.] broccoli::query::colfind::oned::find_other_parallel
+      +   1.11%        [.] core::slice::sort::recurse
+      +   0.82%        [.] core::slice::sort::recurse
+      +   0.81%        [.] broccoli::query::colfind::oned::find_other_parallel
+          0.77%        [.] broccoli::query::colfind::oned::find_other_parallel
+      +   0.76%        [.] broccoli::query::colfind::oned::find
+          0.65%        [.] core::slice::sort::recurse
+          0.42%        [.] &lt;ordered_float::NotNan&lt;f32&gt; as core::convert::TryFrom&lt;f32&gt;&gt;::try_from
+          0.41%        [.] broccoli::query::colfind::oned::find
+          0.41%        [.] broccoli::query::colfind::oned::get_section_mut
+          0.41%        [.] broccoli::query::colfind::inner::InnerRecurser&lt;T,NN,B&gt;::recurse
+          0.41%        [.] core::ops::function::impls::&lt;impl core::ops::function::FnOnce&lt;A&gt; for &amp;mut F&gt;::call_once
+          0.41%        [.] broccoli::query::colfind::oned::find_perp_2d1
+          0.41%        [.] __rdl_realloc
+          0.11%        [.] std::sys::unix::stack_overflow::imp::make_handler
+   +   7.88%        [kernel.kallsyms]
+   +   4.17%        libm-2.31.so
+   +   3.85%        libc-2.31.so
+   +   0.87%        ld-2.31.so
+   +   0.03%        libpthread-2.31.so
++   0.01%        perf
+</code></pre>
+<p>As you can see the query releated functions take up the most time, as opposed to the construction functions.</p>
 <h4><a class="header" href="#nbody-experimental" id="nbody-experimental">nbody (experimental)</a></h4>
 <p>Here we use divide and conquer.</p>
 <p>The nbody algorithm works in three steps. First a new version tree is built with extra data for each node. Then the tree is traversed taking advantage of this data. Then the tree is traversed again applying the changes made to the extra data from the construction in the first step.</p>

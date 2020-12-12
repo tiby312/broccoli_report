@@ -173,6 +173,7 @@ mean we'd need to re-construct the tree.</p>
 between two nodes in the tree. So to get around that we have a <code>PMut&lt;Node&gt;</code> that wraps around a <code>&amp;mut Node</code>.</p>
 <p>So that's alot of work, but now the user is physically unable to violate the invariants of the tree at compile time and at the same time
 we do not have a level of indirection. </p>
+<p>The downside to this static protection is the loss of the nice syntactic sugar using a regular <code>&amp;mut T</code> would provide. The user has to manually extract the mutable inner part by calling <code>unpack_inner()</code>. </p>
 <h3><a class="header" href="#knowing-the-axis-at-compile-time" id="knowing-the-axis-at-compile-time">Knowing the axis at compile time</a></h3>
 <p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid, this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. </p>
 <p>A downside to this is that the starting axis of the tree
