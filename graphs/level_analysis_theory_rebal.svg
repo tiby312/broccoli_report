@@ -169,13 +169,13 @@
 </g>
 	<g id="gnuplot_plot_1a" ><title>Level 0</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(165.5,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(282.4,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 0</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(  0,   0, 255)' fill-opacity = '0.500000' points = '173.8,67.6 216.0,67.6 216.0,58.6 173.8,58.6 '/>
+		<polygon fill = 'rgb(  0,   0, 255)' fill-opacity = '0.500000' points = '290.7,67.6 332.9,67.6 332.9,58.6 290.7,58.6 '/>
 		<polygon fill = 'rgb(  0,   0, 255)' fill-opacity = '0.500000' points = '110.6,182.4 115.0,182.4 119.5,182.4 123.9,182.4 128.3,182.4 132.7,182.4 137.2,182.4 141.6,182.4 146.0,182.4 150.4,182.4 154.8,182.4 159.3,182.4 163.7,182.4 168.1,182.4 172.5,182.4 177.0,182.4
 181.4,182.4 185.8,182.4 190.2,182.4 194.6,182.4 199.1,182.4 203.5,182.4 207.9,182.4 212.3,182.4 216.8,182.4 221.2,182.4 225.6,182.4 230.0,182.4 234.5,182.4 238.9,182.4 243.3,182.4 247.7,182.4
 252.1,182.4 256.6,182.4 261.0,182.4 265.4,182.4 269.8,182.4 274.3,182.4 278.7,182.4 283.1,182.4 287.5,182.4 291.9,182.4 296.4,182.4 300.8,182.4 305.2,182.4 309.6,182.4 314.1,182.4 318.5,182.4
@@ -194,13 +194,13 @@
 	</g>
 	<g id="gnuplot_plot_2a" ><title>Level 1</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(165.5,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(282.4,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 1</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(  0, 100,   0)' fill-opacity = '0.500000' points = '173.8,85.6 216.0,85.6 216.0,76.6 173.8,76.6 '/>
+		<polygon fill = 'rgb(  0, 100,   0)' fill-opacity = '0.500000' points = '290.7,85.6 332.9,85.6 332.9,76.6 290.7,76.6 '/>
 		<polygon fill = 'rgb(  0, 100,   0)' fill-opacity = '0.500000' points = '110.6,182.4 115.0,182.4 119.5,182.4 123.9,182.4 128.3,182.4 132.7,182.4 137.2,182.4 141.6,182.4 146.0,182.4 150.4,182.4 154.8,182.4 159.3,182.4 163.7,182.4 168.1,182.4 172.5,182.4 177.0,182.4
 181.4,182.4 185.8,182.4 190.2,182.4 194.6,182.4 199.1,182.4 203.5,182.4 207.9,182.4 212.3,182.4 216.8,182.4 221.2,182.4 225.6,182.4 230.0,182.4 234.5,182.4 238.9,182.4 243.3,182.4 247.7,182.4
 252.1,182.4 256.6,182.4 261.0,182.4 265.4,182.4 269.8,182.4 274.3,182.4 278.7,182.4 283.1,182.4 287.5,182.4 291.9,182.4 296.4,182.4 300.8,182.4 305.2,182.4 309.6,182.4 314.1,182.4 318.5,182.4
@@ -219,13 +219,13 @@
 	</g>
 	<g id="gnuplot_plot_3a" ><title>Level 2</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(282.4,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(399.3,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 2</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(255,   0,   0)' fill-opacity = '0.500000' points = '290.7,67.6 332.9,67.6 332.9,58.6 290.7,58.6 '/>
+		<polygon fill = 'rgb(255,   0,   0)' fill-opacity = '0.500000' points = '407.6,67.6 449.8,67.6 449.8,58.6 407.6,58.6 '/>
 		<polygon fill = 'rgb(255,   0,   0)' fill-opacity = '0.500000' points = '110.6,182.4 115.0,182.4 119.5,182.4 123.9,182.4 128.3,182.4 132.7,182.4 137.2,182.4 141.6,182.4 146.0,182.4 150.4,182.4 154.8,182.4 159.3,182.4 163.7,182.4 168.1,182.4 172.5,182.4 177.0,182.4
 181.4,182.4 185.8,182.4 190.2,182.4 194.6,182.4 199.1,182.4 203.5,182.4 207.9,182.4 212.3,182.4 216.8,182.4 221.2,182.4 225.6,182.4 230.0,182.4 234.5,182.4 238.9,182.4 243.3,182.4 247.7,182.4
 252.1,182.4 256.6,182.4 261.0,182.4 265.4,182.4 269.8,182.4 274.3,182.4 278.7,182.4 283.1,182.4 287.5,182.4 291.9,182.4 296.4,182.4 300.8,182.4 305.2,182.4 309.6,182.4 314.1,182.4 318.5,182.4
@@ -244,13 +244,13 @@
 	</g>
 	<g id="gnuplot_plot_4a" ><title>Level 3</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(282.4,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(399.3,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 3</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(238, 130, 238)' fill-opacity = '0.500000' points = '290.7,85.6 332.9,85.6 332.9,76.6 290.7,76.6 '/>
+		<polygon fill = 'rgb(238, 130, 238)' fill-opacity = '0.500000' points = '407.6,85.6 449.8,85.6 449.8,76.6 407.6,76.6 '/>
 		<polygon fill = 'rgb(238, 130, 238)' fill-opacity = '0.500000' points = '110.6,182.4 115.0,182.4 119.5,182.4 123.9,182.4 128.3,182.4 132.7,182.4 137.2,182.4 141.6,182.4 146.0,182.4 150.4,182.4 154.8,182.4 159.3,182.4 163.7,182.4 168.1,182.4 172.5,182.4 177.0,182.4
 181.4,182.4 185.8,182.4 190.2,182.4 194.6,182.4 199.1,182.4 203.5,182.4 207.9,182.4 212.3,182.4 216.8,182.4 221.2,182.4 225.6,182.4 230.0,182.4 234.5,182.4 238.9,182.4 243.3,182.4 247.7,182.4
 252.1,182.4 256.6,182.4 261.0,182.4 265.4,182.4 269.8,182.4 274.3,182.4 278.7,182.4 283.1,182.4 287.5,182.4 291.9,182.4 296.4,182.4 300.8,182.4 305.2,182.4 309.6,182.4 314.1,182.4 318.5,182.4
@@ -269,13 +269,13 @@
 	</g>
 	<g id="gnuplot_plot_5a" ><title>Level 4</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(399.3,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(516.2,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 4</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(255, 165,   0)' fill-opacity = '0.500000' points = '407.6,67.6 449.8,67.6 449.8,58.6 407.6,58.6 '/>
+		<polygon fill = 'rgb(255, 165,   0)' fill-opacity = '0.500000' points = '524.5,67.6 566.7,67.6 566.7,58.6 524.5,58.6 '/>
 		<polygon fill = 'rgb(255, 165,   0)' fill-opacity = '0.500000' points = '110.6,182.4 115.0,182.4 119.5,182.4 123.9,182.4 128.3,182.4 132.7,182.4 137.2,182.4 141.6,182.4 146.0,182.4 150.4,182.4 154.8,182.4 159.3,182.4 163.7,182.4 168.1,182.4 172.5,182.4 177.0,182.4
 181.4,182.4 185.8,182.4 190.2,182.4 194.6,182.4 199.1,182.4 203.5,182.4 207.9,182.4 212.3,182.4 216.8,182.4 221.2,182.4 225.6,182.4 230.0,182.4 234.5,182.4 238.9,182.4 243.3,182.4 247.7,182.4
 252.1,182.4 256.6,182.4 261.0,182.4 265.4,182.4 269.8,182.4 274.3,182.4 278.7,182.4 283.1,182.4 287.5,182.4 291.9,182.4 296.4,182.4 300.8,182.4 305.2,182.4 309.6,182.4 314.1,182.4 318.5,182.4
@@ -294,13 +294,13 @@
 	</g>
 	<g id="gnuplot_plot_6a" ><title>Level 5</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(399.3,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(516.2,85.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 5</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(165,  42,  42)' fill-opacity = '0.500000' points = '407.6,85.6 449.8,85.6 449.8,76.6 407.6,76.6 '/>
+		<polygon fill = 'rgb(165,  42,  42)' fill-opacity = '0.500000' points = '524.5,85.6 566.7,85.6 566.7,76.6 524.5,76.6 '/>
 		<polygon fill = 'rgb(165,  42,  42)' fill-opacity = '0.500000' points = '110.6,182.4 115.0,182.4 119.5,182.4 123.9,182.4 128.3,182.4 132.7,182.4 137.2,182.4 141.6,182.4 146.0,182.4 150.4,182.4 154.8,182.4 159.3,182.4 163.7,182.4 168.1,182.4 172.5,182.4 177.0,182.4
 181.4,182.4 185.8,182.4 190.2,182.4 194.6,182.4 199.1,182.4 203.5,182.4 207.9,182.4 212.3,182.4 216.8,182.4 221.2,182.4 225.6,182.4 230.0,182.4 234.5,182.4 238.9,182.4 243.3,182.4 247.7,182.4
 252.1,182.4 256.6,182.4 261.0,182.4 265.4,182.4 269.8,182.4 274.3,182.4 278.7,182.4 283.1,182.4 287.5,182.4 291.9,182.4 296.4,182.4 300.8,182.4 305.2,182.4 309.6,182.4 314.1,182.4 318.5,182.4
@@ -317,32 +317,7 @@
 	</g>
 </g>
 	</g>
-	<g id="gnuplot_plot_7a" ><title>Level 6</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(516.2,67.0)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >Level 6</tspan></text>
-	</g>
-</g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(255, 192, 192)' fill-opacity = '0.500000' points = '524.5,67.6 566.7,67.6 566.7,58.6 524.5,58.6 '/>
-		<polygon fill = 'rgb(255, 192, 192)' fill-opacity = '0.500000' points = '110.6,182.4 115.0,182.4 119.5,182.4 123.9,182.4 128.3,182.4 132.7,182.4 137.2,182.4 141.6,182.4 146.0,182.4 150.4,182.4 154.8,182.4 159.3,182.4 163.7,182.4 168.1,182.4 172.5,182.4 177.0,182.4
-181.4,182.4 185.8,182.4 190.2,182.4 194.6,182.4 199.1,182.4 203.5,182.4 207.9,182.4 212.3,182.4 216.8,182.4 221.2,182.4 225.6,182.4 230.0,182.4 234.5,182.4 238.9,182.4 243.3,182.4 247.7,182.4
-252.1,182.4 256.6,182.4 261.0,182.4 265.4,182.4 269.8,182.4 274.3,182.4 278.7,182.4 283.1,182.4 287.5,182.4 291.9,182.4 296.4,182.4 300.8,182.4 305.2,182.4 309.6,182.4 314.1,182.4 318.5,182.4
-322.9,182.4 327.3,182.4 331.8,182.4 336.2,182.4 340.6,182.4 345.0,182.4 349.4,182.4 353.9,182.4 358.3,182.4 362.7,182.4 367.1,182.4 371.6,182.4 376.0,182.4 380.4,182.4 384.8,182.4 389.2,182.4
-393.7,182.4 398.1,182.4 402.5,182.4 406.9,182.4 411.4,182.4 415.8,182.4 420.2,182.4 424.6,182.4 429.1,182.4 433.5,182.4 437.9,182.4 442.3,182.4 446.7,182.4 451.2,182.4 455.6,182.4 460.0,182.4
-464.4,182.4 468.9,182.4 473.3,182.4 477.7,182.4 482.1,182.4 486.5,182.4 491.0,182.4 495.4,182.4 499.8,182.4 504.2,182.4 508.7,182.4 513.1,182.4 517.5,182.4 521.9,182.4 526.4,182.4 530.8,182.4
-535.2,182.4 539.6,182.4 544.0,182.4 548.5,182.4 548.5,181.1 544.0,181.3 539.6,181.2 535.2,181.2 530.8,181.0 526.4,181.2 521.9,181.1 517.5,181.2 513.1,181.1 508.7,181.1 504.2,181.2 499.8,181.1
-495.4,181.1 491.0,181.1 486.5,181.3 482.1,181.3 477.7,181.4 473.3,181.2 468.9,181.3 464.4,181.3 460.0,181.3 455.6,181.4 451.2,181.2 446.7,181.3 442.3,181.2 437.9,181.3 433.5,181.3 429.1,181.3
-424.6,181.2 420.2,181.3 415.8,181.4 411.4,181.3 406.9,181.4 402.5,181.3 398.1,181.3 393.7,181.4 389.2,181.3 384.8,181.4 380.4,181.3 376.0,181.4 371.6,181.4 367.1,181.4 362.7,181.4 358.3,181.4
-353.9,181.4 349.4,181.5 345.0,181.4 340.6,181.4 336.2,181.5 331.8,181.5 327.3,181.4 322.9,181.5 318.5,181.4 314.1,181.4 309.6,181.5 305.2,181.6 300.8,181.5 296.4,181.6 291.9,181.4 287.5,181.6
-283.1,181.6 278.7,181.7 274.3,181.6 269.8,181.5 265.4,181.6 261.0,181.6 256.6,181.6 252.1,181.7 247.7,181.7 243.3,181.6 238.9,181.8 234.5,181.7 230.0,181.6 225.6,181.8 221.2,181.7 216.8,181.6
-212.3,181.8 207.9,181.7 203.5,181.8 199.1,181.7 194.6,181.7 190.2,181.7 185.8,181.8 181.4,181.8 177.0,181.9 172.5,181.8 168.1,181.8 163.7,181.9 159.3,181.9 154.8,181.8 150.4,181.8 146.0,181.9
-141.6,181.9 137.2,181.9 132.7,181.9 128.3,181.9 123.9,181.9 119.5,182.0 115.0,181.9 110.6,181.9 '/>
-	</g>
-</g>
-	</g>
-<g fill="none" color="#E1E1DB" stroke="rgb(255, 192, 192)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="#E1E1DB" stroke="rgb(165,  42,  42)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
@@ -480,13 +455,13 @@
 </g>
 	<g id="gnuplot_plot_1b" ><title>Level 0</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(165.5,306.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(282.4,306.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 0</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(  0,   0, 255)' fill-opacity = '0.500000' points = '173.8,307.5 216.0,307.5 216.0,298.5 173.8,298.5 '/>
+		<polygon fill = 'rgb(  0,   0, 255)' fill-opacity = '0.500000' points = '290.7,307.5 332.9,307.5 332.9,298.5 290.7,298.5 '/>
 		<polygon fill = 'rgb(  0,   0, 255)' fill-opacity = '0.500000' points = '88.5,422.4 93.4,422.4 98.2,422.4 103.1,422.4 108.0,422.4 112.8,422.4 117.7,422.4 122.6,422.4 127.4,422.4 132.3,422.4 137.2,422.4 142.0,422.4 146.9,422.4 151.7,422.4 156.6,422.4 161.5,422.4
 166.3,422.4 171.2,422.4 176.1,422.4 180.9,422.4 185.8,422.4 190.7,422.4 195.5,422.4 200.4,422.4 205.3,422.4 210.1,422.4 215.0,422.4 219.9,422.4 224.7,422.4 229.6,422.4 234.5,422.4 239.3,422.4
 244.2,422.4 249.0,422.4 253.9,422.4 258.8,422.4 263.6,422.4 268.5,422.4 273.4,422.4 278.2,422.4 283.1,422.4 288.0,422.4 292.8,422.4 297.7,422.4 302.6,422.4 307.4,422.4 312.3,422.4 317.2,422.4
@@ -505,13 +480,13 @@
 	</g>
 	<g id="gnuplot_plot_2b" ><title>Level 1</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(165.5,324.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(282.4,324.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 1</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(  0, 100,   0)' fill-opacity = '0.500000' points = '173.8,325.5 216.0,325.5 216.0,316.5 173.8,316.5 '/>
+		<polygon fill = 'rgb(  0, 100,   0)' fill-opacity = '0.500000' points = '290.7,325.5 332.9,325.5 332.9,316.5 290.7,316.5 '/>
 		<polygon fill = 'rgb(  0, 100,   0)' fill-opacity = '0.500000' points = '88.5,422.4 93.4,422.4 98.2,422.4 103.1,422.4 108.0,422.4 112.8,422.4 117.7,422.4 122.6,422.4 127.4,422.4 132.3,422.4 137.2,422.4 142.0,422.4 146.9,422.4 151.7,422.4 156.6,422.4 161.5,422.4
 166.3,422.4 171.2,422.4 176.1,422.4 180.9,422.4 185.8,422.4 190.7,422.4 195.5,422.4 200.4,422.4 205.3,422.4 210.1,422.4 215.0,422.4 219.9,422.4 224.7,422.4 229.6,422.4 234.5,422.4 239.3,422.4
 244.2,422.4 249.0,422.4 253.9,422.4 258.8,422.4 263.6,422.4 268.5,422.4 273.4,422.4 278.2,422.4 283.1,422.4 288.0,422.4 292.8,422.4 297.7,422.4 302.6,422.4 307.4,422.4 312.3,422.4 317.2,422.4
@@ -530,13 +505,13 @@
 	</g>
 	<g id="gnuplot_plot_3b" ><title>Level 2</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(282.4,306.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(399.3,306.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 2</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(255,   0,   0)' fill-opacity = '0.500000' points = '290.7,307.5 332.9,307.5 332.9,298.5 290.7,298.5 '/>
+		<polygon fill = 'rgb(255,   0,   0)' fill-opacity = '0.500000' points = '407.6,307.5 449.8,307.5 449.8,298.5 407.6,298.5 '/>
 		<polygon fill = 'rgb(255,   0,   0)' fill-opacity = '0.500000' points = '88.5,422.4 93.4,422.4 98.2,422.4 103.1,422.4 108.0,422.4 112.8,422.4 117.7,422.4 122.6,422.4 127.4,422.4 132.3,422.4 137.2,422.4 142.0,422.4 146.9,422.4 151.7,422.4 156.6,422.4 161.5,422.4
 166.3,422.4 171.2,422.4 176.1,422.4 180.9,422.4 185.8,422.4 190.7,422.4 195.5,422.4 200.4,422.4 205.3,422.4 210.1,422.4 215.0,422.4 219.9,422.4 224.7,422.4 229.6,422.4 234.5,422.4 239.3,422.4
 244.2,422.4 249.0,422.4 253.9,422.4 258.8,422.4 263.6,422.4 268.5,422.4 273.4,422.4 278.2,422.4 283.1,422.4 288.0,422.4 292.8,422.4 297.7,422.4 302.6,422.4 307.4,422.4 312.3,422.4 317.2,422.4
@@ -555,13 +530,13 @@
 	</g>
 	<g id="gnuplot_plot_4b" ><title>Level 3</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(282.4,324.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(399.3,324.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 3</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(238, 130, 238)' fill-opacity = '0.500000' points = '290.7,325.5 332.9,325.5 332.9,316.5 290.7,316.5 '/>
+		<polygon fill = 'rgb(238, 130, 238)' fill-opacity = '0.500000' points = '407.6,325.5 449.8,325.5 449.8,316.5 407.6,316.5 '/>
 		<polygon fill = 'rgb(238, 130, 238)' fill-opacity = '0.500000' points = '88.5,422.4 93.4,422.4 98.2,422.4 103.1,422.4 108.0,422.4 112.8,422.4 117.7,422.4 122.6,422.4 127.4,422.4 132.3,422.4 137.2,422.4 142.0,422.4 146.9,422.4 151.7,422.4 156.6,422.4 161.5,422.4
 166.3,422.4 171.2,422.4 176.1,422.4 180.9,422.4 185.8,422.4 190.7,422.4 195.5,422.4 200.4,422.4 205.3,422.4 210.1,422.4 215.0,422.4 219.9,422.4 224.7,422.4 229.6,422.4 234.5,422.4 239.3,422.4
 244.2,422.4 249.0,422.4 253.9,422.4 258.8,422.4 263.6,422.4 268.5,422.4 273.4,422.4 278.2,422.4 283.1,422.4 288.0,422.4 292.8,422.4 297.7,422.4 302.6,422.4 307.4,422.4 312.3,422.4 317.2,422.4
@@ -580,13 +555,13 @@
 	</g>
 	<g id="gnuplot_plot_5b" ><title>Level 4</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(399.3,306.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(516.2,306.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 4</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(255, 165,   0)' fill-opacity = '0.500000' points = '407.6,307.5 449.8,307.5 449.8,298.5 407.6,298.5 '/>
+		<polygon fill = 'rgb(255, 165,   0)' fill-opacity = '0.500000' points = '524.5,307.5 566.7,307.5 566.7,298.5 524.5,298.5 '/>
 		<polygon fill = 'rgb(255, 165,   0)' fill-opacity = '0.500000' points = '88.5,422.4 93.4,422.4 98.2,422.4 103.1,422.4 108.0,422.4 112.8,422.4 117.7,422.4 122.6,422.4 127.4,422.4 132.3,422.4 137.2,422.4 142.0,422.4 146.9,422.4 151.7,422.4 156.6,422.4 161.5,422.4
 166.3,422.4 171.2,422.4 176.1,422.4 180.9,422.4 185.8,422.4 190.7,422.4 195.5,422.4 200.4,422.4 205.3,422.4 210.1,422.4 215.0,422.4 219.9,422.4 224.7,422.4 229.6,422.4 234.5,422.4 239.3,422.4
 244.2,422.4 249.0,422.4 253.9,422.4 258.8,422.4 263.6,422.4 268.5,422.4 273.4,422.4 278.2,422.4 283.1,422.4 288.0,422.4 292.8,422.4 297.7,422.4 302.6,422.4 307.4,422.4 312.3,422.4 317.2,422.4
@@ -605,13 +580,13 @@
 	</g>
 	<g id="gnuplot_plot_6b" ><title>Level 5</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(399.3,324.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
+	<g transform="translate(516.2,324.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
 		<text><tspan font-family="Arial" >Level 5</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(165,  42,  42)' fill-opacity = '0.500000' points = '407.6,325.5 449.8,325.5 449.8,316.5 407.6,316.5 '/>
+		<polygon fill = 'rgb(165,  42,  42)' fill-opacity = '0.500000' points = '524.5,325.5 566.7,325.5 566.7,316.5 524.5,316.5 '/>
 		<polygon fill = 'rgb(165,  42,  42)' fill-opacity = '0.500000' points = '88.5,422.4 93.4,422.4 98.2,422.4 103.1,422.4 108.0,422.4 112.8,422.4 117.7,422.4 122.6,422.4 127.4,422.4 132.3,422.4 137.2,422.4 142.0,422.4 146.9,422.4 151.7,422.4 156.6,422.4 161.5,422.4
 166.3,422.4 171.2,422.4 176.1,422.4 180.9,422.4 185.8,422.4 190.7,422.4 195.5,422.4 200.4,422.4 205.3,422.4 210.1,422.4 215.0,422.4 219.9,422.4 224.7,422.4 229.6,422.4 234.5,422.4 239.3,422.4
 244.2,422.4 249.0,422.4 253.9,422.4 258.8,422.4 263.6,422.4 268.5,422.4 273.4,422.4 278.2,422.4 283.1,422.4 288.0,422.4 292.8,422.4 297.7,422.4 302.6,422.4 307.4,422.4 312.3,422.4 317.2,422.4
@@ -628,32 +603,7 @@
 	</g>
 </g>
 	</g>
-	<g id="gnuplot_plot_7b" ><title>Level 6</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(516.2,306.9)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >Level 6</tspan></text>
-	</g>
-</g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g stroke='none' shape-rendering='crispEdges'>
-		<polygon fill = 'rgb(255, 192, 192)' fill-opacity = '0.500000' points = '524.5,307.5 566.7,307.5 566.7,298.5 524.5,298.5 '/>
-		<polygon fill = 'rgb(255, 192, 192)' fill-opacity = '0.500000' points = '88.5,422.4 93.4,422.4 98.2,422.4 103.1,422.4 108.0,422.4 112.8,422.4 117.7,422.4 122.6,422.4 127.4,422.4 132.3,422.4 137.2,422.4 142.0,422.4 146.9,422.4 151.7,422.4 156.6,422.4 161.5,422.4
-166.3,422.4 171.2,422.4 176.1,422.4 180.9,422.4 185.8,422.4 190.7,422.4 195.5,422.4 200.4,422.4 205.3,422.4 210.1,422.4 215.0,422.4 219.9,422.4 224.7,422.4 229.6,422.4 234.5,422.4 239.3,422.4
-244.2,422.4 249.0,422.4 253.9,422.4 258.8,422.4 263.6,422.4 268.5,422.4 273.4,422.4 278.2,422.4 283.1,422.4 288.0,422.4 292.8,422.4 297.7,422.4 302.6,422.4 307.4,422.4 312.3,422.4 317.2,422.4
-322.0,422.4 326.9,422.4 331.8,422.4 336.6,422.4 341.5,422.4 346.3,422.4 351.2,422.4 356.1,422.4 360.9,422.4 365.8,422.4 370.7,422.4 375.5,422.4 380.4,422.4 385.3,422.4 390.1,422.4 395.0,422.4
-399.9,422.4 404.7,422.4 409.6,422.4 414.5,422.4 419.3,422.4 424.2,422.4 429.1,422.4 433.9,422.4 438.8,422.4 443.6,422.4 448.5,422.4 453.4,422.4 458.2,422.4 463.1,422.4 468.0,422.4 472.8,422.4
-477.7,422.4 482.6,422.4 487.4,422.4 492.3,422.4 497.2,422.4 502.0,422.4 506.9,422.4 511.8,422.4 516.6,422.4 521.5,422.4 526.4,422.4 531.2,422.4 536.1,422.4 540.9,422.4 545.8,422.4 550.7,422.4
-555.5,422.4 560.4,422.4 565.3,422.4 570.1,422.4 570.1,419.9 565.3,419.5 560.4,419.8 555.5,419.7 550.7,419.8 545.8,420.0 540.9,420.0 536.1,419.7 531.2,419.9 526.4,420.0 521.5,420.0 516.6,419.8
-511.8,419.9 506.9,419.9 502.0,419.6 497.2,419.8 492.3,419.9 487.4,420.0 482.6,420.1 477.7,420.0 472.8,420.0 468.0,419.9 463.1,419.8 458.2,420.1 453.4,420.1 448.5,420.0 443.6,420.2 438.8,419.9
-433.9,420.0 429.1,420.0 424.2,420.2 419.3,420.1 414.5,420.2 409.6,420.0 404.7,420.0 399.9,420.4 395.0,420.4 390.1,420.1 385.3,420.2 380.4,420.4 375.5,420.1 370.7,420.4 365.8,420.4 360.9,420.5
-356.1,420.3 351.2,420.1 346.3,420.5 341.5,420.4 336.6,420.4 331.8,420.4 326.9,420.5 322.0,420.6 317.2,420.2 312.3,420.7 307.4,420.5 302.6,420.6 297.7,420.5 292.8,420.6 288.0,420.6 283.1,420.7
-278.2,420.6 273.4,420.6 268.5,420.7 263.6,420.8 258.8,420.7 253.9,420.8 249.0,420.7 244.2,420.8 239.3,420.7 234.5,420.8 229.6,420.8 224.7,420.8 219.9,421.0 215.0,420.8 210.1,420.8 205.3,420.8
-200.4,420.8 195.5,420.9 190.7,421.0 185.8,420.8 180.9,421.1 176.1,420.7 171.2,421.0 166.3,421.0 161.5,421.1 156.6,421.1 151.7,421.1 146.9,421.2 142.0,420.9 137.2,421.1 132.3,421.2 127.4,421.1
-122.6,421.1 117.7,421.1 112.8,421.2 108.0,421.2 103.1,421.1 98.2,421.2 93.4,421.3 88.5,421.2 '/>
-	</g>
-</g>
-	</g>
-<g fill="none" color="#E1E1DB" stroke="rgb(255, 192, 192)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="#E1E1DB" stroke="rgb(165,  42,  42)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>

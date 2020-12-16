@@ -246,6 +246,16 @@ what you plan on doing with every colliding pair (it could be an expensive user 
 <img alt="Construction vs Query" src="graphs/construction_vs_query_grow_bench.svg" class="center" style="width: 100%;" />
 <img alt="Construction vs Query" src="graphs/construction_vs_query_num_theory.svg" class="center" style="width: 100%;" />
 <img alt="Construction vs Query" src="graphs/construction_vs_query_num_bench.svg" class="center" style="width: 100%;" />
+<h3><a class="header" href="#collect-performance" id="collect-performance">Collect Performance</a></h3>
+<p>Sometimes you need to iterate over all colliding pairs multiple times even though the elements havent moved.
+You could call <code>find_colliding_pairs()</code> multiple times, but it is slow.
+Broccoli provides functions to save off query results so that they can be iterated on though <code>TreeRefInd</code>.</p>
+<img alt="Construction vs Query" src="graphs/broccoli_query.svg" class="center" style="width: 100%;" />
+<p>The above graph shows the performance of <code>collect_colliding_pairs()</code> and <code>collect_colliding_pairs_par()</code>. These functions generate lists of colliding pairs. The graph shows only the time taken to construct the lists.</p>
+<img alt="Construction vs Query" src="graphs/optimal_query.svg" class="center" style="width: 100%;" />
+<p>The above graph shows the performance of iterating over the pairs collected from calling <code>collect_colliding_pairs()</code> and <code>collect_colliding_pairs_par()</code>. The parallel version returns multiple disjoint pairs that can be iterated on in parallel. Notice that it is much faster to iterate over the pre-found colliding pairs when compared to the earlier chart. The graph makes it obvious that there are gains to iterating over disjoint pairs in parallel, but keep in mind that the times we are looking at are extremely small to begin with.</p>
+<p>So as you can see, you pay a small cost, for collecting the colliding pairs, but then you are able to iterate 
+over them over and over again faster.</p>
 <h3><a class="header" href="#construction-cost-vs-querying-cost" id="construction-cost-vs-querying-cost">Construction Cost vs Querying Cost</a></h3>
 <p>If you are simulating moving elements, it might seem slow to rebuild the tree every iteration. But from benching, most of the time querying is the cause of the slowdown. Rebuilding is always a constant load, but the load of the query can vary wildly depending on how many elements are overlapping.</p>
 <p>Any kind of heuristics or caching strategy to speed up construction will result in a less optimal partitioning of the space which the querying side will pay for. Therefore it is not worth it. Instead we can focus on speeding up the construction of an optimal partitioning. This can be done via parallelism. Sorting the aabbs that sit on dividing lines may seem slow, but we can get this for 'free' essentially because it can be done after we have already split up the children nodes. So we can finish sorting a node while the children are being worked on. Rebuilding the first level of the tree does take some time, but it is still just a fraction of the entire building algorithm in some crucial cases, provided that it was able to partition almost all the aabbs into two planes. </p>
@@ -402,6 +412,51 @@ Obviously if you choose to switch to sequential straight away, you have sequenti
 <p>You could also covert floats to <code>u16</code>. This way an entire <code>Rect&lt;u16&gt;</code> is only 64bits big. You loose some precision, but provided that you round up such that your bounding boxes are only ever slightly too big, this likely isnt a problem. We are using this tree for broad-phase collision detection - its already not precise. So why not use an imprecise number type if we are just trying to broadly determine colliding pairs.</p>
 <p>If you do convert your floats to integers, make sure to normalize it over all possible values of the integer to make it as accurate as possible. If it is important to you to not miss any interesections, then you'd also have make sure that the rouding is conservative always producing a bounding box that is slightly bigger than it needs to be.</p>
 <img alt="Float vs Integer" src="graphs/float_vs_integer.svg" class="center" style="width: 100%;" />
+<h3><a class="header" href="#ord-vs-partial-ord" id="ord-vs-partial-ord">Ord vs Partial-Ord</a></h3>
+<p>As any rust user eventually learns, the floating point standard doesnt provide a total ordering of floats.
+This makes it impossible to implement a true <code>max()</code> or <code>min()</code> function. Rust's floating point primitive types
+only implement <code>PartialOrd</code> and not <code>Ord</code>, requiring that the user specify what to do in cases where there is no
+clear comparison when using functions like max. </p>
+<p>broccoli construction and query requires sorting or finding the max and min at various times. There are basically
+3 ways to handle floating points.</p>
+<ul>
+<li>
+<p>Enforce <code>Ord</code></p>
+<ul>
+<li>Impossible for the user to incorrectly use the tree.</li>
+<li>Cumbersome for the user to use wrapper types like <code>NotNan</code> or <code>OrderedFloat</code></li>
+<li>Wrapper types can incur performance hits. 
+<ul>
+<li><code>OrderedFloat</code> has a slightly more expensive comparison</li>
+<li><code>NotNan</code> can introduce error paths making auto-vectorization not possible.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Require <code>PartialOrd</code> and panic on failure</p>
+<ul>
+<li>Impossible for the user to incorrectly use the tree.</li>
+<li>Performance hit from extra checks and error paths in the query algorithms themselves.</li>
+</ul>
+</li>
+<li>
+<p>Require <code>PartialOrd</code> and silently fail.</p>
+<ul>
+<li>No performance hit</li>
+<li>Flexible to user.
+<ul>
+<li>User can still opt into static checking by passing their own wrapper types.</li>
+</ul>
+</li>
+<li>User could mis-use the tree. They need to be cognizant that they are not passing NaN values
+if they are opting out of using a wrapper type.</li>
+</ul>
+</li>
+</ul>
+<p>For a long time I used the first option, but have since moved to the last option. Mainly because
+it makes the code using this crate much more egronomic and easier to read since there is no need
+to juggle a wrapper type.</p>
 <h3><a class="header" href="#forbidding-the-user-from-violating-the-invariants-of-the-tree-statically" id="forbidding-the-user-from-violating-the-invariants-of-the-tree-statically">Forbidding the user from violating the invariants of the tree statically</a></h3>
 <p>We want the user to be able to mutate the elements directly in the tree,
 but we also do not want to let them mutate the aabb's of each of the elements of the tree. Doing so would

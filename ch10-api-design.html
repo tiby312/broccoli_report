@@ -163,7 +163,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h3><a class="header" href="#forbidding-the-user-from-violating-the-invariants-of-the-tree-statically" id="forbidding-the-user-from-violating-the-invariants-of-the-tree-statically">Forbidding the user from violating the invariants of the tree statically</a></h3>
+                        <h3><a class="header" href="#ord-vs-partial-ord" id="ord-vs-partial-ord">Ord vs Partial-Ord</a></h3>
+<p>As any rust user eventually learns, the floating point standard doesnt provide a total ordering of floats.
+This makes it impossible to implement a true <code>max()</code> or <code>min()</code> function. Rust's floating point primitive types
+only implement <code>PartialOrd</code> and not <code>Ord</code>, requiring that the user specify what to do in cases where there is no
+clear comparison when using functions like max. </p>
+<p>broccoli construction and query requires sorting or finding the max and min at various times. There are basically
+3 ways to handle floating points.</p>
+<ul>
+<li>
+<p>Enforce <code>Ord</code></p>
+<ul>
+<li>Impossible for the user to incorrectly use the tree.</li>
+<li>Cumbersome for the user to use wrapper types like <code>NotNan</code> or <code>OrderedFloat</code></li>
+<li>Wrapper types can incur performance hits. 
+<ul>
+<li><code>OrderedFloat</code> has a slightly more expensive comparison</li>
+<li><code>NotNan</code> can introduce error paths making auto-vectorization not possible.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Require <code>PartialOrd</code> and panic on failure</p>
+<ul>
+<li>Impossible for the user to incorrectly use the tree.</li>
+<li>Performance hit from extra checks and error paths in the query algorithms themselves.</li>
+</ul>
+</li>
+<li>
+<p>Require <code>PartialOrd</code> and silently fail.</p>
+<ul>
+<li>No performance hit</li>
+<li>Flexible to user.
+<ul>
+<li>User can still opt into static checking by passing their own wrapper types.</li>
+</ul>
+</li>
+<li>User could mis-use the tree. They need to be cognizant that they are not passing NaN values
+if they are opting out of using a wrapper type.</li>
+</ul>
+</li>
+</ul>
+<p>For a long time I used the first option, but have since moved to the last option. Mainly because
+it makes the code using this crate much more egronomic and easier to read since there is no need
+to juggle a wrapper type.</p>
+<h3><a class="header" href="#forbidding-the-user-from-violating-the-invariants-of-the-tree-statically" id="forbidding-the-user-from-violating-the-invariants-of-the-tree-statically">Forbidding the user from violating the invariants of the tree statically</a></h3>
 <p>We want the user to be able to mutate the elements directly in the tree,
 but we also do not want to let them mutate the aabb's of each of the elements of the tree. Doing so would
 mean we'd need to re-construct the tree.</p>
