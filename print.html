@@ -521,10 +521,14 @@ and treat them as two entirely seperate trees. Since these are two completely di
 parallel.</li>
 </ol>
 <h4><a class="header" href="#profiling-construction--finding-all-colliding-pairs" id="profiling-construction--finding-all-colliding-pairs">Profiling Construction + Finding all colliding pairs.</a></h4>
-<p>Here are some profiling results running construction + finding on <code>abspiral(0.2,50_000)</code> with one 
-construction and 30 queries.</p>
-<img alt="Flamegraph" src="graphs/flamegraph.svg" class="center" style="width: 100%;" />
-<p>As you can see all functions are split up into smaller problems.</p>
+<p>Here are some profiling results finding all intersections on <code>abspiral(0.2,50_000)</code> 30 times. 
+The image below is a SVG image and is interactive. Hover over blocks to see the full names.
+Try this link for a full page view of the image (or if it is not rendering correctly): <a href="graphs/flamegraph.svg">SVG</a></p>
+<object class="p" data="graphs/flamegraph.svg" type="image/svg+xml" style="width: 100%;">
+</object>
+<p>The flame graph shows a very insightful map of how much time is spent in which sections of the algorithm.
+You can clearly see how the rebalancing and the querying are each individually broken down.
+You can see how at each recursive step, a piece of the problem is broken off.</p>
 <h4><a class="header" href="#nbody-experimental" id="nbody-experimental">nbody (experimental)</a></h4>
 <p>Here we use divide and conquer.</p>
 <p>The nbody algorithm works in three steps. First a new version tree is built with extra data for each node. Then the tree is traversed taking advantage of this data. Then the tree is traversed again applying the changes made to the extra data from the construction in the first step.</p>
