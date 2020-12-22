@@ -533,6 +533,23 @@ There are a couple of options:</p>
 -perform parallel sweep </p>
 <p>Turns out these both appear to be about the same, if we adjust the target number of aabbs for node. Option2 prefers like 64 aabbs, while option2 prefers a smaller amount like 32. Because of this I chose option2 since it does
 not require any special dynamic allocation.</p>
+<h3><a class="header" href="#how-to-handle-parallel-cases" id="how-to-handle-parallel-cases">How to handle parallel cases</a></h3>
+<p>We have three options that all sound pretty good:</p>
+<p>Option1:
+-use just one stack of active list
+-aabbs are kept in the active list longer than normal
+-more comparisons, but simple and only useso ne vec
+Option2:
+-use two active lists. 
+-fewest comparisons
+-needs two vecs.
+Option3:
+-use two active lists, but implement it as one vec under the hood.
+-fewest allocations
+-fewest comparisons
+-slow to push and truncate each vec since it requires shuffling things around.</p>
+<p>I went with option3. The performance hit from pushing and truncating can be made up with a big allocation up front.
+Doing two big allocations upfront for option2 is wasteful.</p>
 <h4><a class="header" href="#profiling-construction--finding-all-colliding-pairs" id="profiling-construction--finding-all-colliding-pairs">Profiling Construction + Finding all colliding pairs.</a></h4>
 <p>Here are some profiling results finding all intersections on <code>abspiral(0.2,50_000)</code> 30 times. 
 The image below is a SVG image and is interactive. Hover over blocks to see the full names.
