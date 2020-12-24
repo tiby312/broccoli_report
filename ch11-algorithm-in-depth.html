@@ -184,36 +184,59 @@ with this nodes aabb.</li>
 and treat them as two entirely seperate trees. Since these are two completely disjoint trees, they can be handling in
 parallel.</li>
 </ol>
-<h3><a class="header" href="#how-to-speed-up-perpendicular-cases" id="how-to-speed-up-perpendicular-cases">How to speed up perpendicular cases</a></h3>
+<h4><a class="header" href="#how-to-handle-parallel-cases" id="how-to-handle-parallel-cases">How to handle parallel cases</a></h4>
+<p>Part of the colliding pair finding algorithm requires that we find all colliding pairs between two nodes. 
+Some times the aabbs between two nodes are sorted along the same dimension and sometimes not. When they are
+we have three options that all sound pretty good:</p>
+<ul>
+<li>Option 1:
+<ul>
+<li>Use just one stack of active list</li>
+<li>Aabbs are kept in the active list longer than normal</li>
+<li>More comparisons, but simple and only uses one vec</li>
+</ul>
+</li>
+<li>Option 2:
+<ul>
+<li>Use two active lists. </li>
+<li>Fewest comparisons</li>
+<li>Needs two vecs.</li>
+</ul>
+</li>
+<li>Option 3:
+<ul>
+<li>Use two active lists, but implement it as one vec under the hood.</li>
+<li>Fewest allocations</li>
+<li>Fewest comparisons</li>
+<li>Slow to push and truncate each vec since it requires shuffling things around.</li>
+</ul>
+</li>
+</ul>
+<p>I went with option 3. The performance hit from pushing and truncating can be made up with a big allocation up front.
+Doing two big allocations upfront for option2 is wasteful.</p>
+<h4><a class="header" href="#how-to-speed-up-perpendicular-cases" id="how-to-speed-up-perpendicular-cases">How to speed up perpendicular cases</a></h4>
 <p>Its slow to naively find intersections between the aabbs in two nodes that are sorted along different dimensions.
 There are a couple of options:</p>
-<p>Option1:
--Cut off each list by using the other node's bounding box to deal with smaller lists.
--Now iterate over each element, and perform parallel sweep where one list has size one.</p>
-<p>Option2:
--Cut off each list by using the other node's bounding box to deal with smaller list.
--collect a list of pointers of one list. 
--sort that list along the other lists axis
--perform parallel sweep </p>
+<ul>
+<li>
+<p>Option 1:</p>
+<ul>
+<li>Cut off each list by using the other node's bounding box to deal with smaller lists.</li>
+<li>Now iterate over each element, and perform parallel sweep where one list has size one.</li>
+</ul>
+</li>
+<li>
+<p>Option 2:</p>
+<ul>
+<li>Cut off each list by using the other node's bounding box to deal with smaller list.</li>
+<li>Collect a list of pointers of one list. </li>
+<li>Sort that list along the other lists axis</li>
+<li>Perform parallel sweep </li>
+</ul>
+</li>
+</ul>
 <p>Turns out these both appear to be about the same, if we adjust the target number of aabbs for node. Option2 prefers like 64 aabbs, while option2 prefers a smaller amount like 32. Because of this I chose option2 since it does
 not require any special dynamic allocation.</p>
-<h3><a class="header" href="#how-to-handle-parallel-cases" id="how-to-handle-parallel-cases">How to handle parallel cases</a></h3>
-<p>We have three options that all sound pretty good:</p>
-<p>Option1:
--use just one stack of active list
--aabbs are kept in the active list longer than normal
--more comparisons, but simple and only useso ne vec
-Option2:
--use two active lists. 
--fewest comparisons
--needs two vecs.
-Option3:
--use two active lists, but implement it as one vec under the hood.
--fewest allocations
--fewest comparisons
--slow to push and truncate each vec since it requires shuffling things around.</p>
-<p>I went with option3. The performance hit from pushing and truncating can be made up with a big allocation up front.
-Doing two big allocations upfront for option2 is wasteful.</p>
 <h4><a class="header" href="#profiling-construction--finding-all-colliding-pairs" id="profiling-construction--finding-all-colliding-pairs">Profiling Construction + Finding all colliding pairs.</a></h4>
 <p>Here are some profiling results finding all intersections on <code>abspiral(0.2,50_000)</code> 30 times. 
 The image below is a SVG image and is interactive. Hover over blocks to see the full names.
