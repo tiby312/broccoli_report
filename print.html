@@ -263,7 +263,8 @@ over them over and over again faster.</p>
 <p>Additionally, we have been assuming that once we build the tree, we are just finding all the colliding pairs of the elements. In reality, there might be many different queries we want to do on the same tree. So this is another reason we want the tree to be built to make querying as fast as possible, because we don't know how many queries the user might want to do on it. In addition to finding all colliding pairs, its quite reasonable the user might want to do some k_nearest querying, some rectangle area querying, or some raycasting.</p>
 <h3><a class="header" href="#inserting-elements-after-construction" id="inserting-elements-after-construction">Inserting elements after construction</a></h3>
 <p>broccoli does not support inserting elements after construction. If you want to add more elements,
-you have to rebuild the tree. In most usecases, I think you want to do this anyway. In a dynamic
+you have to rebuild the tree. However, broccoli provides a <code>intersect_with()</code> function that lets you
+find collisions between two groups. This way you can have one group of static objects and another group of dynamic objects, and update the static objects less frequently. In a dynamic
 particle system for example, most of the time, enough particles move about in one step to justify
 recreating the whole tree. Trying to avoid this using loose bounding boxes can make querying take
 longer as there are more intersections to detect than necessary. </p>
@@ -570,9 +571,28 @@ There are a couple of options:</p>
 <li>Perform parallel sweep </li>
 </ul>
 </li>
+<li>
+<p>Option 3:</p>
+<ul>
+<li>Cut off each list as always</li>
+<li>do a simple nested loop and check if the aabbs intersect</li>
 </ul>
-<p>Turns out these both appear to be about the same, if we adjust the target number of aabbs for node. Option2 prefers like 64 aabbs, while option2 prefers a smaller amount like 32. Because of this I chose option2 since it does
-not require any special dynamic allocation.</p>
+</li>
+<li>
+<p>Option 4:</p>
+<ul>
+<li>Cut off each list as always</li>
+<li>For each element in node A, iterate over each element in node B.
+<ul>
+<li>Exit early if the B element is completely to the right of the A element.</li>
+<li>Now we only have to check if the B element's right side is touching A.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Option 4 is the fastest. It exploits the sorted property of the aabbs, but also does not require
+any kind of storage of an active list.</p>
 <h4><a class="header" href="#profiling-construction--finding-all-colliding-pairs" id="profiling-construction--finding-all-colliding-pairs">Profiling Construction + Finding all colliding pairs.</a></h4>
 <p>Here are some profiling results finding all intersections on <code>abspiral(0.2,50_000)</code> 30 times. 
 The image below is a SVG image and is interactive. Hover over blocks to see the full names.

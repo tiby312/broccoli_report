@@ -196,7 +196,8 @@ over them over and over again faster.</p>
 <p>Additionally, we have been assuming that once we build the tree, we are just finding all the colliding pairs of the elements. In reality, there might be many different queries we want to do on the same tree. So this is another reason we want the tree to be built to make querying as fast as possible, because we don't know how many queries the user might want to do on it. In addition to finding all colliding pairs, its quite reasonable the user might want to do some k_nearest querying, some rectangle area querying, or some raycasting.</p>
 <h3><a class="header" href="#inserting-elements-after-construction" id="inserting-elements-after-construction">Inserting elements after construction</a></h3>
 <p>broccoli does not support inserting elements after construction. If you want to add more elements,
-you have to rebuild the tree. In most usecases, I think you want to do this anyway. In a dynamic
+you have to rebuild the tree. However, broccoli provides a <code>intersect_with()</code> function that lets you
+find collisions between two groups. This way you can have one group of static objects and another group of dynamic objects, and update the static objects less frequently. In a dynamic
 particle system for example, most of the time, enough particles move about in one step to justify
 recreating the whole tree. Trying to avoid this using loose bounding boxes can make querying take
 longer as there are more intersections to detect than necessary. </p>

@@ -234,9 +234,28 @@ There are a couple of options:</p>
 <li>Perform parallel sweep </li>
 </ul>
 </li>
+<li>
+<p>Option 3:</p>
+<ul>
+<li>Cut off each list as always</li>
+<li>do a simple nested loop and check if the aabbs intersect</li>
 </ul>
-<p>Turns out these both appear to be about the same, if we adjust the target number of aabbs for node. Option2 prefers like 64 aabbs, while option2 prefers a smaller amount like 32. Because of this I chose option2 since it does
-not require any special dynamic allocation.</p>
+</li>
+<li>
+<p>Option 4:</p>
+<ul>
+<li>Cut off each list as always</li>
+<li>For each element in node A, iterate over each element in node B.
+<ul>
+<li>Exit early if the B element is completely to the right of the A element.</li>
+<li>Now we only have to check if the B element's right side is touching A.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Option 4 is the fastest. It exploits the sorted property of the aabbs, but also does not require
+any kind of storage of an active list.</p>
 <h4><a class="header" href="#profiling-construction--finding-all-colliding-pairs" id="profiling-construction--finding-all-colliding-pairs">Profiling Construction + Finding all colliding pairs.</a></h4>
 <p>Here are some profiling results finding all intersections on <code>abspiral(0.2,50_000)</code> 30 times. 
 The image below is a SVG image and is interactive. Hover over blocks to see the full names.
