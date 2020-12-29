@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Parallelism - broccoli_report</title>
+        <title>Code Layout - broccoli_report</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html" class="active"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-api-design.html"><strong aria-hidden="true">12.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch11-algorithm-in-depth.html"><strong aria-hidden="true">13.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch12-improvements.html"><strong aria-hidden="true">14.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch13-how-to-make-aabb.html"><strong aria-hidden="true">15.</strong> How to make Aabb</a></li><li class="chapter-item expanded "><a href="ch14-code-layout.html"><strong aria-hidden="true">16.</strong> Code Layout</a></li><li class="chapter-item expanded "><a href="ch15-general-thoughts.html"><strong aria-hidden="true">17.</strong> General Thoughts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-api-design.html"><strong aria-hidden="true">12.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch11-algorithm-in-depth.html"><strong aria-hidden="true">13.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch12-improvements.html"><strong aria-hidden="true">14.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch13-how-to-make-aabb.html"><strong aria-hidden="true">15.</strong> How to make Aabb</a></li><li class="chapter-item expanded "><a href="ch14-code-layout.html" class="active"><strong aria-hidden="true">16.</strong> Code Layout</a></li><li class="chapter-item expanded "><a href="ch15-general-thoughts.html"><strong aria-hidden="true">17.</strong> General Thoughts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,24 +163,36 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h3><a class="header" href="#comparison-of-parallel-height" id="comparison-of-parallel-height">Comparison of Parallel Height</a></h3>
-<p>The below chart shows the performance of the broccoli tree for different levels at which to switch to sequential.
-Obviously if you choose to switch to sequential straight away, you have sequential tree performance.</p>
-<p>This was benched on a laptop with 4 physical cores. This means that if you just parallelize one level of the kdtree, you're only taking advantage of two of the 4 cores. This explains the time it took when we switched at level 8 vs 9. </p>
-<img alt="Parallel Height Heuristic" src="graphs/parallel_height_heuristic.svg" class="center" style="width: 100%;" />
+                        <h3><a class="header" href="#code-layout" id="code-layout">Code Layout</a></h3>
+<p>At a high level, I wanted all the code related to a specific query algorithm to be contained in one module.
+So all the raycast code would be in a raycast module. However, at the same time, I wanted people to be able
+to call raycast_mut() on the Tree object itself. One solution would be to have one raycast_mut() function
+inside of the raycast module, and then Tree would also have a raycast function that would just be a wrapper
+and call the one in the raycast module.</p>
+<p>There are some problems with this approach. The obvious problem is added boilerplate of defining wrapper functions.
+The other problem is that it raises the question of where should the function
+documentation go. Clearly duplicating the documentation is not good. The user would be calling the function
+attached to the Tree object which makes adding the documentation to that function seem like a good idea,
+but our goal is to contain all the raycast code and documentation into the raycast module.</p>
+<p>The soltuion I went with was making each query module define a trait. Then the Tree would implement all of them.
+This way all the code and documentaiton for a query algorith is all contained inside of one module and there are no wrapper functions.</p>
+<p>For the naive and assert functions, egronomics is not a concern since they are only used for debugging/testing the tree,
+which a regular user of the crate shouldnt care about. So for those, we dont need to to the raycast function to
+the tree itself. Instead the user has to call the function directly and pass the tree in as an argument. </p>
+<p>A downside to the current approach is that there is a kind of circular dpenendency with the current setup. The knearest module depends on Tree and Tree depends on the knearest module. This can be fixed by introducing another type TreeCore. Then you could have Tree depending on knearest module depending on TreeCore. Tree could deref to TreeCore. So TreeCore would provide the data structure and visitor functions, and then Tree would just be a wrapper around TreeCore providing high level query functions like raycast(). However, this didnt seem worth introducing a new type.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="ch6-choosing-optimal-height.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="ch13-how-to-make-aabb.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="ch8-bounds-checking.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="ch15-general-thoughts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -192,13 +204,13 @@ Obviously if you choose to switch to sequential straight away, you have sequenti
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="ch6-choosing-optimal-height.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch13-how-to-make-aabb.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="ch8-bounds-checking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch15-general-thoughts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
