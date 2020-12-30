@@ -266,10 +266,8 @@ over them over and over again faster.</p>
 you have to rebuild the tree. However, broccoli provides a <code>intersect_with()</code> function that lets you
 find collisions between two groups. This way you can have one group of static objects and another group of dynamic objects, and update the static objects less frequently. In a dynamic
 particle system for example, most of the time, enough particles move about in one step to justify
-recreating the whole tree. Trying to avoid this using loose bounding boxes can make querying take
-longer as there are more intersections to detect than necessary. </p>
+recreating the whole tree. </p>
 <h3><a class="header" href="#exploiting-temporal-locality-with-loose-bounding-boxes" id="exploiting-temporal-locality-with-loose-bounding-boxes">Exploiting Temporal Locality (with loose bounding boxes)</a></h3>
-<p>The main reason against exploiting temporal locality is that adding any kind of &quot;memory&quot; to the tree where you save the positions of the dividers to use as good heuristic positions for next iterations will come at a cost of a less optimal tree layout which will hurt the query algorithm. Our goal is to make the query algorithm as fast as possible since that is what can dominate.</p>
 <p>One strategy to exploit temporal locality is by inserting looser bounding boxes into the tree and caching the results of a query for longer than one step. The upside to this is that you only have to build and query the tree every couple of iterations. There are a number of downsides, though:</p>
 <ul>
 <li>
@@ -277,9 +275,6 @@ longer as there are more intersections to detect than necessary. </p>
 </li>
 <li>
 <p>You have to implement all the useful geometry tree functions all over again, or you can only use the useful geometry functions at the key world steps where the tree actually is constructed. For example, if you want to query a rectangle area, the tree provides a nice function to do this, but you only have the tree every couple of iterations. The result is that you have to somehow implement a way to query all the aabbs in the rectangle area using your cached lists of colliding aabbs, or simply only query on the world steps in which you do have the built tree. Those queries will also be slower since you are working on a tree with loose boxes.</p>
-</li>
-<li>
-<p>Every bot needs to have a member variable that is its index. This isnt ideal to have since its redundant information. You can figure out a aabbs index from its position within the list fed into the tree. So it is just wasted space. For a very intestive algorithms like collision querying, having the memory footprint being operated being small is crucial. We can't rely on pointer offsets to determine the indicies of which aabbs are colliding when using the tree since we reordered the aabbs directly to make the tree to avoid a level of indirection. This increases the separation between the other fields.</p>
 </li>
 <li>
 <p>The maximum load on a world step is greater. Sure amortised, this caching system may save computation, but the times you do construct and query the tree, you are doing so with loose bounding boxes. On top of that, while querying, you also have to build up a seperate data structure that caches the colliding pairs you find. </p>
@@ -290,9 +285,10 @@ longer as there are more intersections to detect than necessary. </p>
 </ul>
 <p>So in short, this system doesnt take advantage of temporal locality, but the user can still take advantage of it by inserting loose bounding boxes and then querying less frequently to amortize the cost. </p>
 <h3><a class="header" href="#expoiting-temporal-locality-caching-medians" id="expoiting-temporal-locality-caching-medians">Expoiting Temporal Locality (caching medians)</a></h3>
-<p>I would love to try the following: Instead of finding the median at every level, find an approximate median. Additionally, keep a weighted average of the medians from previous tree builds and let it degrade with time. Get an approximate median using median of medians. This would ensure worst case linear time when building one level of the tree. This would allow the rest of the algorithm to be parallelized sooner. This would mean that query would be slower since we are not using heuristics and not using the true median, but this might be a small slowdown and it might speed of construction significatly.</p>
+<p>I would be interesting to try the following: Instead of finding the median at every level, find an approximate median. Additionally, keep a weighted average of the medians from previous tree builds and let it degrade with time. Get an approximate median using median of medians. This would ensure worst case linear time when building one level of the tree. This would allow the rest of the algorithm to be parallelized sooner. This would mean that query would be slower since we are not using heuristics and not using the true median, but this might be a small slowdown and it might speed of construction significatly.
+However in looking at data of the load taken by each level, finding the medians is pretty fast, and an approximate median would only hurt the query side of the algorithm.</p>
 <h3><a class="header" href="#exploting-temporal-location-moving-dividers-with-mass" id="exploting-temporal-location-moving-dividers-with-mass">Exploting Temporal Location (moving dividers with mass)</a></h3>
-<p>For a while I had the design where the dividers would move as thoought they had mass. They would gently be pushed to which ever side had more aabbs. Dividers near the root had more mass and were harder to sway than those below. The problem with this approach is that the divider locations will mostly of the time be sub optimial. And the cost saved in rebalancing just isnt enough for the cost added to querying with a suboptimal partitioning. By always partitioning optimally, we get guarentees of the maximum number of aabbs in a node. Remember querying is the bottleneck, not rebalancing.</p>
+<p>For a while I had the design where the dividers would move as though they had mass. They would gently be pushed to which ever side had more aabbs. Dividers near the root had more mass and were harder to sway than those below. The problem with this approach is that the divider locations will mostly of the time be sub optimial. And the cost saved in rebalancing just isnt enough for the cost added to querying with a suboptimal partitioning. By always partitioning optimally, we get guarentees of the maximum number of aabbs in a node. Remember querying is the bottleneck, not rebalancing.</p>
 <h3><a class="header" href="#level-comparison" id="level-comparison">Level Comparison</a></h3>
 <p>The below charts show the load balance between the different levels of the tree. 
 Tree construction is compared against one call to <code>find_colliding_pairs</code>.</p>
@@ -471,9 +467,10 @@ between two nodes in the tree. So to get around that we have a <code>PMut&lt;Nod
 we do not have a level of indirection. </p>
 <p>The downside to this static protection is the loss of the nice syntactic sugar using a regular <code>&amp;mut T</code> would provide. The user has to manually extract the mutable inner part by calling <code>unpack_inner()</code>. </p>
 <h3><a class="header" href="#knowing-the-axis-at-compile-time" id="knowing-the-axis-at-compile-time">Knowing the axis at compile time</a></h3>
-<p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid, this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. </p>
+<p>A problem with using recursion on an kd tree is that every time you recurse, you have to access a different axis, so you might have branches in your code. A branch predictor might have problems seeing the pattern that the axis alternate with each call. One way to avoid this would be to handle the nodes in bfs order. Then you only have to alternate the axis once every level. But this way you lose the nice divide and conquer aspect of splitting the problem into two and handling those two problems concurrently. So to avoid this, the axis of a particular recursive call is known at compile time. Each recursive call, will call the next with the next axis type. This way all branching based off of the axis is known at compile time. </p>
 <p>A downside to this is that the starting axis of the tree
 must be chosen at compile time. It is certainly possible to create a wrapper around two specialized versions of the tree, one for each axis, but this would leads to alot of generated code, for little benefit. Not much time is spent handling the root node anyway, so even if the suboptimal starting axis is picked it is not that big of a deal.</p>
+<p>For this reason I hardcoded the starting divider to be a vertical line, partitioning aabbs based off of their x axis. This is completely arbitrary. In some cases, users might have more information about their particular distribution of aabbs to want a different starting axis, but the loss of choosing the not optimal starting axis isnt tht big in most cases I think. </p>
 <h3><a class="header" href="#mutable-vs-read-only-api" id="mutable-vs-read-only-api">Mutable vs Read-Only api</a></h3>
 <p>We could have just exposed read only versions of all the query functions where functions like
 <code>find_all_colliding_pairs</code> just returned a read only reference instead of a mutable reference.
@@ -487,7 +484,8 @@ So having to use unsafe is a downside.</p>
 <h3><a class="header" href="#mutable-vs-mutable--read-only-api" id="mutable-vs-mutable--read-only-api">Mutable vs Mutable + Read-Only api</a></h3>
 <p>Ideally, there would be both a <code>find_all_colliding_pairs</code> and a <code>find_all_colliding_pairs_mut</code>. </p>
 <p>A lot of the query algorithms don't actually care what kind of reference is in the tree.
-They don't actually mutate the elements, they just retrieve them.</p>
+They don't actually mutate the elements, they just retrieve them, and forward them on to the user
+who may want to mutate them or not.</p>
 <p>In this way, it would be nice if the query algorithms were generic of the type of reference they held. This way you could have a raycast(&amp;mut Tree) function that allows you to mutate the elements it finds, or you could have a rayacst(&amp;Tree) function that allows you to call it multiple times in parallel.</p>
 <p>To do this you can go down one of two paths, macros or generic associated types. GATs <a href="https://github.com/rust-lang/rfcs/blob/master/text/1598-generic_associated_types.md">don't exist yet</a>, and macros are hard to read and can be a head ache. Check out how rust reuses code between Iter and IterMut for slices for an example of macro solution. So for now, we will just support mutable api.</p>
 <p>A good article about GATs can be found <a href="https://lukaskalbertodt.github.io/2018/08/03/solving-the-generalized-streaming-iterator-problem-without-gats.html">here</a>.</p>
@@ -700,8 +698,9 @@ that you convert them back right before repelling. However if the aabbs are u16 
 then the offset vectors might be too inaccurate.</p>
 <h3><a class="header" href="#code-layout" id="code-layout">Code Layout</a></h3>
 <p>At a high level, I wanted all the code related to a specific query algorithm to be contained in one module.
-So all the raycast code would be in a raycast module. However, at the same time, I wanted people to be able
-to call raycast_mut() on the Tree object itself. One solution would be to have one raycast_mut() function
+So all the raycast code would be in a raycast module, for example.
+However, at the same time, I wanted people to be able
+to call raycast_mut() on the Tree object itself for convenience. One solution would be to have one raycast_mut() function
 inside of the raycast module, and then Tree would also have a raycast function that would just be a wrapper
 and call the one in the raycast module.</p>
 <p>There are some problems with this approach. The obvious problem is added boilerplate of defining wrapper functions.
@@ -710,11 +709,12 @@ documentation go. Clearly duplicating the documentation is not good. The user wo
 attached to the Tree object which makes adding the documentation to that function seem like a good idea,
 but our goal is to contain all the raycast code and documentation into the raycast module.</p>
 <p>The soltuion I went with was making each query module define a trait. Then the Tree would implement all of them.
-This way all the code and documentaiton for a query algorith is all contained inside of one module and there are no wrapper functions.</p>
+This way all the code and documentaiton for a query algorith is all contained inside of one module and there are no wrapper functions.  This adds up to a lot of traits, but they can all be included using the broccoli::prelude.</p>
 <p>For the naive and assert functions, egronomics is not a concern since they are only used for debugging/testing the tree,
 which a regular user of the crate shouldnt care about. So for those, we dont need to to the raycast function to
 the tree itself. Instead the user has to call the function directly and pass the tree in as an argument. </p>
-<p>A downside to the current approach is that there is a kind of circular dpenendency with the current setup. The knearest module depends on Tree and Tree depends on the knearest module. This can be fixed by introducing another type TreeCore. Then you could have Tree depending on knearest module depending on TreeCore. Tree could deref to TreeCore. So TreeCore would provide the data structure and visitor functions, and then Tree would just be a wrapper around TreeCore providing high level query functions like raycast(). However, this didnt seem worth introducing a new type.</p>
+<p>A downside to the current approach is that there is a kind of circular dpenendency with the current setup. The knearest module depends on Tree and Tree depends on the knearest module. While this is true, the dependency is mostly in one direction. Its mosltly &quot;knearest module depends on tree module&quot; and not the other way around. The only dependany the Tree module has on kearest is the one line it has to implment the KnearestQuery trait.</p>
+<p>This can be fixed by introducing another type TreeCore. Then you could have Tree depending on knearest module depending on TreeCore. Tree could deref to TreeCore. So TreeCore would provide the data structure and visitor functions, and then Tree would just be a wrapper around TreeCore providing high level query functions like raycast(). However, this didnt seem worth introducing a new type.</p>
 <h4><a class="header" href="#multithreading" id="multithreading">Multithreading</a></h4>
 <p>Evenly dividing up work into chuncks for up to N cores is preferable. You don't want to make assumptions about how many cores the user has. Why set up your system to only take up advantage of 2 cores if 16 are available. So here, using a thread pool library like rayon is useful. </p>
 <p>In a big complicated system, it can be tempting to keep sub-systems sequential and then just allow multiple sub-systems to happen in parallel if they are computation heavy. But this is not fully taking advantage of multithreading. You want each subsystem to itself be parallizable. You want to parallelize in a platform independant way exploiting as many cores as are available.</p>
