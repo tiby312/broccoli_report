@@ -185,7 +185,7 @@ and treat them as two entirely seperate trees. Since these are two completely di
 parallel.</li>
 </ol>
 <h4><a class="header" href="#allocations" id="allocations">Allocations</a></h4>
-<p>Before we go over different design options, I want to talk about allocators. There are some very fast allocators out
+<p>There are some very fast allocators out
 there, but not all allocators are created equal. If you want your code to be as platform independant as possible,
 you should try to minimize allocations even if in benches on your local machine, there is no performance hit. For example, currently the rust webassembly target using a very simple allocator that is pretty slow. The colliding pair
 finding algorithm requires a stack at each level of recursion. Each level of recursion, we could allocate a new stack,

@@ -169,7 +169,7 @@ populating it with <code>BBox&lt;N,&amp;mut T&gt;</code>.
 But we havent talked about how you would generate such a struct.</p>
 <p>In some dynamic systems, every particle has a position and maybe a radius, and then from the position and radius
 an aabb can be generated. So what you store in your tree might look something like this:</p>
-<p><code>BBox&lt;OrderedFloat&lt;f32&gt;,&amp;mut Particle&gt;</code></p>
+<p><code>BBox&lt;f32,&amp;mut Particle&gt;</code></p>
 <p>where <code>Particle</code> might look like this:</p>
 <pre><code>struct Particle{
     pos:[f32;2],

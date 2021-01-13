@@ -198,7 +198,7 @@ clear comparison when using functions like max. </p>
 <li>Flexible to user.
 <ul>
 <li>User can still opt into using <code>Ord</code> types by passing their own wrapper types. They can
-define their own <code>from_ord()</code> tree building function that requires Ord.</li>
+define their own <code>from_ord()-&gt;Tree</code> tree building function that requires Ord.</li>
 </ul>
 </li>
 <li>User could mis-use the tree. They need to be cognizant that they are not passing NaN values
