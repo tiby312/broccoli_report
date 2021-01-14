@@ -166,7 +166,7 @@
                         <h4><a class="header" href="#how-to-make-a-aabb" id="how-to-make-a-aabb">How to make a Aabb</a></h4>
 <p>So far we've talked about how aabbs can be stored in a Tree. For example we recommended
 populating it with <code>BBox&lt;N,&amp;mut T&gt;</code>.
-But we havent talked about how you would generate such a struct.</p>
+But we haven't talked about how you would generate such a struct.</p>
 <p>In some dynamic systems, every particle has a position and maybe a radius, and then from the position and radius
 an aabb can be generated. So what you store in your tree might look something like this:</p>
 <p><code>BBox&lt;f32,&amp;mut Particle&gt;</code></p>
@@ -196,7 +196,7 @@ an aabb can be generated. So what you store in your tree might look something li
     })
 </code></pre>
 <p>This works because for the repel() function we just need the relative offset position
-to determine the direction and magnitude of the repel force. So it doesnt matter that
+to determine the direction and magnitude of the repel force. So it doesn't matter that
 we used the top left corner instead of the center.</p>
 <p>This optimization might still work if your aabb was converted from floats to u32 provided 
 that you convert them back right before repelling. However if the aabbs are u16 converted from float,
