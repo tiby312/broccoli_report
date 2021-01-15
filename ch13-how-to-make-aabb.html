@@ -179,7 +179,7 @@ an aabb can be generated. So what you store in your tree might look something li
 </code></pre>
 <p>and then in your main loop you might have something like this:</p>
 <pre><code>    tree.for_every_colliding_pair(|a,b|{
-        a.repel(b)
+        a.unpack_inner().repel(b.unpack_inner());
     })
 </code></pre>
 <h4><a class="header" href="#an-optimization-idea" id="an-optimization-idea">An optimization idea</a></h4>
@@ -189,18 +189,16 @@ an aabb can be generated. So what you store in your tree might look something li
 }
 </code></pre>
 <p>And you could instead use one of the corners of the aabb:</p>
-<pre><code>    tree.for_every_colliding_pair_pmut(|a,b|{
-        let apos=[a.get().x.start,a.get().y.start];
-        let bpos=[b.get().x.start,b.get().y.start];
-        repel(apos,a.inner_mut(),bpos,b.inner_mut())
+<pre><code>    tree.for_every_colliding_pair(|a,b|{
+        let apos=[a.rect.x.start,a.rect.y.start];
+        let bpos=[b.rect.x.start,b.rect.y.start];
+        repel(apos,a.unpack_inner(),bpos,b.unpack_inner())
     })
 </code></pre>
-<p>This works because for the repel() function we just need the relative offset position
+<p>Where repel is modified to take the center of the particle as an argument.
+This works because for the repel() function we just need the relative offset position
 to determine the direction and magnitude of the repel force. So it doesn't matter that
 we used the top left corner instead of the center.</p>
-<p>This optimization might still work if your aabb was converted from floats to u32 provided 
-that you convert them back right before repelling. However if the aabbs are u16 converted from float,
-then the offset vectors might be too inaccurate.</p>
 
                     </main>
 

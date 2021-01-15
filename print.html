@@ -183,12 +183,12 @@
 <p>We increase n to increase the size of the problem.
 We can increase the grow rate to decrease the number of aabbs intersecting.</p>
 <img alt="Spiral Visualize" src="graphs/spiral_visualize.svg" class="center" style="width: 100%;" />
-<p>While those 3 variables change the the distribution of the elements, there is another variable at play.</p>
+<p>While those 3 variables change the distribution of the elements, there is another variable at play.</p>
 <ul>
 <li>aabb size (the bounding box size of each element)</li>
 </ul>
 <p>For all the benching in here, we just fix the size such that every element has the same size aabb. There is still a lot of interesting data analysis to do with elements that are all different sizes, but for now we'll just analyse cases where they are all the same.</p>
-<p>Lets define a particular scene/distribution just so that it makes are benching simpler.</p>
+<p>Lets define a particular scene / distribution just so that it makes are benching simpler.</p>
 <p>Let <code>abspiral(n,grow)</code> be a distribution of aabbs where:</p>
 <ul>
 <li>n=number of aabbs</li>
@@ -197,7 +197,7 @@ We can increase the grow rate to decrease the number of aabbs intersecting.</p>
 <li>aabb radius=constant (5)</li>
 </ul>
 <p>The constants are just arbitrary values. We just want all the elements to have some bounding box size and to influence how many of them are intersecting. This just makes things simpler since for most of the benches, we can typically show trends what we want to show by only influencing these two variables, so we might as well pick constants for the other variables and imbue that in the meaning of abspiral() itself.</p>
-<p>The below chart shows how influencing the spiral_grow affects the number of bot intersections for abspiral(). This shows that we can influence the spiral grow to see how the performance of the tree degrades. We could influence how many aabbs are colliding with changing the separation, but the relationship to the grow rate and the number of intersection pairs makes a nice smooth downward graph.</p>
+<p>The below chart shows how influencing the spiral_grow affects the number of bot intersections for abspiral(). This shows that we can influence the spiral grow to see how the performance of the tree degrades. We could influence how many aabbs are colliding by changing the separation, but the relationship to the grow rate and the number of intersection pairs makes a nice smooth downward graph.</p>
 <p>It is not entirely smooth, but it is smooth enough that we can use this function to change the load on the broccoli without having to sample multiple times.</p>
 <p>Its also clearly not linear, but all that really matters is that we have a way to increase/decrease
 the number of collisions easily. We just need something that will allow us to definitively see
@@ -517,7 +517,7 @@ RefCell or Mutex. If the user violates this, then despite two query rectangles b
 the same bot might be in both. So at the cost of making HasAabb unsafe, we can make the MultiRect Api not unsafe.</p>
 <h3><a class="header" href="#algorithm-overview" id="algorithm-overview">Algorithm overview:</a></h3>
 <h4><a class="header" href="#construction" id="construction">Construction</a></h4>
-<p>Construction works as follows, Given: a list of elements.</p>
+<p>Construction works like this. Given: a list of aabbs.</p>
 <p>For every node we do the following:</p>
 <ol>
 <li>First we find the median of the remaining elements (using pattern defeating quick select) and use its position as this nodes divider.</li>
@@ -717,7 +717,7 @@ an aabb can be generated. So what you store in your tree might look something li
 </code></pre>
 <p>and then in your main loop you might have something like this:</p>
 <pre><code>    tree.for_every_colliding_pair(|a,b|{
-        a.repel(b)
+        a.unpack_inner().repel(b.unpack_inner());
     })
 </code></pre>
 <h4><a class="header" href="#an-optimization-idea" id="an-optimization-idea">An optimization idea</a></h4>
@@ -727,18 +727,16 @@ an aabb can be generated. So what you store in your tree might look something li
 }
 </code></pre>
 <p>And you could instead use one of the corners of the aabb:</p>
-<pre><code>    tree.for_every_colliding_pair_pmut(|a,b|{
-        let apos=[a.get().x.start,a.get().y.start];
-        let bpos=[b.get().x.start,b.get().y.start];
-        repel(apos,a.inner_mut(),bpos,b.inner_mut())
+<pre><code>    tree.for_every_colliding_pair(|a,b|{
+        let apos=[a.rect.x.start,a.rect.y.start];
+        let bpos=[b.rect.x.start,b.rect.y.start];
+        repel(apos,a.unpack_inner(),bpos,b.unpack_inner())
     })
 </code></pre>
-<p>This works because for the repel() function we just need the relative offset position
+<p>Where repel is modified to take the center of the particle as an argument.
+This works because for the repel() function we just need the relative offset position
 to determine the direction and magnitude of the repel force. So it doesn't matter that
 we used the top left corner instead of the center.</p>
-<p>This optimization might still work if your aabb was converted from floats to u32 provided 
-that you convert them back right before repelling. However if the aabbs are u16 converted from float,
-then the offset vectors might be too inaccurate.</p>
 <h3><a class="header" href="#code-layout" id="code-layout">Code Layout</a></h3>
 <p>At a high level, I wanted all the code related to a specific query algorithm to be contained in one module.
 So all the raycast code would be in a raycast module, for example.
@@ -780,9 +778,6 @@ of smaller elements making more of it fit in memory at once. This of course only
 <p>Often times, its not the dynamic allocation that is slow, but some other residual of doing it in the first place. For example, dynamically allocating a bunch of pointers to an array, and then sorting that list of pointers. The allocation is fast, its just that there is no cache coherency. Two pointers in your list of pointers could very easily point to memory locations that are very far apart.</p>
 <p>Writing apis that don't do dynamic allocation is tough and can be cumbersome, since you probably have to have the user give you a slice of a certain size, but typically you need to first get the problem size from the user to figure out the amount of memory you want to request.
 On one hand the level of explicitness is great and users don't have to put any faith in allocation system. But on the other hand it adds a lot of logic to your api that makes it harder to see what your library actually does. </p>
-<h3><a class="header" href="#design-space-big" id="design-space-big">Design space big</a></h3>
-<p>One thing ive learned that the design space is so big. There are so many design decisions to make and a lot of
-them are just made based off of hunches or educated guesses since there simply isn't enough time to back up each decision with real world data and benches. </p>
 
                     </main>
 
