@@ -199,10 +199,6 @@ argument which influences the size of <code>T</code>.</p>
 <img alt="Direct vs Indirect Query" src="graphs/tree_direct_indirect_rebal_0.01_128_bytes.svg" class="center" style="width: 100%;" />
 <img alt="Direct vs Indirect Query" src="graphs/tree_direct_indirect_rebal_0.1_32_bytes.svg" class="center" style="width: 100%;" />
 <h3><a class="header" href="#different-data-layouts" id="different-data-layouts">Different Data Layouts</a></h3>
-<p>There are three main data layouts for each of the elements in a broccoli that are interesting:
-<code>(Rect&lt;isize&gt;,&amp;mut T)</code>
-<code>(Rect&lt;isize&gt;,T)</code>
-<code>&amp;mut (Rect&lt;isize&gt;,T)</code></p>
 <p>Because the tree construction code is generic over the elements that are inserted (as long as they implement Aabb),
 The user can easily try all three data layouts.</p>
 <p>The semi-direct layout is almost always the fastest. 
