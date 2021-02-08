@@ -1,0 +1,82 @@
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+5e-1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="276.26263" y="440">
+1e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="402.52527" y="440">
+1.5e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="528.78784" y="440">
+2e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+2e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="364.9594">
+4e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="329.91882">
+6e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="294.87823">
+8e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="259.83765">
+1e5
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="224.79706">
+1.2e5
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="189.75647">
+1.4e5
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="154.71588">
+1.6e5
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="119.67529">
+1.8e5
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+intersections
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,100 155.0505,128.21643 160.10101,153.70322 165.15152,173.06664 170.20203,192.16727 175.25253,206.2273 180.30302,220.98639 185.35353,232.46219 190.40405,242.38393 195.45454,251.26848 200.50505,261.03253 205.55556,269.79092 210.60606,276.23138 215.65656,281.66092 220.70706,286.72955 225.75757,291.6545 230.80807,297.19443 235.8586,303.99756 240.90909,308.8349 245.9596,312.6 251.0101,315.6608 256.0606,318.27307 261.1111,321.21475 266.16162,323.88135 271.21213,326.42 276.26263,328.87286 281.31314,331.28192 286.36365,333.68393 291.41412,335.8985 296.46466,338.3899 301.51514,341.93774 306.56567,344.8216 311.61615,347.6441 316.6667,350.71365 321.71716,350.95718 326.76767,352.88443 331.81818,354.25977 336.86868,355.63687 341.9192,356.91583 346.96973,358.3017 352.0202,359.3564 357.0707,360.39713 362.12122,361.36426 367.1717,362.48553 372.22223,363.16357 377.27274,363.90118 382.32324,364.5985 387.37372,364.9927 392.42426,365.44473 397.47473,365.93353 402.52527,366.4206 407.57574,366.9865 412.62625,367.43503 417.67676,367.9151 422.72726,368.502 427.77774,369.07318 432.82828,369.65134 437.87878,370.205 442.9293,370.9706 447.9798,371.58383 453.03027,372.29166 458.08078,372.9802 463.13132,373.76337 468.18182,374.53424 473.23233,375.44354 478.2828,376.26352 483.3333,377.36377 488.38382,378.45178 493.43433,379.61514 498.48486,380.97647 503.53534,382.97552 508.58585,384.48053 513.63635,385.8471 518.6869,387.08054 523.7373,387.4257 528.78784,388.0126 533.8384,400 538.8889,391.18906 543.9394,390.8474 548.98987,391.82678 554.0404,392.1912 559.09094,393.0865 564.1414,393.33878 569.1919,394.0431 574.24243,394.70535 579.2929,395.1609 584.3434,395.49554 589.3939,396.00186 594.44446,396.40134 599.49493,396.83408 604.5454,397.2248 609.59595,397.5787 614.6465,397.93262 619.6969,398.26898 624.74744,398.58963 629.798,398.82788 634.84845,399.11697 639.89905,399.34125 644.94946,399.569 650,399.73718 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Number of Intersections with abspiral(20_000,grow)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Grow
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Intersections
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>

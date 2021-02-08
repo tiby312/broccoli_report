@@ -1,0 +1,143 @@
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+0e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="230.64516" y="440">
+1e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="311.2903" y="440">
+2e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="391.9355" y="440">
+3e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="472.58063" y="440">
+4e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="553.2258" y="440">
+5e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="633.871" y="440">
+6e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+1e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="342.77975">
+2e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="285.5595">
+3e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="228.3393">
+4e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="171.11902">
+5e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="113.8988">
+6e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+query
+</text>
+<rect class="poloto0fill" height="7.5" rx="5" ry="5" width="50" x="680" y="76.25"/>
+<rect class="poloto0fill" height="1.2531128" width="5.064514" x="150" y="398.7469"/>
+<rect class="poloto0fill" height="8.880585" width="5.064514" x="158.06451" y="391.11942"/>
+<rect class="poloto0fill" height="0.5550232" width="5.064514" x="166.12903" y="399.44498"/>
+<rect class="poloto0fill" height="25.594604" width="5.064514" x="174.19354" y="374.4054"/>
+<rect class="poloto0fill" height="2.0484924" width="5.064514" x="182.25806" y="397.9515"/>
+<rect class="poloto0fill" height="12.113525" width="5.0645294" x="190.32257" y="387.88647"/>
+<rect class="poloto0fill" height="3.250122" width="5.064514" x="198.3871" y="396.74988"/>
+<rect class="poloto0fill" height="62.63327" width="5.064514" x="206.45161" y="337.36673"/>
+<rect class="poloto0fill" height="1.247406" width="5.064514" x="214.51613" y="398.7526"/>
+<rect class="poloto0fill" height="9.0121765" width="5.064514" x="222.58064" y="390.98782"/>
+<rect class="poloto0fill" height="1.3675537" width="5.0645294" x="230.64516" y="398.63245"/>
+<rect class="poloto0fill" height="23.51181" width="5.064514" x="238.70969" y="376.4882"/>
+<rect class="poloto0fill" height="0.8411255" width="5.064514" x="246.7742" y="399.15887"/>
+<rect class="poloto0fill" height="9.927704" width="5.064514" x="254.83871" y="390.0723"/>
+<rect class="poloto0fill" height="1.8825378" width="5.064514" x="262.90323" y="398.11746"/>
+<rect class="poloto0fill" height="134.8681" width="5.064514" x="270.96774" y="265.1319"/>
+<rect class="poloto0fill" height="1.8596497" width="5.064514" x="279.03226" y="398.14035"/>
+<rect class="poloto0fill" height="11.873199" width="5.064514" x="287.09677" y="388.1268"/>
+<rect class="poloto0fill" height="3.2958984" width="5.064514" x="295.1613" y="396.7041"/>
+<rect class="poloto0fill" height="26.836304" width="5.064514" x="303.2258" y="373.1637"/>
+<rect class="poloto0fill" height="1.3504028" width="5.0645447" x="311.2903" y="398.6496"/>
+<rect class="poloto0fill" height="9.773224" width="5.064514" x="319.35486" y="390.22678"/>
+<rect class="poloto0fill" height="1.1558533" width="5.064514" x="327.41937" y="398.84415"/>
+<rect class="poloto0fill" height="64.85913" width="5.064514" x="335.4839" y="335.14087"/>
+<rect class="poloto0fill" height="0.7152405" width="5.064514" x="343.5484" y="399.28476"/>
+<rect class="poloto0fill" height="9.767487" width="5.064514" x="351.6129" y="390.2325"/>
+<rect class="poloto0fill" height="1.7223206" width="5.064514" x="359.67743" y="398.27768"/>
+<rect class="poloto0fill" height="25.50879" width="5.064514" x="367.74194" y="374.4912"/>
+<rect class="poloto0fill" height="1.4247742" width="5.064514" x="375.80646" y="398.57523"/>
+<rect class="poloto0fill" height="10.883301" width="5.064514" x="383.87097" y="389.1167"/>
+<rect class="poloto0fill" height="2.0770874" width="5.064514" x="391.9355" y="397.9229"/>
+<rect class="poloto0fill" height="300" width="5.064514" x="400" y="100"/>
+<rect class="poloto0fill" height="0" width="5.064514" x="408.0645" y="400"/>
+<rect class="poloto0fill" height="9.424164" width="5.064514" x="416.12903" y="390.57584"/>
+<rect class="poloto0fill" height="1.625061" width="5.064514" x="424.19354" y="398.37494"/>
+<rect class="poloto0fill" height="24.061096" width="5.064514" x="432.25806" y="375.9389"/>
+<rect class="poloto0fill" height="0.62368774" width="5.064514" x="440.32257" y="399.3763"/>
+<rect class="poloto0fill" height="9.933441" width="5.064514" x="448.3871" y="390.06656"/>
+<rect class="poloto0fill" height="1.5964355" width="5.064514" x="456.4516" y="398.40356"/>
+<rect class="poloto0fill" height="66.39838" width="5.064514" x="464.5161" y="333.60162"/>
+<rect class="poloto0fill" height="0.37191772" width="5.0645447" x="472.58063" y="399.62808"/>
+<rect class="poloto0fill" height="10.694458" width="5.064514" x="480.64517" y="389.30554"/>
+<rect class="poloto0fill" height="2.9411316" width="5.064514" x="488.7097" y="397.05887"/>
+<rect class="poloto0fill" height="29.994843" width="5.064514" x="496.7742" y="370.00516"/>
+<rect class="poloto0fill" height="3.6678162" width="5.0644836" x="504.8387" y="396.33218"/>
+<rect class="poloto0fill" height="14.070465" width="5.064575" x="512.9032" y="385.92953"/>
+<rect class="poloto0fill" height="3.6907043" width="5.064453" x="520.9678" y="396.3093"/>
+<rect class="poloto0fill" height="140.27542" width="5.064575" x="529.0322" y="259.72458"/>
+<rect class="poloto0fill" height="0.7266846" width="5.064453" x="537.0968" y="399.27332"/>
+<rect class="poloto0fill" height="9.441345" width="5.064575" x="545.16125" y="390.55865"/>
+<rect class="poloto0fill" height="1.3847351" width="5.064453" x="553.2258" y="398.61526"/>
+<rect class="poloto0fill" height="23.231415" width="5.064575" x="561.2903" y="376.7686"/>
+<rect class="poloto0fill" height="0.08010864" width="5.064453" x="569.35486" y="399.9199"/>
+<rect class="poloto0fill" height="9.183838" width="5.064575" x="577.4193" y="390.81616"/>
+<rect class="poloto0fill" height="2.0828247" width="5.064453" x="585.4839" y="397.91718"/>
+<rect class="poloto0fill" height="66.71307" width="5.064575" x="593.54834" y="333.28693"/>
+<rect class="poloto0fill" height="3.6621094" width="5.064514" x="601.6129" y="396.3379"/>
+<rect class="poloto0fill" height="14.282166" width="5.064514" x="609.6774" y="385.71783"/>
+<rect class="poloto0fill" height="4.0969543" width="5.064514" x="617.74194" y="395.90305"/>
+<rect class="poloto0fill" height="30.979034" width="5.064514" x="625.80646" y="369.02097"/>
+<rect class="poloto0fill" height="0.77819824" width="5.064514" x="633.871" y="399.2218"/>
+<rect class="poloto0fill" height="11.913269" width="5.064514" x="641.9355" y="388.08673"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Complexity of query evenness with abspiral(3000,2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+dfs inorder iteration
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>

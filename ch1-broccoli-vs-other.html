@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js rust">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -50,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -76,7 +76,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('rust')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -115,9 +115,9 @@
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
                         
@@ -164,15 +164,815 @@
                 <div id="content" class="content">
                     <main>
                         <h3><a class="header" href="#comparison-against-other-algorithms" id="comparison-against-other-algorithms">Comparison against other Algorithms</a></h3>
-<img alt="Colfind Theory" src="graphs/colfind_theory.svg" class="center" style="width: 100%;" />
-<img alt="Colfind Bench" src="graphs/colfind_bench.svg" class="center" style="width: 100%;" />
-<p>The above chart compares different implementations of <code>find_colliding_pairs</code> both in terms of comparisons and benches. It is interesting to note that the real world bench times follow the same trend as the theoretical number of comparisons.</p>
+<link rel="stylesheet" href="css/poloto.css">
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+0e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="251.0101" y="440">
+2e3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="352.0202" y="440">
+4e3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="453.0303" y="440">
+6e3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="554.0404" y="440">
+8e3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+2e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="334.49957">
+4e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="268.9991">
+6e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="203.49869">
+8e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="137.99823">
+1e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+brocc
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,399.93967 155.0505,397.89218 160.10101,395.01187 165.15152,392.7542 170.20203,390.03293 175.25253,394.85513 180.30302,393.51685 185.35353,392.48755 190.40404,391.2222 195.45454,389.86105 200.50505,388.80457 205.55556,387.68845 210.60606,386.63644 215.65656,385.87573 220.70706,384.3616 225.75757,383.09592 230.80807,381.9749 235.85858,380.65048 240.90909,379.52472 245.9596,377.95377 251.0101,377.28616 256.0606,374.9318 261.1111,374.34744 266.16162,373.30066 271.21213,372.28442 276.26263,371.3681 281.3131,369.81418 286.36365,368.8976 291.41412,367.7966 296.46466,365.9121 301.51514,365.28458 306.56567,364.0556 311.61615,362.7272 316.66666,361.80893 321.71716,360.44318 326.76767,358.9636 331.81818,357.59662 336.86868,356.7829 341.9192,356.02313 346.9697,354.0384 352.0202,353.01218 357.0707,352.34595 362.12122,350.5046 367.1717,349.8363 372.22223,347.54755 377.2727,346.93564 382.32324,345.7261 387.37372,344.59616 392.42426,343.38824 397.47473,341.4769 402.52527,341.04865 407.57574,340.01395 412.62625,338.57925 417.67676,337.3848 422.72726,336.20798 427.77777,335.30957 432.82828,333.8346 437.87878,332.3801 442.9293,331.27612 447.9798,330.21548 453.0303,328.7706 458.0808,328.2758 463.13132,326.63748 468.18182,325.48935 473.23233,324.58875 478.28284,323.28778 483.3333,321.1134 488.38382,318.75473 493.43433,319.0346 498.48483,317.9853 503.53534,315.67935 508.58585,314.80273 513.63635,312.7576 518.6869,311.6593 523.73737,309.4675 528.78784,308.97223 533.8384,308.3155 538.8889,307.34534 543.9394,305.1891 548.98987,303.89722 554.0404,302.48138 559.09094,302.3381 564.1414,299.17337 569.1919,297.45276 574.24243,296.84174 579.2929,295.72748 584.3434,293.87875 589.3939,293.12793 594.44446,291.58478 599.49493,290.13376 604.5454,289.51678 609.59595,288.7175 614.6465,288.33716 619.69696,286.2006 624.74744,284.3913 629.798,282.74118 634.8485,282.14508 639.899,282.0151 644.94946,278.83856 650,279.18518 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+brocc_par
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,399.8198 155.0505,397.578 160.10101,394.7625 165.15152,392.62317 170.20203,389.87308 175.25253,394.76416 180.30302,393.4852 185.35353,392.48965 190.40404,391.2783 195.45454,389.84354 200.50505,388.34293 205.55556,387.51254 210.60606,386.66708 215.65656,385.91183 220.70706,384.61276 225.75757,383.14392 230.80807,382.0764 235.85858,380.66534 240.90909,379.5396 245.9596,377.65042 251.0101,376.9894 256.0606,374.90067 261.1111,374.69562 266.16162,371.90158 271.21213,373.0015 276.26263,370.8745 281.3131,369.23828 286.36365,369.44217 291.41412,375.89133 296.46466,368.12616 301.51514,366.13333 306.56567,367.30893 311.61615,364.51355 316.66666,365.22525 321.71716,363.00983 326.76767,363.9901 331.81818,363.64505 336.86868,361.1463 341.9192,369.38504 346.9697,361.3171 352.0202,358.78726 357.0707,371.70337 362.12122,373.31125 367.1717,367.6236 372.22223,370.1982 377.2727,368.4054 382.32324,369.2385 387.37372,372.38882 392.42426,365.58743 397.47473,367.35742 402.52527,367.08786 407.57574,371.7664 412.62625,368.20914 417.67676,368.9598 422.72726,366.127 427.77777,356.33023 432.82828,364.9903 437.87878,369.5241 442.9293,365.58887 447.9798,342.7441 453.0303,365.85498 458.0808,363.9451 463.13132,365.8148 468.18182,363.7595 473.23233,361.67572 478.28284,366.39056 483.3333,360.8416 488.38382,359.5955 493.43433,365.82242 498.48483,365.03595 503.53534,364.63226 508.58585,363.15143 513.63635,267.46222 518.6869,362.71103 523.73737,354.8847 528.78784,358.16412 533.8384,350.9149 538.8889,353.31677 543.9394,349.6343 548.98987,354.91705 554.0404,347.6882 559.09094,357.58994 564.1414,355.81836 569.1919,353.90967 574.24243,349.0606 579.2929,351.65918 584.3434,354.07892 589.3939,351.511 594.44446,348.1263 599.49493,351.43933 604.5454,323.68814 609.59595,352.84778 614.6465,353.04095 619.69696,343.94492 624.74744,338.72208 629.798,346.4771 634.8485,347.77808 639.899,351.35498 644.94946,343.24026 650,347.8297 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+naive
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,400 155.0505,396.18228 160.10101,390.32516 165.15152,382.3231 170.20203,389.7872 175.25253,385.5154 180.30302,380.93527 185.35353,375.15512 190.40404,367.72168 195.45454,362.53503 200.50505,355.4501 205.55556,347.28674 210.60606,338.36307 215.65656,327.87375 220.70706,319.35608 225.75757,308.8234 230.80807,297.22876 235.85858,285.44946 240.90909,272.91287 245.9596,260.2187 251.0101,245.82881 256.0606,231.8594 261.1111,217.3892 266.16162,202.82057 271.21213,186.48065 276.26263,170.73227 281.3131,153.33934 286.36365,135.47531 291.41412,117.897736 296.46466,100 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+nosort
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,399.95026 155.0505,397.30127 160.10101,393.3235 165.15152,389.56125 170.20203,393.8739 175.25253,391.48135 180.30302,390.0811 185.35353,388.73093 190.40404,385.84415 195.45454,383.4367 200.50505,380.92285 205.55556,379.66595 210.60606,378.2663 215.65656,375.61166 220.70706,373.68973 225.75757,369.86252 230.80807,368.52 235.85858,365.71347 240.90909,362.45184 245.9596,360.30963 251.0101,357.04755 256.0606,359.02386 261.1111,355.74475 266.16162,353.9996 271.21213,351.0996 276.26263,348.68448 281.3131,345.3074 286.36365,344.0645 291.41412,342.1194 296.46466,336.9774 301.51514,335.08148 306.56567,332.5355 311.61615,329.97128 316.66666,328.06073 321.71716,323.15533 326.76767,319.81238 331.81818,318.7162 336.86868,313.29614 341.9192,311.06522 346.9697,308.3887 352.0202,304.6106 357.0707,308.9945 362.12122,307.01004 367.1717,304.05365 372.22223,299.33636 377.2727,299.62372 382.32324,295.1593 387.37372,291.83264 392.42426,290.86145 397.47473,286.89255 402.52527,282.9168 407.57574,281.68726 412.62625,277.97482 417.67676,276.0817 422.72726,273.04333 427.77777,270.65585 432.82828,267.31543 437.87878,263.3921 442.9293,260.2194 447.9798,257.6067 453.0303,252.2889 458.0808,252.37361 463.13132,247.51643 468.18182,246.0198 473.23233,244.81572 478.28284,241.33054 483.3333,238.40752 488.38382,235.7704 493.43433,232.28618 498.48483,227.74806 503.53534,220.04056 508.58585,220.50952 513.63635,216.37077 518.6869,208.70012 523.73737,211.37947 528.78784,206.33942 533.8384,206.75609 538.8889,201.4441 543.9394,198.64197 548.98987,193.82443 554.0404,193.4897 559.09094,190.18353 564.1414,204.97932 569.1919,201.04851 574.24243,198.0085 579.2929,194.7705 584.3434,192.65994 589.3939,189.5204 594.44446,183.46286 599.49493,184.87851 604.5454,179.40901 609.59595,177.92215 614.6465,175.5023 619.69696,169.60461 624.74744,166.9816 629.798,165.1063 634.8485,160.71826 639.899,161.43622 644.94946,157.1332 650,154.01971 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="300">
+nosort_par
+</text>
+<line class="poloto4stroke" x1="680" x2="730" y1="281.25" y2="281.25"/>
+<polyline class="poloto4stroke" fill="none" points="150,399.94214 155.0505,397.35632 160.10101,393.48294 165.15152,389.54846 170.20203,393.93408 175.25253,391.6324 180.30302,390.24417 185.35353,389.04037 190.40404,386.4504 195.45454,383.87863 200.50505,381.54346 205.55556,380.182 210.60606,378.62805 215.65656,375.89355 220.70706,373.94534 225.75757,370.64682 230.80807,368.9649 235.85858,366.28207 240.90909,363.07895 245.9596,361.02902 251.0101,357.4282 256.0606,361.75336 261.1111,360.2823 266.16162,359.19504 271.21213,356.513 276.26263,355.97476 281.3131,354.46262 286.36365,353.01407 291.41412,353.70563 296.46466,349.72336 301.51514,349.32376 306.56567,345.55762 311.61615,345.22894 316.66666,345.89417 321.71716,341.64194 326.76767,341.48538 331.81818,337.73834 336.86868,333.04385 341.9192,331.1513 346.9697,333.49875 352.0202,332.53912 357.0707,350.91187 362.12122,350.3291 367.1717,345.69495 372.22223,343.7323 377.2727,346.14154 382.32324,346.1732 387.37372,343.62946 392.42426,324.06555 397.47473,339.11688 402.52527,340.85956 407.57574,338.00842 412.62625,335.15317 417.67676,334.43414 422.72726,336.66495 427.77777,334.08002 432.82828,338.1082 437.87878,332.32108 442.9293,329.58997 447.9798,333.7732 453.0303,328.23886 458.0808,328.14835 463.13132,328.64355 468.18182,328.63223 473.23233,299.85205 478.28284,326.09006 483.3333,325.29742 488.38382,323.4936 493.43433,324.67188 498.48483,320.42377 503.53534,317.24258 508.58585,315.17676 513.63635,315.58954 518.6869,281.69083 523.73737,312.38986 528.78784,308.33823 533.8384,308.83624 538.8889,309.2023 543.9394,311.55576 548.98987,303.22858 554.0404,309.09995 559.09094,307.5291 564.1414,306.48077 569.1919,311.46945 574.24243,306.2224 579.2929,306.36945 584.3434,301.91513 589.3939,288.75787 594.44446,251.96953 599.49493,298.78592 604.5454,275.06348 609.59595,301.47192 614.6465,301.57266 619.69696,293.18582 624.74744,293.8748 629.798,290.33963 634.8485,289.6979 639.899,278.304 644.94946,279.6868 650,291.46124 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="350">
+sweep
+</text>
+<line class="poloto5stroke" x1="680" x2="730" y1="331.25" y2="331.25"/>
+<polyline class="poloto5stroke" fill="none" points="150,398.6633 155.0505,397.76984 160.10101,394.3398 165.15152,390.08273 170.20203,388.67386 175.25253,392.39838 180.30302,390.35004 185.35353,388.14194 190.40404,385.71198 195.45454,383.45062 200.50505,380.4426 205.55556,378.22598 210.60606,375.35773 215.65656,372.59543 220.70706,369.69852 225.75757,366.9856 230.80807,363.62186 235.85858,360.64322 240.90909,357.38748 245.9596,354.27982 251.0101,351.23325 256.0606,347.6236 261.1111,343.93628 266.16162,340.14676 271.21213,336.85046 276.26263,333.28604 281.3131,329.8532 286.36365,325.67316 291.41412,322.1031 296.46466,318.02145 301.51514,313.57013 306.56567,310.65042 311.61615,305.99 316.66666,301.95502 321.71716,298.7845 326.76767,294.58044 331.81818,289.258 336.86868,285.43063 341.9192,280.92786 346.9697,276.5618 352.0202,272.11453 357.0707,268.08893 362.12122,263.453 367.1717,257.94592 372.22223,254.41365 377.2727,249.47691 382.32324,245.34698 387.37372,240.39839 392.42426,235.37651 397.47473,230.86758 402.52527,226.41824 407.57574,221.11366 412.62625,216.47292 417.67676,211.20561 422.72726,206.744 427.77777,201.63464 432.82828,196.45071 437.87878,191.04047 442.9293,185.76068 447.9798,181.17096 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Bench of space partitioning algs with abspiral(x,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Number of Elements
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Time in Seconds
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+0e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="251.0101" y="440">
+2e3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="352.0202" y="440">
+4e3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="453.0303" y="440">
+6e3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="554.0404" y="440">
+8e3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+2e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="366.1837">
+4e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="332.36737">
+6e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="298.5511">
+8e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="264.73477">
+1e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="230.91846">
+1.2e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="197.10217">
+1.4e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="163.28586">
+1.6e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="129.46954">
+1.8e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+brocc
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,399.99106 155.0505,399.5351 160.10101,398.66937 165.15152,397.78604 170.20203,396.86136 175.25253,395.98056 180.30302,394.69714 185.35353,393.80945 190.40404,393.0277 195.45454,391.812 200.50505,391.2065 205.55556,389.78564 210.60606,388.77 215.65656,387.75824 220.70706,387.00635 225.75757,386.0256 230.80807,384.9781 235.85858,384.2202 240.90909,383.0478 245.9596,382.3169 251.0101,381.12054 256.0606,378.67554 261.1111,377.90152 266.16162,377.39142 271.21213,375.76834 276.26263,375.10968 281.3131,373.98944 286.36365,373.3161 291.41412,371.6844 296.46466,370.96667 301.51514,370.0186 306.56567,369.07947 311.61615,368.53873 316.66666,366.93744 321.71716,366.34216 326.76767,365.2015 331.81818,364.5293 336.86868,363.4162 341.9192,362.37213 346.9697,361.2466 352.0202,360.58752 357.0707,357.79782 362.12122,356.89798 367.1717,355.61038 372.22223,354.6663 377.2727,353.5306 382.32324,352.51697 387.37372,351.87677 392.42426,350.7921 397.47473,349.17114 402.52527,348.3108 407.57574,346.98663 412.62625,345.60974 417.67676,345.00763 422.72726,343.956 427.77777,343.294 432.82828,342.0824 437.87878,340.75516 442.9293,340.1406 447.9798,338.92377 453.0303,338.85547 458.0808,337.4882 463.13132,336.1286 468.18182,334.9309 473.23233,334.51 478.28284,332.90256 483.3333,331.80716 488.38382,331.31622 493.43433,330.42783 498.48483,329.00925 503.53534,328.18793 508.58585,327.91693 513.63635,326.5937 518.6869,325.4303 523.73737,324.49573 528.78784,323.10648 533.8384,322.2539 538.8889,321.12112 543.9394,320.03937 548.98987,318.903 554.0404,317.88812 559.09094,317.04538 564.1414,310.25226 569.1919,309.22394 574.24243,306.5581 579.2929,307.23083 584.3434,305.76657 589.3939,304.69983 594.44446,303.80432 599.49493,302.88635 604.5454,300.73804 609.59595,300.2917 614.6465,299.86215 619.69696,298.3869 624.74744,297.47385 629.798,297.08044 634.8485,295.5781 639.899,294.0159 644.94946,293.59766 650,293.07596 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+brocc_par
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,399.98346 155.0505,399.50992 160.10101,398.62457 165.15152,397.761 170.20203,396.85968 175.25253,395.96707 180.30302,394.62305 185.35353,393.81885 190.40404,393.0386 195.45454,392.07956 200.50505,391.172 205.55556,389.8551 210.60606,388.85342 215.65656,387.81134 220.70706,387.02863 225.75757,386.00024 230.80807,384.9225 235.85858,384.19116 240.90909,383.13434 245.9596,382.32858 251.0101,381.32788 256.0606,380.38275 261.1111,379.26443 266.16162,377.79337 271.21213,377.17032 276.26263,376.9734 281.3131,376.27756 286.36365,379.48523 291.41412,374.36337 296.46466,374.54678 301.51514,374.01367 306.56567,372.8305 311.61615,371.60693 316.66666,371.2673 321.71716,370.7751 326.76767,370.3321 331.81818,368.81668 336.86868,369.0297 341.9192,369.5205 346.9697,367.3683 352.0202,368.42264 357.0707,374.10352 362.12122,373.88373 367.1717,374.96384 372.22223,370.20996 377.2727,372.4882 382.32324,370.38257 387.37372,371.5276 392.42426,372.90463 397.47473,370.29153 402.52527,372.54443 407.57574,366.57062 412.62625,370.3195 417.67676,370.45578 422.72726,370.6865 427.77777,368.48175 432.82828,369.21512 437.87878,366.64075 442.9293,365.04416 447.9798,357.23538 453.0303,366.44446 458.0808,368.6314 463.13132,363.68036 468.18182,360.0115 473.23233,367.61685 478.28284,364.85098 483.3333,364.24686 488.38382,365.13525 493.43433,366.91223 498.48483,365.72687 503.53534,364.5759 508.58585,362.00644 513.63635,363.28705 518.6869,363.4719 523.73737,355.02118 528.78784,361.58188 533.8384,361.1136 538.8889,364.18085 543.9394,362.1688 548.98987,360.45297 554.0404,358.6236 559.09094,360.4222 564.1414,355.54312 569.1919,358.06113 574.24243,352.33234 579.2929,355.70123 584.3434,346.02283 589.3939,354.23657 594.44446,354.53033 599.49493,325.665 604.5454,351.29358 609.59595,352.37424 614.6465,353.51794 619.69696,318.63013 624.74744,350.62314 629.798,351.98685 634.8485,351.07584 639.899,349.29395 644.94946,350.2759 650,351.7929 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+naive
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,400 155.0505,399.39243 160.10101,397.74622 165.15152,395.50235 170.20203,392.86157 175.25253,389.75092 180.30302,386.0556 185.35353,382.21176 190.40404,378.04507 195.45454,373.47278 200.50505,368.47867 205.55556,363.2643 210.60606,357.5797 215.65656,351.9016 220.70706,345.13712 225.75757,338.3005 230.80807,331.33707 235.85858,323.21945 240.90909,315.8659 245.9596,307.2814 251.0101,298.16333 256.0606,288.87036 261.1111,279.74805 266.16162,269.94568 271.21213,260.14423 276.26263,248.72421 281.3131,238.51593 286.36365,226.5907 291.41412,214.67328 296.46466,201.73335 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+nosort
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,399.99448 155.0505,399.3974 160.10101,398.14908 165.15152,396.7728 170.20203,394.70294 175.25253,393.31714 180.30302,391.3916 185.35353,389.70078 190.40404,388.15744 195.45454,385.38266 200.50505,383.65628 205.55556,381.42368 210.60606,377.90567 215.65656,376.65485 220.70706,374.91934 225.75757,370.95593 230.80807,369.20242 235.85858,367.28876 240.90909,363.9391 245.9596,362.19162 251.0101,360.10104 256.0606,357.31445 261.1111,351.7994 266.16162,353.52563 271.21213,349.30875 276.26263,346.6424 281.3131,342.29367 286.36365,340.18866 291.41412,335.7116 296.46466,334.4769 301.51514,333.57025 306.56567,332.00616 311.61615,328.2723 316.66666,325.90988 321.71716,321.5791 326.76767,320.3649 331.81818,316.9551 336.86868,309.36768 341.9192,313.84747 346.9697,310.20337 352.0202,306.2999 357.0707,299.85425 362.12122,294.211 367.1717,295.52466 372.22223,292.15216 377.2727,293.01285 382.32324,286.0061 387.37372,283.7707 392.42426,281.4189 397.47473,275.88272 402.52527,279.55768 407.57574,267.75464 412.62625,268.87842 417.67676,263.10452 422.72726,260.1269 427.77777,260.5885 432.82828,255.07593 437.87878,252.97769 442.9293,248.9837 447.9798,251.71823 453.0303,245.08464 458.0808,241.63402 463.13132,236.84166 468.18182,230.09373 473.23233,230.4382 478.28284,224.77841 483.3333,224.75793 488.38382,221.77626 493.43433,214.90994 498.48483,215.42552 503.53534,210.35957 508.58585,207.71529 513.63635,204.50783 518.6869,198.1446 523.73737,197.65033 528.78784,197.52545 533.8384,190.64545 538.8889,189.1741 543.9394,181.15038 548.98987,186.41191 554.0404,175.73318 559.09094,171.31949 564.1414,171.61258 569.1919,172.23076 574.24243,167.90782 579.2929,153.15242 584.3434,157.569 589.3939,151.926 594.44446,154.18318 599.49493,152.44856 604.5454,146.42416 609.59595,140.22263 614.6465,141.1109 619.69696,128.69604 624.74744,125.04013 629.798,121.62726 634.8485,125.64578 639.899,115.293274 644.94946,100 650,114.74426 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="300">
+nosort_par
+</text>
+<line class="poloto4stroke" x1="680" x2="730" y1="281.25" y2="281.25"/>
+<polyline class="poloto4stroke" fill="none" points="150,399.9927 155.0505,399.41516 160.10101,398.14252 165.15152,396.7439 170.20203,394.68527 175.25253,393.316 180.30302,391.35434 185.35353,389.6713 190.40404,388.2472 195.45454,385.4758 200.50505,383.744 205.55556,381.36023 210.60606,378.0207 215.65656,376.7413 220.70706,375.08475 225.75757,371.11252 230.80807,369.36218 235.85858,367.8111 240.90909,364.39462 245.9596,362.64587 251.0101,360.80188 256.0606,362.49896 261.1111,358.62793 266.16162,360.3112 271.21213,358.7031 276.26263,356.31778 281.3131,356.06778 286.36365,350.85104 291.41412,349.1916 296.46466,347.4292 301.51514,348.4772 306.56567,347.867 311.61615,344.48282 316.66666,342.27313 321.71716,339.21906 326.76767,339.99188 331.81818,337.57104 336.86868,333.5456 341.9192,335.88275 346.9697,333.5956 352.0202,330.9356 357.0707,336.30624 362.12122,333.42648 367.1717,329.74164 372.22223,334.5158 377.2727,336.47763 382.32324,332.615 387.37372,317.6145 392.42426,333.19055 397.47473,328.83063 402.52527,286.6023 407.57574,296.9185 412.62625,327.3385 417.67676,323.59583 422.72726,322.6472 427.77777,324.22195 432.82828,319.95062 437.87878,319.4826 442.9293,299.69098 447.9798,304.36374 453.0303,314.43213 458.0808,309.11102 463.13132,286.69647 468.18182,306.63388 473.23233,299.4104 478.28284,304.35257 483.3333,303.7297 488.38382,304.25586 493.43433,296.64423 498.48483,283.2555 503.53534,300.3025 508.58585,295.68762 513.63635,295.886 518.6869,296.27658 523.73737,292.71378 528.78784,291.20453 533.8384,292.57516 538.8889,294.6433 543.9394,283.75513 548.98987,291.8277 554.0404,286.04346 559.09094,282.98166 564.1414,284.79596 569.1919,282.14975 574.24243,281.86203 579.2929,250.216 584.3434,275.41266 589.3939,274.83755 594.44446,276.04678 599.49493,275.7104 604.5454,275.4698 609.59595,265.2954 614.6465,239.37102 619.69696,261.77484 624.74744,259.85272 629.798,262.06055 634.8485,264.49792 639.899,255.4288 644.94946,244.25674 650,262.21112 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="350">
+sweep
+</text>
+<line class="poloto5stroke" x1="680" x2="730" y1="331.25" y2="331.25"/>
+<polyline class="poloto5stroke" fill="none" points="150,399.82556 155.0505,399.45636 160.10101,398.35678 165.15152,396.90747 170.20203,395.1073 175.25253,393.33752 180.30302,391.46814 185.35353,389.09592 190.40404,386.81943 195.45454,384.53613 200.50505,382.10425 205.55556,379.3888 210.60606,376.42612 215.65656,373.55594 220.70706,370.97464 225.75757,367.75262 230.80807,364.66653 235.85858,361.30975 240.90909,357.95486 245.9596,354.7743 251.0101,351.3901 256.0606,347.70493 261.1111,343.7676 266.16162,340.36932 271.21213,336.22833 276.26263,332.6393 281.3131,328.6297 286.36365,324.7829 291.41412,320.71997 296.46466,316.6357 301.51514,312.3629 306.56567,308.48965 311.61615,304.39227 316.66666,299.681 321.71716,295.78943 326.76767,290.83832 331.81818,286.46585 336.86868,281.50275 341.9192,276.90976 346.9697,271.9844 352.0202,267.57083 357.0707,263.07074 362.12122,258.349 367.1717,252.95201 372.22223,248.55296 377.2727,243.42365 382.32324,238.74939 387.37372,233.3011 392.42426,228.12703 397.47473,223.89685 402.52527,218.40463 407.57574,212.89122 412.62625,208.39764 417.67676,201.98206 422.72726,196.69322 427.77777,191.57568 432.82828,185.70316 437.87878,179.98175 442.9293,173.98694 447.9798,168.91464 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Bench of space partitioning algs with abspiral(x,0.05)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Number of Elements
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Time in Seconds
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+0e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="214.10257" y="440">
+1e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="278.20514" y="440">
+2e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="342.30768" y="440">
+3e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="406.41025" y="440">
+4e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="470.51282" y="440">
+5e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="534.61536" y="440">
+6e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="598.71796" y="440">
+7e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+0e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="343.8327">
+1e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="287.6654">
+2e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="231.49811">
+3e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="175.33084">
+4e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="119.16354">
+5e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+broccoli
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,400 162.82051,398.85925 175.64102,397.8186 188.46155,396.4567 201.28204,394.8584 214.10257,394.4263 226.92308,393.02878 239.74359,391.76343 252.5641,390.233 265.3846,389.03528 278.20514,387.76282 291.02563,386.09518 303.84616,384.45374 316.6667,382.84167 329.48718,381.2454 342.30768,379.62357 355.1282,378.00232 367.94873,379.35663 380.76923,378.30353 393.58975,376.63434 406.41025,375.5344 419.23077,374.2813 432.0513,372.626 444.8718,371.39175 457.69232,370.26007 470.51282,368.78256 483.33334,366.78143 496.15384,365.90857 508.97437,363.82364 521.7949,362.2546 534.61536,361.18945 547.4359,359.51703 560.2564,358.71655 573.0769,356.72363 585.89746,355.07983 598.71796,353.3989 611.53845,352.4439 624.359,350.13965 637.1795,349.3271 650,347.4697 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+naive
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,400 162.82051,381.1518 175.64102,326.9686 188.46155,238.04892 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+nosort
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,400 162.82051,396.96655 175.64102,392.77527 188.46155,389.03445 201.28204,383.59265 214.10257,380.43958 226.92308,374.38354 239.74359,368.2608 252.5641,361.34097 265.3846,360.84323 278.20514,355.15338 291.02563,348.74072 303.84616,342.0485 316.6667,334.9491 329.48718,327.5895 342.30768,320.55344 355.1282,313.09512 367.94873,315.48566 380.76923,309.30908 393.58975,302.1474 406.41025,294.95328 419.23077,288.16888 432.0513,281.73392 444.8718,273.4766 457.69232,266.37665 470.51282,259.2685 483.33334,250.24232 496.15384,242.21793 508.97437,234.26083 521.7949,225.69296 534.61536,217.92883 547.4359,208.82646 560.2564,200.52179 573.0769,218.10097 585.89746,209.4606 598.71796,203.3253 611.53845,196.2979 624.359,188.74226 637.1795,181.77727 650,174.09111 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+sweep
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,400 162.82051,397.35217 175.64102,392.5774 188.46155,386.46457 201.28204,379.2032 214.10257,371.0134 226.92308,361.94254 239.74359,352.12473 252.5641,341.59454 265.3846,330.45392 278.20514,318.555 291.02563,306.2037 303.84616,293.2406 316.6667,279.68576 329.48718,265.62488 342.30768,251.21938 355.1282,236.16774 367.94873,220.53674 380.76923,204.60902 393.58975,188.24315 406.41025,171.54713 419.23077,154.2457 432.0513,136.55804 444.8718,118.516754 457.69232,100 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Complexity of space partitioning algs with abspiral(x,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Number of Elements
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+0e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="214.10257" y="440">
+1e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="278.20514" y="440">
+2e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="342.30768" y="440">
+3e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="406.41025" y="440">
+4e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="470.51282" y="440">
+5e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="534.61536" y="440">
+6e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="598.71796" y="440">
+7e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+0e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="343.3513">
+2e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="286.70258">
+4e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="230.05386">
+6e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="173.40515">
+8e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="116.75644">
+1e8
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+broccoli
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,400 162.82051,398.69156 175.64102,397.45358 188.46155,395.92755 201.28204,394.33167 214.10257,393.18854 226.92308,391.72202 239.74359,390.35513 252.5641,389.0106 265.3846,387.30606 278.20514,385.7153 291.02563,384.1089 303.84616,382.64102 316.6667,381.0988 329.48718,379.4756 342.30768,377.9674 355.1282,376.30658 367.94873,375.41855 380.76923,373.90903 393.58975,372.42892 406.41025,371.0235 419.23077,369.39514 432.0513,368.28174 444.8718,366.70868 457.69232,365.2412 470.51282,363.5016 483.33334,362.17792 496.15384,360.99582 508.97437,359.38556 521.7949,357.8775 534.61536,356.4024 547.4359,354.79517 560.2564,353.5136 573.0769,350.5208 585.89746,348.85486 598.71796,347.44327 611.53845,345.97305 624.359,344.17908 637.1795,342.61362 650,341.12802 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+naive
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,400 162.82051,389.46237 175.64102,360.23288 188.46155,312.93304 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+nosort
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,400 162.82051,396.74686 175.64102,392.32233 188.46155,387.03094 201.28204,381.32642 214.10257,376.0799 226.92308,369.70703 239.74359,363.06546 252.5641,356.6536 265.3846,350.09576 278.20514,342.48755 291.02563,334.76605 303.84616,327.4383 316.6667,320.62576 329.48718,312.65274 342.30768,304.63812 355.1282,296.58185 367.94873,290.79346 380.76923,281.99487 393.58975,274.5187 406.41025,266.37384 419.23077,258.1258 432.0513,251.31322 444.8718,243.78966 457.69232,234.15224 470.51282,225.22156 483.33334,217.03987 496.15384,207.72046 508.97437,198.45651 521.7949,190.67108 534.61536,181.19205 547.4359,171.57256 560.2564,163.29 573.0769,154.88799 585.89746,146.56023 598.71796,136.71591 611.53845,126.76099 624.359,117.28299 637.1795,108.36603 650,100.098694 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+sweep
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,400 162.82051,397.3629 175.64102,392.58545 188.46155,386.4515 201.28204,379.23056 214.10257,371.0254 226.92308,361.97803 239.74359,352.15167 252.5641,341.63336 265.3846,330.42062 278.20514,318.56412 291.02563,306.1505 303.84616,293.15518 316.6667,279.68295 329.48718,265.59393 342.30768,251.08 355.1282,236.04495 367.94873,220.48798 380.76923,204.49457 393.58975,188.06999 406.41025,171.2342 419.23077,153.67912 432.0513,136.3522 444.8718,118.36017 457.69232,100 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Complexity of space partitioning algs with abspiral(x,0.05)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Number of Elements
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<p>The above charts compare different implementations of <code>find_colliding_pairs</code> both in terms of comparisons and benches. It is interesting to note that the real world bench times follow the same trend as the theoretical number of comparisons.</p>
 <p>The jumps that you see in the theoretical <code>broccoli</code> line are the points at which the trees height grows. It is a complete binary tree so a slight increase in the height causes a doubling of nodes so it is a drastic change. As the number of aabbs increases it is inevitable that sometimes the tree will be too tall or too short. </p>
 <p>It's also worth noting that the difference between <code>sweep and prune</code>/<code>kdtree</code> and <code>naive</code> is much bigger than the difference between <code>sweep and prune</code>/<code>kdtree</code> and <code>broccoli</code>. So using these simpler algorithms gets you big gains as it is. The gains you get from using <code>broccoli</code> are not as pronounced, but are noticeable with more elements.</p>
 <p>In the same vein, you can see that there aren't many gains to use <code>broccoli_par</code> over <code>broccoli</code>. It can double/quadruple your performance, but as you can see those gains pale in comparison to the gains from simply using the a better sequential algorithm. Thats not to say multiplying your performance by the number of cores you have isn't great, it's just that it isn't a big factor. This to me means that typically, allocating effort on
 investigating if your algorithm is optimal sequentially may be better than spending effort in parallelizing what you have.</p>
-<img alt="3D Colfind" src="graphs/3d_colfind_num_pairs.svg" class="center" style="width: 100%;" />
-<p>The above chart shows a 3d view of the characteristics of <code>naive</code>, <code>sweep and prune</code>, and <code>broccoli</code>.</p>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+1e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="205.55556" y="440">
+2e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="261.1111" y="440">
+3e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="316.6667" y="440">
+4e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="372.22223" y="440">
+5e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="427.7778" y="440">
+6e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="483.33334" y="440">
+7e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="538.8889" y="440">
+8e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="594.44446" y="440">
+9e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+4e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="352.2084">
+6e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="304.41678">
+8e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="256.62518">
+1e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="208.83356">
+1.2e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="161.04196">
+1.4e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="113.25037">
+1.6e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+broccoli
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,163.21173 155.55556,173.43315 161.11111,179.13068 166.66667,192.85382 172.22221,208.11975 177.77777,218.24347 183.33333,220.75784 188.88889,231.88855 194.44444,238.13475 200,252.43529 205.55556,261.6606 211.11111,261.08356 216.66666,276.90073 222.22223,280.97778 227.77779,279.20627 233.33334,292.91852 238.88889,294.9312 244.44446,296.23083 250,299.8463 255.55556,304.17523 261.1111,308.9521 266.6667,309.30707 272.22223,314.8733 277.77777,317.84225 283.33334,324.44055 288.88892,322.69727 294.44446,325.2964 300,329.95523 305.55554,330.31723 311.11108,333.20264 316.6667,337.99603 322.22223,339.32397 327.77777,344.35614 333.33334,342.98688 338.8889,344.1552 344.44446,346.40784 350,347.98138 355.55554,353.0322 361.11115,352.86523 366.6667,358.4988 372.22223,358.96005 377.77777,357.11792 383.33334,359.96954 388.8889,363.19138 394.44446,361.3272 400,362.39832 405.55554,364.1686 411.1111,366.12415 416.66666,366.88693 422.22223,370.49796 427.7778,371.00864 433.33334,373.5566 438.88892,371.731 444.44446,373.53134 450,375.49213 455.55557,377.02512 461.1111,376.93777 466.66666,377.19785 472.22223,377.8263 477.77777,379.81912 483.33334,380.29004 488.88892,381.12918 494.44446,383.3983 500.00003,384.09506 505.55557,383.78842 511.1111,383.94577 516.6667,386.40228 522.2222,385.8237 527.7778,387.82495 533.3333,388.2325 538.8889,389.1076 544.44446,388.90387 550,390.0388 555.55554,390.00937 561.1111,391.52197 566.66675,393.09592 572.2223,392.64096 577.77783,394.06537 583.3334,393.30807 588.8889,394.75232 594.44446,394.54266 600,394.57574 605.55554,395.05893 611.1111,396.771 616.6667,396.75378 622.2222,397.74185 627.77783,398.87094 633.3334,399.12006 638.8889,399.90958 644.44446,399.4513 650,400 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+naive
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,100 155.55556,106.375824 161.11111,111.62402 166.66667,117.6926 172.22221,121.77713 177.77777,127.36932 183.33333,131.92712 188.88889,135.9036 194.44444,140.35553 200,144.10968 205.55556,147.02084 211.11111,150.63245 216.66666,153.40541 222.22223,155.85564 227.77779,159.21025 233.33334,161.21881 238.88889,164.00131 244.44446,166.34317 250,168.66699 255.55556,170.76662 261.1111,172.66435 266.6667,174.3445 272.22223,176.28986 277.77777,178.19022 283.33334,179.6972 288.88892,181.53058 294.44446,183.05171 300,184.42952 305.55554,185.89212 311.11108,187.28847 316.6667,188.85336 322.22223,190.0019 327.77777,191.34132 333.33334,192.54315 338.8889,193.67314 344.44446,194.68535 350,196.05046 355.55554,196.87308 361.11115,197.997 366.6667,199.03775 372.22223,200.05338 377.77777,200.91177 383.33334,202.23604 388.8889,202.8207 394.44446,203.76427 400,204.57816 405.55554,205.4704 411.1111,206.43047 416.66666,207.04732 422.22223,207.97858 427.7778,208.65349 433.33334,209.21306 438.88892,210.18382 444.44446,210.98967 450,211.41998 455.55557,212.18666 461.1111,212.82228 466.66666,213.65854 472.22223,214.1582 477.77777,214.66641 483.33334,215.1746 488.88892,215.7934 494.44446,216.4827 500.00003,217.31204 505.55557,217.82857 511.1111,218.21349 516.6667,218.70953 522.2222,219.39984 527.7778,219.95975 533.3333,220.35312 538.8889,220.91515 544.44446,221.36272 550,221.77124 555.55554,222.23187 561.1111,222.70685 566.66675,223.23495 572.2223,223.70833 577.77783,224.03699 583.3334,224.51564 588.8889,225.11986 594.44446,225.367 600,225.82813 605.55554,226.15396 611.1111,226.47871 616.6667,226.98076 622.2222,227.32713 627.77783,227.78772 633.3334,228.25974 638.8889,228.69118 644.44446,228.89635 650,229.32678 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+nosort
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,114.597565 155.55556,125.062775 161.11111,131.08249 166.66667,139.52145 172.22221,147.21732 177.77777,157.68687 183.33333,162.26959 188.88889,169.45673 194.44444,175.40953 200,181.13121 205.55556,184.9293 211.11111,191.62933 216.66666,197.0381 222.22223,200.81062 227.77779,203.9259 233.33334,208.69626 238.88889,212.26358 244.44446,216.68874 250,219.54683 255.55556,223.71617 261.1111,224.77965 266.6667,229.20357 272.22223,230.85983 277.77777,235.7018 283.33334,239.34749 288.88892,241.21071 294.44446,242.55693 300,245.83627 305.55554,248.3551 311.11108,249.86136 316.6667,253.51227 322.22223,255.00409 327.77777,259.477 333.33334,258.24365 338.8889,259.05475 344.44446,262.04126 350,264.3633 355.55554,267.55786 361.11115,269.18793 366.6667,276.3655 372.22223,277.57468 377.77777,273.18768 383.33334,275.93796 388.8889,281.67163 394.44446,278.62057 400,281.2094 405.55554,281.10324 411.1111,283.15582 416.66666,283.67493 422.22223,289.59933 427.7778,289.84225 433.33334,293.4766 438.88892,289.81964 444.44446,293.5749 450,296.1175 455.55557,298.45462 461.1111,297.47665 466.66666,296.0616 472.22223,299.67432 477.77777,302.31204 483.33334,300.86606 488.88892,303.0338 494.44446,308.1706 500.00003,307.13535 505.55557,306.1997 511.1111,307.83722 516.6667,311.08612 522.2222,309.89575 527.7778,313.3369 533.3333,314.20477 538.8889,314.2685 544.44446,313.33853 550,315.62473 555.55554,316.85284 561.1111,317.26517 566.66675,321.44846 572.2223,320.7399 577.77783,320.88657 583.3334,320.9507 588.8889,324.52 594.44446,323.95847 600,323.57977 605.55554,325.0101 611.1111,326.25424 616.6667,326.00073 622.2222,327.79456 627.77783,330.92175 633.3334,329.93594 638.8889,332.1449 644.44446,331.65497 650,331.9374 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+sweep
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,216.9394 155.55556,224.21455 161.11111,230.58298 166.66667,237.87985 172.22221,242.87166 177.77777,249.31856 183.33333,254.92229 188.88889,259.39264 194.44444,264.6582 200,269.44104 205.55556,272.69116 211.11111,276.72495 216.66666,280.3204 222.22223,283.45132 227.77779,287.0421 233.33334,289.84824 238.88889,292.89883 244.44446,295.79547 250,298.63745 255.55556,301.10974 261.1111,303.18738 266.6667,305.23892 272.22223,307.54657 277.77777,309.9051 283.33334,312.0075 288.88892,314.0762 294.44446,315.85648 300,317.43195 305.55554,319.2448 311.11108,321.0025 316.6667,322.78717 322.22223,324.12747 327.77777,325.90613 333.33334,327.21735 338.8889,328.6906 344.44446,329.92923 350,331.41492 355.55554,332.77148 361.11115,333.95886 366.6667,335.1467 372.22223,336.50247 377.77777,337.46423 383.33334,338.98975 388.8889,339.8775 394.44446,340.92545 400,341.91443 405.55554,343.0061 411.1111,344.14792 416.66666,344.84827 422.22223,345.97702 427.7778,346.86105 433.33334,347.53064 438.88892,348.63394 444.44446,349.46393 450,350.2401 455.55557,351.18597 461.1111,351.85748 466.66666,352.80707 472.22223,353.47073 477.77777,354.222 483.33334,354.84293 488.88892,355.57446 494.44446,356.42752 500.00003,357.27856 505.55557,357.84552 511.1111,358.50613 516.6667,359.03235 522.2222,359.9245 527.7778,360.55154 533.3333,361.05447 538.8889,361.63812 544.44446,362.22842 550,362.87805 555.55554,363.42737 561.1111,363.9549 566.66675,364.59253 572.2223,365.195 577.77783,365.54788 583.3334,366.1289 588.8889,366.93845 594.44446,367.20096 600,367.6588 605.55554,368.19946 611.1111,368.65042 616.6667,369.11566 622.2222,369.67972 627.77783,370.15546 633.3334,370.70053 638.8889,371.3155 644.44446,371.53058 650,371.9453 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Complexity of space partitioning algs with abspiral(3000,grow)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Grow
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+5e-2
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="282.27515" y="440">
+1e-1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="414.55026" y="440">
+1.5e-1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="546.82544" y="440">
+2e-1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+2e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="336.5931">
+4e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="273.18622">
+6e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="209.7793">
+8e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="146.3724">
+1e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+broccoli
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,326.4385 152.64551,335.26508 155.291,339.3401 157.93651,345.18283 160.58202,348.14432 163.22751,351.51678 165.87302,354.1928 168.51852,357.0042 171.16402,359.12097 173.80952,360.30386 176.45503,363.54446 179.10052,364.53864 181.74603,366.31158 184.39154,367.54883 187.03703,370.03052 189.68254,370.27493 192.32805,371.8093 194.97354,373.47235 197.61905,374.37854 200.26456,375.15353 202.91005,376.35355 205.55556,377.14352 208.20107,377.81506 210.84656,378.89233 213.49207,379.3198 216.13757,380.49564 218.78307,380.82343 221.42857,381.91876 224.07407,382.43893 226.71957,382.8582 229.36508,383.69287 232.01059,383.63593 234.65608,384.69028 237.30159,384.76474 239.9471,385.42743 242.5926,385.63892 245.2381,386.49683 247.8836,386.40344 250.52911,387.3939 253.17459,387.8759 255.8201,387.8638 258.4656,388.0287 261.1111,388.47693 263.7566,389.04865 266.4021,389.2452 269.0476,389.37302 271.6931,389.672 274.33862,389.90622 276.98413,390.11832 279.62964,390.34256 282.27515,390.69705 284.92065,390.9772 287.56616,391.355 290.21167,391.0322 292.85718,391.32306 295.50262,391.87305 298.14813,391.8973 300.79364,392.129 303.43918,392.228 306.08466,392.25095 308.73016,392.44772 311.37567,392.7074 314.02118,392.75186 316.6667,392.98688 319.3122,393.10764 321.9577,393.31152 324.60318,393.3793 327.2487,393.45453 329.8942,393.84137 332.5397,393.7307 335.18518,393.80945 337.8307,393.97217 340.4762,394.1071 343.1217,394.2694 345.7672,394.36722 348.41272,394.46597 351.05823,394.7235 353.7037,394.71298 356.3492,394.8765 358.99472,394.9202 361.64023,394.84537 364.2857,395.29947 366.9312,395.1704 369.57672,395.44183 372.22223,395.3964 374.86774,395.66122 377.51324,395.54486 380.15875,395.70313 382.80423,395.75595 385.44974,395.9314 388.09525,396.03998 390.74075,395.99008 393.38623,396.13074 396.03174,396.19452 398.67725,396.17892 401.32275,396.3199 403.96826,396.46414 406.61377,396.46936 409.25928,396.4861 411.90475,396.7075 414.55026,396.71765 417.19577,396.77847 419.84128,396.70596 422.4868,396.75824 425.1323,396.8774 427.7778,396.97696 430.42328,397.08212 433.0688,397.19617 435.7143,397.35587 438.3598,397.11566 441.00528,397.18524 443.6508,397.34244 446.2963,397.37766 448.9418,397.408 451.5873,397.42603 454.23282,397.54852 456.87833,397.59885 459.52383,397.66617 462.16934,397.78372 464.81482,397.69684 467.46033,397.79645 470.10583,397.77582 472.75134,397.94193 475.39685,398.0166 478.04236,398.20618 480.68784,398.02057 483.33334,398.2136 485.97882,398.08664 488.62433,398.22003 491.26984,398.32172 493.91534,398.3021 496.56085,398.43835 499.20636,398.48 501.85187,398.47012 504.4973,398.4101 507.14282,398.4753 509.78836,398.45532 512.43384,398.65927 515.07935,398.45187 517.72485,398.6094 520.37036,398.62772 523.01587,398.75864 525.6614,398.9342 528.3069,398.78973 530.9524,398.82254 533.5979,398.7838 536.2434,398.96 538.8889,398.89725 541.5344,398.9987 544.1799,399.0227 546.8254,399.0156 549.4709,399.15616 552.1164,398.8411 554.7619,399.18124 557.4074,399.0792 560.0529,399.04227 562.69836,399.29294 565.3439,399.2842 567.9894,399.34683 570.6349,399.2734 573.2804,399.3757 575.9259,399.30765 578.5714,399.4529 581.2169,399.34488 583.8624,399.36472 586.50793,399.32755 589.15344,399.40906 591.79895,399.5031 594.44446,399.40656 597.08997,399.69003 599.7355,399.57068 602.3809,399.71725 605.0264,399.4401 607.67194,399.74414 610.31744,399.5356 612.96295,399.6756 615.60846,399.7311 618.25397,399.72845 620.8994,399.68356 623.5449,399.90417 626.1904,399.7663 628.83594,399.8022 631.48145,399.9274 634.12695,399.8098 636.77246,399.9093 639.41797,399.94125 642.0635,399.98184 644.709,399.97992 647.3545,400 650,399.93848 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+naive
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,100.00003 152.64551,104.384125 155.291,108.251495 157.93651,111.71176 160.58202,114.72058 163.22751,117.55444 165.87302,119.855865 168.51852,122.20816 171.16402,124.19043 173.80952,126.171844 176.45503,128.01709 179.10052,129.48248 181.74603,131.18713 184.39154,132.4357 187.03703,133.9697 189.68254,135.00952 192.32805,136.12015 194.97354,137.44962 197.61905,138.31033 200.26456,139.34793 202.91005,140.2334 205.55556,141.49344 208.20107,142.02972 210.84656,142.96118 213.49207,143.74457 216.13757,144.32547 218.78307,145.32169 221.42857,145.94148 224.07407,146.73978 226.71957,147.05145 229.36508,147.6781 232.01059,148.27661 234.65608,148.80551 237.30159,149.50311 239.9471,150.24716 242.5926,150.47182 245.2381,151.1957 247.8836,151.40868 250.52911,152.19382 253.17459,152.3724 255.8201,152.68864 258.4656,153.26926 261.1111,153.81773 263.7566,154.25996 266.4021,154.65869 269.0476,154.93668 271.6931,155.24297 274.33862,155.40405 276.98413,155.79146 279.62964,156.46361 282.27515,156.7186 284.92065,156.68839 287.56616,157.43753 290.21167,157.51207 292.85718,157.86163 295.50262,158.14316 298.14813,158.43227 300.79364,158.68243 303.43918,159.19162 306.08466,159.04247 308.73016,159.59883 311.37567,159.90395 314.02118,159.7465 316.6667,160.25185 319.3122,160.72179 321.9577,160.84627 324.60318,160.69006 327.2487,161.01395 329.8942,161.4063 332.5397,161.76941 335.18518,162.10901 337.8307,162.32501 340.4762,162.35864 343.1217,162.56471 345.7672,162.77284 348.41272,162.92543 351.05823,163.09784 353.7037,163.32433 356.3492,163.56734 358.99472,163.85596 361.64023,164.03925 364.2857,164.18848 366.9312,164.25467 369.57672,164.27094 372.22223,164.25705 374.86774,164.27753 377.51324,164.6666 380.15875,165.18867 382.80423,165.34831 385.44974,165.25977 388.09525,165.11484 390.74075,165.35776 393.38623,165.95578 396.03174,165.98158 398.67725,165.74628 401.32275,165.93422 403.96826,166.53088 406.61377,166.47803 409.25928,166.18835 411.90475,166.74773 414.55026,166.98627 417.19577,166.62697 419.84128,167.08667 422.4868,167.39325 425.1323,166.97691 427.7778,167.5376 430.42328,167.70673 433.0688,167.34601 435.7143,168.10039 438.3598,167.80963 441.00528,167.91658 443.6508,168.34917 446.2963,167.89673 448.9418,168.844 451.5873,168.33116 454.23282,168.67084 456.87833,168.71014 459.52383,168.58229 462.16934,169.07368 464.81482,168.65031 467.46033,169.39525 470.10583,168.85829 472.75134,169.6686 475.39685,169.00558 478.04236,169.83727 480.68784,169.22365 483.33334,169.96132 485.97882,169.41313 488.62433,170.22154 491.26984,169.60104 493.91534,170.3857 496.56085,169.75607 499.20636,170.53589 501.85187,169.97527 504.4973,170.59827 507.14282,170.30788 509.78836,170.59526 512.43384,170.74393 515.07935,170.57335 517.72485,171.16716 520.37036,170.50938 523.01587,171.32669 525.6614,170.7774 528.3069,171.23235 530.9524,171.36896 533.5979,171.03943 536.2434,171.76125 538.8889,171.10689 541.5344,171.70355 544.1799,171.63802 546.8254,171.42659 549.4709,172.12537 552.1164,171.47278 554.7619,171.91032 557.4074,172.17302 560.0529,171.65102 562.69836,172.37976 565.3439,172.16582 567.9894,172.0009 570.6349,172.6992 573.2804,172.11331 575.9259,172.39671 578.5714,172.97185 581.2169,172.2434 583.8624,172.67323 586.50793,173.05545 589.15344,172.34009 591.79895,172.88042 594.44446,173.21637 597.08997,172.53021 599.7355,173.07542 602.3809,173.44576 605.0264,172.75908 607.67194,173.18509 610.31744,173.66086 612.96295,173.00542 615.60846,173.28482 618.25397,173.90514 620.8994,173.30444 623.5449,173.2479 626.1904,173.96574 628.83594,173.71457 631.48145,173.2919 634.12695,173.96141 636.77246,174.15515 639.41797,173.52599 642.0635,173.84348 644.709,174.43858 647.3545,174.00166 650,173.684 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+nosort
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,236.13736 152.64551,251.57726 155.291,258.4532 157.93651,271.8188 160.58202,276.67056 163.22751,279.4266 165.87302,283.03824 168.51852,287.35052 171.16402,292.70078 173.80952,296.6778 176.45503,299.50635 179.10052,302.5617 181.74603,304.30334 184.39154,307.60095 187.03703,312.62048 189.68254,311.99945 192.32805,316.92517 194.97354,317.64645 197.61905,320.1737 200.26456,321.32297 202.91005,323.92227 205.55556,327.2408 208.20107,329.20044 210.84656,331.6816 213.49207,332.03647 216.13757,334.90826 218.78307,335.65387 221.42857,337.96368 224.07407,338.29956 226.71957,339.14597 229.36508,340.64508 232.01059,341.35507 234.65608,343.09717 237.30159,344.0297 239.9471,345.1184 242.5926,346.92883 245.2381,347.86142 247.8836,347.36392 250.52911,349.74518 253.17459,350.7528 255.8201,349.987 258.4656,352.02966 261.1111,353.48062 263.7566,352.8369 266.4021,353.79492 269.0476,354.7995 271.6931,355.22504 274.33862,355.71655 276.98413,356.8033 279.62964,356.87567 282.27515,358.37305 284.92065,358.19675 287.56616,359.448 290.21167,358.34384 292.85718,359.53656 295.50262,360.3161 298.14813,360.64026 300.79364,361.02893 303.43918,361.56143 306.08466,361.97495 308.73016,362.14847 311.37567,362.01224 314.02118,362.28934 316.6667,362.98306 319.3122,362.841 321.9577,364.3101 324.60318,364.04813 327.2487,364.8841 329.8942,364.64108 332.5397,365.12225 335.18518,365.6673 337.8307,366.10147 340.4762,366.47275 343.1217,366.5764 345.7672,366.97375 348.41272,367.31488 351.05823,367.82477 353.7037,367.56708 356.3492,368.0053 358.99472,368.04825 361.64023,368.30472 364.2857,369.10834 366.9312,368.9203 369.57672,369.65686 372.22223,369.7972 374.86774,369.8739 377.51324,369.4231 380.15875,370.98285 382.80423,371.15192 385.44974,370.8297 388.09525,370.62976 390.74075,370.81647 393.38623,372.1439 396.03174,370.72177 398.67725,371.56265 401.32275,372.09918 403.96826,372.40356 406.61377,372.90115 409.25928,372.21326 411.90475,372.77798 414.55026,372.05365 417.19577,373.14758 419.84128,373.38287 422.4868,373.5866 425.1323,373.19476 427.7778,373.68555 430.42328,374.12308 433.0688,373.7898 435.7143,374.39038 438.3598,374.11325 441.00528,373.93008 443.6508,374.67004 446.2963,374.71545 448.9418,374.45813 451.5873,375.1529 454.23282,375.05798 456.87833,375.12912 459.52383,375.42938 462.16934,375.04944 464.81482,376.61212 467.46033,375.94165 470.10583,375.63892 472.75134,375.76926 475.39685,376.30347 478.04236,376.59033 480.68784,376.5527 483.33334,377.5969 485.97882,376.80707 488.62433,377.55167 491.26984,377.72748 493.91534,377.33896 496.56085,377.55927 499.20636,378.52686 501.85187,378.39078 504.4973,377.73657 507.14282,377.5344 509.78836,378.52426 512.43384,378.3039 515.07935,378.5572 517.72485,378.99686 520.37036,378.56113 523.01587,378.49005 525.6614,378.9482 528.3069,379.40594 530.9524,379.37137 533.5979,378.571 536.2434,379.84406 538.8889,379.46277 541.5344,379.22458 544.1799,379.6991 546.8254,379.51352 549.4709,379.28537 552.1164,380.25726 554.7619,380.2528 557.4074,379.95688 560.0529,379.6614 562.69836,380.02814 565.3439,379.66406 567.9894,379.91986 570.6349,380.60934 573.2804,380.46906 575.9259,380.47067 578.5714,380.1692 581.2169,380.6535 583.8624,379.91714 586.50793,380.97107 589.15344,380.58536 591.79895,381.0793 594.44446,380.96112 597.08997,380.59296 599.7355,380.92374 602.3809,381.20193 605.0264,380.58463 607.67194,381.5728 610.31744,380.97705 612.96295,380.99448 615.60846,381.81287 618.25397,381.71356 620.8994,381.30194 623.5449,382.1453 626.1904,381.57626 628.83594,381.2845 631.48145,382.34055 634.12695,381.74274 636.77246,382.14014 639.41797,381.82983 642.0635,381.82584 644.709,382.11465 647.3545,382.22604 650,382.71527 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+sweep
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,289.21735 152.64551,294.7959 155.291,299.5863 157.93651,303.61444 160.58202,307.56345 163.22751,310.86298 165.87302,313.88208 168.51852,316.6028 171.16402,319.30573 173.80952,321.58105 176.45503,323.7474 179.10052,325.85596 181.74603,327.67496 184.39154,329.4115 187.03703,331.06287 189.68254,332.66656 192.32805,334.05673 194.97354,335.44745 197.61905,336.77798 200.26456,337.96582 202.91005,339.1796 205.55556,340.2979 208.20107,341.39386 210.84656,342.41348 213.49207,343.358 216.13757,344.2684 218.78307,345.17584 221.42857,346.06378 224.07407,346.7588 226.71957,347.521 229.36508,348.46335 232.01059,349.16348 234.65608,349.85593 237.30159,350.54114 239.9471,351.1639 242.5926,351.80737 245.2381,352.453 247.8836,353.05127 250.52911,353.59637 253.17459,354.1652 255.8201,354.71234 258.4656,355.2645 261.1111,355.79175 263.7566,356.18497 266.4021,356.7521 269.0476,357.17142 271.6931,357.7024 274.33862,358.1709 276.98413,358.4559 279.62964,359.00012 282.27515,359.38693 284.92065,359.81378 287.56616,360.26044 290.21167,360.52307 292.85718,361.01572 295.50262,361.31277 298.14813,361.7144 300.79364,362.09964 303.43918,362.34036 306.08466,362.73853 308.73016,362.98557 311.37567,363.39175 314.02118,363.60864 316.6667,363.969 319.3122,364.31674 321.9577,364.6546 324.60318,364.79077 327.2487,365.1596 329.8942,365.45004 332.5397,365.7103 335.18518,365.99893 337.8307,366.20023 340.4762,366.40332 343.1217,366.70526 345.7672,367.05188 348.41272,367.23257 351.05823,367.51218 353.7037,367.723 356.3492,368.00293 358.99472,368.17667 361.64023,368.408 364.2857,368.59738 366.9312,368.8327 369.57672,369.1077 372.22223,369.32013 374.86774,369.40717 377.51324,369.61032 380.15875,369.91562 382.80423,370.04053 385.44974,370.26917 388.09525,370.49088 390.74075,370.58127 393.38623,370.86646 396.03174,370.95544 398.67725,371.18234 401.32275,371.32553 403.96826,371.5813 406.61377,371.6978 409.25928,371.811 411.90475,372.01022 414.55026,372.18732 417.19577,372.40158 419.84128,372.5827 422.4868,372.61777 425.1323,372.80618 427.7778,373.03043 430.42328,373.17075 433.0688,373.2924 435.7143,373.50842 438.3598,373.60095 441.00528,373.75537 443.6508,373.8128 446.2963,374.0008 448.9418,374.17102 451.5873,374.3766 454.23282,374.48068 456.87833,374.5696 459.52383,374.6544 462.16934,374.74777 464.81482,374.91718 467.46033,375.04327 470.10583,375.18738 472.75134,375.37796 475.39685,375.39465 478.04236,375.58502 480.68784,375.71155 483.33334,375.76486 485.97882,375.91342 488.62433,376.0603 491.26984,376.15552 493.91534,376.2413 496.56085,376.375 499.20636,376.4238 501.85187,376.57053 504.4973,376.65854 507.14282,376.76526 509.78836,376.95618 512.43384,377.06158 515.07935,377.0214 517.72485,377.2808 520.37036,377.32358 523.01587,377.46332 525.6614,377.55313 528.3069,377.65927 530.9524,377.79132 533.5979,377.86877 536.2434,377.9807 538.8889,378.0473 541.5344,378.14133 544.1799,378.2694 546.8254,378.3413 549.4709,378.41083 552.1164,378.25485 554.7619,378.56635 557.4074,378.65903 560.0529,378.71567 562.69836,378.83316 565.3439,378.98965 567.9894,379.05026 570.6349,379.1196 573.2804,379.18787 575.9259,379.37006 578.5714,379.4486 581.2169,379.51114 583.8624,379.54507 586.50793,379.65576 589.15344,379.62018 591.79895,379.71976 594.44446,379.866 597.08997,379.8899 599.7355,380.03067 602.3809,380.1725 605.0264,380.11008 607.67194,380.30124 610.31744,380.34927 612.96295,380.42526 615.60846,380.5095 618.25397,380.58258 620.8994,380.58542 623.5449,380.686 626.1904,380.74326 628.83594,380.85406 631.48145,380.91177 634.12695,380.9496 636.77246,381.05978 639.41797,381.12067 642.0635,381.2185 644.709,381.23926 647.3545,381.32843 650,381.36908 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Complexity of space partitioning algs with abspiral(3000,grow)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Grow
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+1e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="222.46378" y="440">
+2e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="294.92755" y="440">
+3e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="367.39133" y="440">
+4e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="439.8551" y="440">
+5e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="512.31885" y="440">
+6e-3
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="584.78265" y="440">
+7e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+0e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="333.85144">
+5e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="267.70285">
+1e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="201.55426">
+1.5e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="135.4057">
+2e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+brocc
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,170.18733 157.24637,182.93857 164.49275,191.04608 171.73914,203.71643 178.9855,213.27515 186.23189,207.55438 193.47826,224.33485 200.72464,229.20552 207.97101,236.9567 215.21739,241.31126 222.46378,246.88016 229.71014,251.18459 236.95651,257.03104 244.20291,259.37354 251.44928,263.455 258.69565,267.26196 265.94202,269.9499 273.18842,274.84592 280.43478,274.6339 287.68115,276.6278 294.92755,281.733 302.17395,283.00867 309.4203,285.23373 316.6667,288.12396 323.9131,290.4218 331.15942,291.15356 338.4058,292.30884 345.6522,294.87845 352.89856,296.0321 360.14493,298.25262 367.39133,297.55606 374.6377,300.4384 381.88403,301.07834 389.13043,304.39896 396.37683,305.5628 403.62317,306.45462 410.86957,306.4926 418.11594,307.72333 425.36234,309.5695 432.6087,309.6191 439.85507,310.78757 447.10147,312.08704 454.34784,313.80695 461.5942,314.56113 468.8406,314.27823 476.08698,316.6255 483.33334,316.97906 490.57974,318.00174 497.82608,318.2226 505.07248,321.14343 512.31885,321.3043 519.5652,322.44464 526.81165,321.4834 534.058,323.81003 541.3043,324.66113 548.5508,324.72574 555.7971,325.7933 563.04346,326.17694 570.2899,326.8967 577.53625,327.0326 584.78265,327.80573 592.02905,328.45352 599.2754,328.49124 606.5217,330.3181 613.7681,330.58072 621.0145,331.74188 628.26086,331.85846 635.50726,332.08942 642.75366,333.87338 650,333.94232 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+brocc_par
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,158.93378 157.24637,169.91629 164.49275,178.91321 171.73914,193.3379 178.9855,201.45891 186.23189,189.11371 193.47826,213.0039 200.72464,219.76639 207.97101,225.99321 215.21739,231.63472 222.46378,238.61797 229.71014,244.127 236.95651,249.14197 244.20291,251.03001 251.44928,251.80254 258.69565,259.0578 265.94202,260.95905 273.18842,266.9911 280.43478,266.0146 287.68115,266.81085 294.92755,270.34946 302.17395,273.66714 309.4203,274.97974 316.6667,278.1828 323.9131,280.93457 331.15942,282.1924 338.4058,284.24667 345.6522,287.82397 352.89856,288.62042 360.14493,290.81305 367.39133,289.8048 374.6377,296.30515 381.88403,294.8699 389.13043,298.82574 396.37683,300.21503 403.62317,301.42166 410.86957,301.7627 418.11594,302.43982 425.36234,303.77686 432.6087,305.19116 439.85507,306.51996 447.10147,306.71967 454.34784,308.75214 461.5942,308.2272 468.8406,309.02682 476.08698,312.90164 483.33334,313.65823 490.57974,313.51178 497.82608,313.05685 505.07248,317.61832 512.31885,318.597 519.5652,319.49738 526.81165,319.86185 534.058,321.77478 541.3043,323.4172 548.5508,322.2413 555.7971,322.39124 563.04346,324.82477 570.2899,325.03445 577.53625,325.48502 584.78265,326.3504 592.02905,330.02444 599.2754,328.62396 606.5217,329.30725 613.7681,330.9866 621.0145,331.36688 628.26086,333.03387 635.50726,331.91638 642.75366,334.40768 650,333.09763 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+naive
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,400 157.24637,400 164.49275,400 171.73914,400 178.9855,400 186.23189,400 193.47826,400 200.72464,400 207.97101,400 215.21739,400 222.46378,400 229.71014,400 236.95651,400 244.20291,400 251.44928,400 258.69565,400 265.94202,400 273.18842,400 280.43478,400 287.68115,400 294.92755,400 302.17395,400 309.4203,400 316.6667,400 323.9131,400 331.15942,400 338.4058,400 345.6522,400 352.89856,400 360.14493,400 367.39133,400 374.6377,400 381.88403,400 389.13043,400 396.37683,400 403.62317,400 410.86957,400 418.11594,400 425.36234,400 432.6087,400 439.85507,400 447.10147,400 454.34784,400 461.5942,400 468.8406,400 476.08698,400 483.33334,400 490.57974,400 497.82608,400 505.07248,400 512.31885,400 519.5652,400 526.81165,400 534.058,400 541.3043,400 548.5508,400 555.7971,400 563.04346,400 570.2899,400 577.53625,400 584.78265,400 592.02905,400 599.2754,400 606.5217,400 613.7681,400 621.0145,400 628.26086,400 635.50726,400 642.75366,400 650,400 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+nosort
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,106.979034 157.24637,107.189514 164.49275,109.926575 171.73914,128.01038 178.9855,120.70358 186.23189,126.96588 193.47826,137.99344 200.72464,134.56552 207.97101,134.83228 215.21739,141.2782 222.46378,139.71378 229.71014,146.25151 236.95651,152.04422 244.20291,148.46469 251.44928,163.56662 258.69565,156.32237 265.94202,152.50417 273.18842,169.35387 280.43478,176.67688 287.68115,165.75809 294.92755,174.3787 302.17395,191.73685 309.4203,183.03873 316.6667,177.12056 323.9131,188.12195 331.15942,183.60355 338.4058,193.16893 345.6522,203.74417 352.89856,170.41971 360.14493,205.0558 367.39133,206.39949 374.6377,208.22661 381.88403,210.50307 389.13043,192.66469 396.37683,214.74487 403.62317,205.39447 410.86957,214.78523 418.11594,220.24727 425.36234,218.87512 432.6087,221.22377 439.85507,224.14099 447.10147,226.1898 454.34784,231.80203 461.5942,226.77032 468.8406,227.17798 476.08698,225.53642 483.33334,236.7144 490.57974,220.33249 497.82608,227.70845 505.07248,238.71274 512.31885,229.352 519.5652,232.55481 526.81165,240.42133 534.058,243.99605 541.3043,233.36569 548.5508,235.74527 555.7971,234.31747 563.04346,247.51164 570.2899,241.63219 577.53625,234.75363 584.78265,252.92848 592.02905,254.65811 599.2754,250.9812 606.5217,250.6269 613.7681,240.9219 621.0145,254.71971 628.26086,248.44708 635.50726,238.32307 642.75366,259.95212 650,258.8831 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="300">
+nosort_par
+</text>
+<line class="poloto4stroke" x1="680" x2="730" y1="281.25" y2="281.25"/>
+<polyline class="poloto4stroke" fill="none" points="150,100.747925 157.24637,100 164.49275,103.02527 171.73914,119.78903 178.9855,114.11264 186.23189,118.545166 193.47826,128.66757 200.72464,126.30655 207.97101,125.72476 215.21739,132.79391 222.46378,130.06265 229.71014,135.81491 236.95651,143.05896 244.20291,139.6976 251.44928,153.62216 258.69565,148.55 265.94202,160.99373 273.18842,160.47809 280.43478,151.62956 287.68115,156.8839 294.92755,164.19012 302.17395,180.53358 309.4203,172.98248 316.6667,167.23558 323.9131,178.43596 331.15942,175.91774 338.4058,182.67032 345.6522,195.41637 352.89856,166.24036 360.14493,198.31895 367.39133,198.20714 374.6377,200.8935 381.88403,202.7978 389.13043,184.6244 396.37683,211.39848 403.62317,200.04118 410.86957,208.94313 418.11594,213.35553 425.36234,216.22234 432.6087,217.40436 439.85507,219.64883 447.10147,222.32286 454.34784,229.92822 461.5942,223.98967 468.8406,226.42183 476.08698,225.90273 483.33334,235.6229 490.57974,219.58548 497.82608,228.16594 505.07248,240.45882 512.31885,227.63852 519.5652,229.99814 526.81165,239.94598 534.058,245.60461 541.3043,234.092 548.5508,239.75511 555.7971,234.58537 563.04346,251.44696 570.2899,245.05959 577.53625,237.23059 584.78265,256.47137 592.02905,258.30853 599.2754,255.13724 606.5217,256.52603 613.7681,246.99538 621.0145,261.21283 628.26086,253.9485 635.50726,256.52194 642.75366,263.6397 650,267.43073 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="350">
+sweep
+</text>
+<line class="poloto5stroke" x1="680" x2="730" y1="331.25" y2="331.25"/>
+<polyline class="poloto5stroke" fill="none" points="150,130.5368 157.24637,125.10635 164.49275,115.38428 171.73914,115.50345 178.9855,113.33359 186.23189,102.81799 193.47826,111.49573 200.72464,110.735535 207.97101,115.20178 215.21739,113.74158 222.46378,114.74585 229.71014,116.89896 236.95651,117.282104 244.20291,116.129 251.44928,122.934326 258.69565,123.60568 265.94202,127.52371 273.18842,128.97238 280.43478,131.29196 287.68115,135.38931 294.92755,138.26297 302.17395,139.14209 309.4203,139.09277 316.6667,144.18217 323.9131,146.43552 331.15942,147.7423 338.4058,150.02145 345.6522,153.47177 352.89856,153.8966 360.14493,158.09984 367.39133,159.50156 374.6377,157.2897 381.88403,162.30879 389.13043,166.46588 396.37683,168.49046 403.62317,171.09343 410.86957,172.21362 418.11594,174.88737 425.36234,176.6072 432.6087,178.4004 439.85507,180.36873 447.10147,181.71208 454.34784,184.35785 461.5942,185.35283 468.8406,187.03934 476.08698,189.90244 483.33334,190.2917 490.57974,192.77177 497.82608,193.26178 505.07248,196.42876 512.31885,199.21103 519.5652,199.80852 526.81165,202.44705 534.058,203.03333 541.3043,205.86627 548.5508,206.36581 555.7971,208.09453 563.04346,208.4424 570.2899,211.28531 577.53625,210.91013 584.78265,212.80234 592.02905,214.84003 599.2754,216.7405 606.5217,217.51266 613.7681,219.98967 621.0145,221.41927 628.26086,221.55847 635.50726,222.09004 642.75366,224.24509 650,224.94951 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Bench of space partitioning algs with abspiral(3000,grow)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Grow
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Time in Seconds
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+5e-2
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="282.97873" y="440">
+1e-1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="415.95746" y="440">
+1.5e-1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="548.93616" y="440">
+2e-1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+0e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="348.61258">
+2e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="297.22516">
+4e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="245.8377">
+6e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="194.45029">
+8e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="143.06287">
+1e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+brocc
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,288.39526 155.31915,299.44165 160.6383,309.72253 165.95744,316.39813 171.2766,322.54352 176.59575,326.38763 181.91489,329.9191 187.23404,334.05347 192.55319,336.32642 197.87234,338.59543 203.19148,340.72195 208.51065,343.2174 213.82979,343.57184 219.14893,346.3265 224.46808,347.55655 229.78723,348.79144 235.10638,350.44415 240.42554,351.10214 245.74467,352.2973 251.06384,353.89243 256.38297,354.35193 261.70215,355.6368 267.02127,357.00446 272.34045,357.2211 277.65958,357.7967 282.9787,358.43103 288.29788,359.38324 293.61703,359.82587 298.93616,360.88626 304.25534,361.33167 309.57446,361.9467 314.89362,362.03113 320.21277,362.23737 325.53192,362.8122 330.85107,362.71906 336.17023,363.15112 341.48938,363.2366 346.80853,363.821 352.1277,363.6846 357.4468,364.88678 362.766,364.85037 368.0851,365.0326 373.40424,365.01373 378.72342,365.43427 384.04254,365.52643 389.3617,366.11493 394.68085,366.3018 400,365.8772 405.31915,366.68878 410.6383,366.62735 415.95746,367.23737 421.2766,367.06085 426.59576,367.5318 431.9149,368.15497 437.23404,368.21344 442.5532,368.16623 447.87234,368.42767 453.1915,368.4559 458.51065,368.24713 463.8298,368.86725 469.14893,368.8642 474.46808,369.05396 479.78726,369.02084 485.10638,369.9781 490.4255,369.42404 495.74466,369.85132 501.0638,369.38367 506.38293,370.44443 511.70212,370.23187 517.02124,369.8651 522.34045,370.156 527.65955,370.69888 532.9787,370.72665 538.29785,370.73676 543.61707,371.25943 548.93616,371.561 554.2553,370.69952 559.57446,371.45374 564.89355,371.19705 570.21277,371.5225 575.53186,371.53442 580.8511,372.02377 586.17017,371.9199 591.4894,371.65198 596.8085,372.04382 602.1277,372.09293 607.4468,372.2461 612.7659,372.62344 618.0851,372.5216 623.40424,372.01093 628.7234,372.44495 634.04254,372.49173 639.3617,372.5319 644.6808,372.53613 650,372.5281 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+brocc_par
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,283.49515 155.31915,300.83865 160.6383,310.02277 165.95744,318.3844 171.2766,323.89935 176.59575,329.02972 181.91489,337.15057 187.23404,338.15002 192.55319,344.53787 197.87234,343.97757 203.19148,346.29535 208.51065,349.74246 213.82979,349.45096 219.14893,352.7212 224.46808,353.31012 229.78723,354.59473 235.10638,356.77472 240.42554,357.12195 245.74467,357.18533 251.06384,359.48456 256.38297,359.5479 261.70215,361.33374 267.02127,362.399 272.34045,362.61395 277.65958,361.184 282.9787,362.48773 288.29788,364.26736 293.61703,363.703 298.93616,365.50583 304.25534,365.39603 309.57446,365.1584 314.89362,365.78827 320.21277,365.73413 325.53192,368.39792 330.85107,367.9047 336.17023,365.86987 341.48938,367.1919 346.80853,367.78015 352.1277,368.04404 357.4468,368.64584 362.766,368.6081 368.0851,369.78366 373.40424,368.88495 378.72342,369.46112 384.04254,369.0521 389.3617,368.65295 394.68085,369.7915 400,369.6392 405.31915,370.26175 410.6383,368.57516 415.95746,371.3349 421.2766,370.22958 426.59576,373.53455 431.9149,376.55106 437.23404,371.2706 442.5532,373.68567 447.87234,371.38397 453.1915,371.20135 458.51065,370.16327 463.8298,371.38144 469.14893,372.77542 474.46808,373.16885 479.78726,371.84674 485.10638,371.01794 490.4255,374.40363 495.74466,371.65167 501.0638,374.50717 506.38293,374.23083 511.70212,377.86328 517.02124,372.26016 522.34045,373.9807 527.65955,372.85477 532.9787,373.21265 538.29785,373.4187 543.61707,372.29498 548.93616,370.1117 554.2553,380.01443 559.57446,378.61874 564.89355,354.49356 570.21277,377.21518 575.53186,376.7218 580.8511,375.35614 586.17017,373.98114 591.4894,373.8487 596.8085,374.01248 602.1277,374.65216 607.4468,381.19427 612.7659,380.06775 618.0851,380.2228 623.40424,375.4514 628.7234,379.19537 634.04254,373.28207 639.3617,375.7299 644.6808,374.76468 650,374.98444 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+naive
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,400 155.31915,400 160.6383,400 165.95744,400 171.2766,400 176.59575,400 181.91489,400 187.23404,400 192.55319,400 197.87234,400 203.19148,400 208.51065,400 213.82979,400 219.14893,400 224.46808,400 229.78723,400 235.10638,400 240.42554,400 245.74467,400 251.06384,400 256.38297,400 261.70215,400 267.02127,400 272.34045,400 277.65958,400 282.9787,400 288.29788,400 293.61703,400 298.93616,400 304.25534,400 309.57446,400 314.89362,400 320.21277,400 325.53192,400 330.85107,400 336.17023,400 341.48938,400 346.80853,400 352.1277,400 357.4468,400 362.766,400 368.0851,400 373.40424,400 378.72342,400 384.04254,400 389.3617,400 394.68085,400 400,400 405.31915,400 410.6383,400 415.95746,400 421.2766,400 426.59576,400 431.9149,400 437.23404,400 442.5532,400 447.87234,400 453.1915,400 458.51065,400 463.8298,400 469.14893,400 474.46808,400 479.78726,400 485.10638,400 490.4255,400 495.74466,400 501.0638,400 506.38293,400 511.70212,400 517.02124,400 522.34045,400 527.65955,400 532.9787,400 538.29785,400 543.61707,400 548.93616,400 554.2553,400 559.57446,400 564.89355,400 570.21277,400 575.53186,400 580.8511,400 586.17017,400 591.4894,400 596.8085,400 602.1277,400 607.4468,400 612.7659,400 618.0851,400 623.40424,400 628.7234,400 634.04254,400 639.3617,400 644.6808,400 650,400 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+nosort
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,155.78726 155.31915,176.55556 160.6383,186.34552 165.95744,207.1942 171.2766,218.11238 176.59575,231.11176 181.91489,240.79207 187.23404,247.22919 192.55319,253.69676 197.87234,264.35074 203.19148,262.4218 208.51065,270.41528 213.82979,270.1246 219.14893,276.05676 224.46808,278.4333 229.78723,286.199 235.10638,288.47217 240.42554,288.09988 245.74467,291.84253 251.06384,296.90268 256.38297,298.97754 261.70215,300.7738 267.02127,303.10297 272.34045,307.20505 277.65958,305.84424 282.9787,305.0072 288.29788,309.84885 293.61703,308.60886 298.93616,315.57358 304.25534,315.08417 309.57446,314.77008 314.89362,316.10458 320.21277,320.11948 325.53192,320.23746 330.85107,322.0155 336.17023,320.55127 341.48938,322.59393 346.80853,322.5467 352.1277,326.43893 357.4468,326.57764 362.766,326.68713 368.0851,324.8047 373.40424,328.60587 378.72342,328.10886 384.04254,331.00204 389.3617,331.36774 394.68085,329.76953 400,331.89087 405.31915,332.8396 410.6383,333.5741 415.95746,332.8049 421.2766,335.15704 426.59576,336.01035 431.9149,336.73837 437.23404,337.24222 442.5532,336.0659 447.87234,337.37375 453.1915,336.57202 458.51065,337.33636 463.8298,337.74307 469.14893,338.36188 474.46808,338.1362 479.78726,336.91885 485.10638,339.39764 490.4255,341.3612 495.74466,341.1056 501.0638,340.5023 506.38293,341.29767 511.70212,342.30743 517.02124,341.58112 522.34045,342.61322 527.65955,342.7827 532.9787,343.81058 538.29785,343.59286 543.61707,343.73236 548.93616,343.6887 554.2553,343.3059 559.57446,344.85516 564.89355,344.37207 570.21277,344.96167 575.53186,344.53436 580.8511,344.7857 586.17017,344.86853 591.4894,346.35944 596.8085,346.7354 602.1277,346.5243 607.4468,347.48825 612.7659,346.1526 618.0851,346.53845 623.40424,347.8444 628.7234,347.80988 634.04254,348.147 639.3617,349.75906 644.6808,347.08014 650,348.4029 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="300">
+nosort_par
+</text>
+<line class="poloto4stroke" x1="680" x2="730" y1="281.25" y2="281.25"/>
+<polyline class="poloto4stroke" fill="none" points="150,174.22708 155.31915,198.82237 160.6383,212.13507 165.95744,231.83095 171.2766,243.85866 176.59575,259.0653 181.91489,266.5893 187.23404,272.85846 192.55319,277.64246 197.87234,286.94586 203.19148,287.0664 208.51065,296.6331 213.82979,293.7803 219.14893,301.93597 224.46808,304.4606 229.78723,307.2536 235.10638,311.2157 240.42554,312.27255 245.74467,313.78094 251.06384,317.9755 256.38297,321.7145 261.70215,321.88187 267.02127,323.99057 272.34045,331.89832 277.65958,328.3647 282.9787,325.3071 288.29788,329.308 293.61703,327.34024 298.93616,333.8316 304.25534,332.63547 309.57446,332.89575 314.89362,302.32474 320.21277,338.77612 325.53192,336.96146 330.85107,338.78046 336.17023,338.69052 341.48938,339.23944 346.80853,339.32285 352.1277,343.8488 357.4468,343.13617 362.766,345.2477 368.0851,343.55902 373.40424,347.02817 378.72342,345.90656 384.04254,345.99207 389.3617,347.6323 394.68085,347.20993 400,346.3246 405.31915,348.34335 410.6383,346.6755 415.95746,350.38882 421.2766,349.25583 426.59576,355.55707 431.9149,351.01495 437.23404,354.04523 442.5532,351.80972 447.87234,349.95715 453.1915,351.5086 458.51065,351.96777 463.8298,349.57916 469.14893,352.04404 474.46808,353.3437 479.78726,349.9577 485.10638,354.32434 490.4255,354.75165 495.74466,354.66418 501.0638,356.59464 506.38293,343.07324 511.70212,357.60748 517.02124,359.49866 522.34045,354.9687 527.65955,356.86627 532.9787,355.49576 538.29785,359.58774 543.61707,350.46948 548.93616,296.38776 554.2553,349.51028 559.57446,337.59436 564.89355,357.99576 570.21277,355.01215 575.53186,357.83282 580.8511,355.07455 586.17017,354.78253 591.4894,359.0703 596.8085,356.85275 602.1277,363.43427 607.4468,365.03677 612.7659,363.64886 618.0851,361.88904 623.40424,362.60522 628.7234,361.99182 634.04254,358.32816 639.3617,359.59827 644.6808,359.51813 650,358.38727 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="350">
+sweep
+</text>
+<line class="poloto5stroke" x1="680" x2="730" y1="331.25" y2="331.25"/>
+<polyline class="poloto5stroke" fill="none" points="150,100 155.31915,128.05478 160.6383,149.36351 165.95744,166.24765 171.2766,180.61786 176.59575,191.58499 181.91489,201.34605 187.23404,210.0381 192.55319,217.17302 197.87234,224.00635 203.19148,230.16556 208.51065,235.94272 213.82979,239.9906 219.14893,243.18025 224.46808,248.2778 229.78723,251.0774 235.10638,255.95267 240.42554,258.13824 245.74467,262.30066 251.06384,264.64514 256.38297,267.30856 261.70215,270.20563 267.02127,273.38403 272.34045,274.3752 277.65958,277.12823 282.9787,278.54523 288.29788,280.7525 293.61703,282.0506 298.93616,284.28616 304.25534,285.83142 309.57446,287.53912 314.89362,288.63904 320.21277,290.75443 325.53192,291.43594 330.85107,293.04465 336.17023,294.66095 341.48938,294.82428 346.80853,297.23547 352.1277,298.38483 357.4468,298.90088 362.766,300.10672 368.0851,300.91217 373.40424,302.66367 378.72342,303.21765 384.04254,304.196 389.3617,306.14108 394.68085,306.38666 400,307.29892 405.31915,307.9057 410.6383,308.8473 415.95746,310.0679 421.2766,310.3812 426.59576,311.09802 431.9149,311.64948 437.23404,312.3897 442.5532,313.79373 447.87234,314.55576 453.1915,314.93253 458.51065,315.61328 463.8298,316.45306 469.14893,316.5125 474.46808,317.63177 479.78726,317.89505 485.10638,318.37756 490.4255,319.37894 495.74466,319.47104 501.0638,320.02246 506.38293,320.66812 511.70212,321.4711 517.02124,321.67368 522.34045,322.82617 527.65955,322.7429 532.9787,323.93604 538.29785,323.85016 543.61707,324.60385 548.93616,324.8097 554.2553,324.69717 559.57446,325.3173 564.89355,325.5398 570.21277,327.0175 575.53186,326.8327 580.8511,328.06705 586.17017,328.21472 591.4894,327.95944 596.8085,328.75555 602.1277,328.98575 607.4468,329.51395 612.7659,329.8763 618.0851,329.9933 623.40424,330.63025 628.7234,330.9908 634.04254,331.342 639.3617,331.7934 644.6808,332.42636 650,332.50558 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Bench of space partitioning algs with abspiral(3000,grow)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Grow
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Time in Seconds
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<p>The above charts shows the characteristics of <code>naive</code>, <code>sweep and prune</code>, and <code>broccoli</code> as things get more
+clumped up.</p>
 <p>There are a couple of observations to make here. First, you might have noticed that the naive algorithm is not completely static with respect to the spiral grow. This is because the naive implementation I used is not 100% naive. While it does check
 every possible pair, it first checks if a pair of aabb's collides in one dimension. If it does not collide in that dimension, it does not even check the next dimension. So because of this &quot;short circuiting&quot;, there is a slight increase in comparisons when the aabbs are clumped up. If there were no short-circuiting, it would be flat all across. It is clear from the graph that this short-circuiting optimization does not gain you all that much.</p>
 <p>Another interesting observation is that these graphs show that <code>sweep and prune</code> has a better worst case than the <code>broccoli</code>. This makes sense since in the worst case, <code>sweep and prune</code> will sort all the elements, and then sweep. In the worst case for <code>broccoli</code>, it will first find the median, and then sort all the elements, and then sweep. So <code>broccoli</code> is slower since it redundantly found the median, and then sorted everything. However, it is easy to see that this only happens when the aabbs are extremely clumped up (abspiral(grow) where grow&lt;=0.003). So while <code>sweep and prune</code> has a better worst-cast, the worst-cast scenario of <code>broccoli</code> is rare and it is not much worse (median finding + sort versus just sort). </p>

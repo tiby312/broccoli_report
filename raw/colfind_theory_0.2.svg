@@ -1,0 +1,100 @@
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+0e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="214.10257" y="440">
+1e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="278.20514" y="440">
+2e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="342.30768" y="440">
+3e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="406.41025" y="440">
+4e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="470.51282" y="440">
+5e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="534.61536" y="440">
+6e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="598.71796" y="440">
+7e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+0e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="343.8327">
+1e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="287.6654">
+2e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="231.49811">
+3e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="175.33084">
+4e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="119.16354">
+5e7
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+broccoli
+</text>
+<line class="poloto0stroke" x1="680" x2="730" y1="81.25" y2="81.25"/>
+<polyline class="poloto0stroke" fill="none" points="150,400 162.82051,398.85925 175.64102,397.8186 188.46155,396.4567 201.28204,394.8584 214.10257,394.4263 226.92308,393.02878 239.74359,391.76343 252.5641,390.233 265.3846,389.03528 278.20514,387.76282 291.02563,386.09518 303.84616,384.45374 316.6667,382.84167 329.48718,381.2454 342.30768,379.62357 355.1282,378.00232 367.94873,379.35663 380.76923,378.30353 393.58975,376.63434 406.41025,375.5344 419.23077,374.2813 432.0513,372.626 444.8718,371.39175 457.69232,370.26007 470.51282,368.78256 483.33334,366.78143 496.15384,365.90857 508.97437,363.82364 521.7949,362.2546 534.61536,361.18945 547.4359,359.51703 560.2564,358.71655 573.0769,356.72363 585.89746,355.07983 598.71796,353.3989 611.53845,352.4439 624.359,350.13965 637.1795,349.3271 650,347.4697 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+naive
+</text>
+<line class="poloto1stroke" x1="680" x2="730" y1="131.25" y2="131.25"/>
+<polyline class="poloto1stroke" fill="none" points="150,400 162.82051,381.1518 175.64102,326.9686 188.46155,238.04892 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="200">
+nosort
+</text>
+<line class="poloto2stroke" x1="680" x2="730" y1="181.25" y2="181.25"/>
+<polyline class="poloto2stroke" fill="none" points="150,400 162.82051,396.96655 175.64102,392.77527 188.46155,389.03445 201.28204,383.59265 214.10257,380.43958 226.92308,374.38354 239.74359,368.2608 252.5641,361.34097 265.3846,360.84323 278.20514,355.15338 291.02563,348.74072 303.84616,342.0485 316.6667,334.9491 329.48718,327.5895 342.30768,320.55344 355.1282,313.09512 367.94873,315.48566 380.76923,309.30908 393.58975,302.1474 406.41025,294.95328 419.23077,288.16888 432.0513,281.73392 444.8718,273.4766 457.69232,266.37665 470.51282,259.2685 483.33334,250.24232 496.15384,242.21793 508.97437,234.26083 521.7949,225.69296 534.61536,217.92883 547.4359,208.82646 560.2564,200.52179 573.0769,218.10097 585.89746,209.4606 598.71796,203.3253 611.53845,196.2979 624.359,188.74226 637.1795,181.77727 650,174.09111 " stroke="black"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="250">
+sweep
+</text>
+<line class="poloto3stroke" x1="680" x2="730" y1="231.25" y2="231.25"/>
+<polyline class="poloto3stroke" fill="none" points="150,400 162.82051,397.35217 175.64102,392.5774 188.46155,386.46457 201.28204,379.2032 214.10257,371.0134 226.92308,361.94254 239.74359,352.12473 252.5641,341.59454 265.3846,330.45392 278.20514,318.555 291.02563,306.2037 303.84616,293.2406 316.6667,279.68576 329.48718,265.62488 342.30768,251.21938 355.1282,236.16774 367.94873,220.53674 380.76923,204.60902 393.58975,188.24315 406.41025,171.54713 419.23077,154.2457 432.0513,136.55804 444.8718,118.516754 457.69232,100 " stroke="black"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Complexity of space partitioning algs with abspiral(x,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Number of Elements
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>

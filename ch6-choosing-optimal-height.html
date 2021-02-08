@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js rust">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -50,7 +50,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -76,7 +76,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('rust')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -115,9 +115,9 @@
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
                         
@@ -166,12 +166,530 @@
                         <h3><a class="header" href="#comparison-of-tree-height" id="comparison-of-tree-height">Comparison of Tree Height</a></h3>
 <p>The below charts show the performance of building and querying colliding pairs when manually selecting a height other than the default one chosen.
 You can see that the theory is a downward curve, but the benching is more of a bowl. Theory would tell us to have a big enough height such that every leaf node had only one bot in it. But in the real world, this is overhead due to excessive recursive calls. Its not that pronounced, and I think it is because most of the aabbs don't make it to the bottom of the tree anyway. Most will intersect a divider somewhere in the tree. If we used smaller aabbs it might be more pronounced.</p>
-<img alt="Height heuristic" src="graphs/height_heuristic.svg" class="center" style="width: 100%;" />
+<link rel="stylesheet" href="css/poloto.css">
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+2e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="250" y="440">
+4e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="350" y="440">
+6e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="450" y="440">
+8e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="550" y="440">
+1e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+1e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="363.80188">
+1.5e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="327.60373">
+2e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="291.4056">
+2.5e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="255.20746">
+3e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="219.00934">
+3.5e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="182.81122">
+4e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="146.61307">
+4.5e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="110.41495">
+5e6
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+brocc
+</text>
+<rect class="poloto0fill" height="7.5" rx="5" ry="5" width="50" x="680" y="76.25"/>
+<rect class="poloto0fill" height="300" width="47" x="150" y="100"/>
+<rect class="poloto0fill" height="134.58502" width="47" x="200" y="265.41498"/>
+<rect class="poloto0fill" height="131.44714" width="47" x="250" y="268.55286"/>
+<rect class="poloto0fill" height="55.841064" width="47" x="300" y="344.15894"/>
+<rect class="poloto0fill" height="52.829956" width="47" x="350" y="347.17004"/>
+<rect class="poloto0fill" height="16.166168" width="47" x="400" y="383.83383"/>
+<rect class="poloto0fill" height="15.247894" width="47" x="450" y="384.7521"/>
+<rect class="poloto0fill" height="0" width="47" x="500" y="400"/>
+<rect class="poloto0fill" height="1.6435547" width="47" x="550" y="398.35645"/>
+<rect class="poloto0fill" height="2.941681" width="47" x="600" y="397.05832"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Complexity of differing num elem per node with abspiral(10000,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Tree Height
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+2e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="250" y="440">
+4e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="350" y="440">
+6e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="450" y="440">
+8e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="550" y="440">
+1e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+4e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="334.69992">
+6e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="269.39984">
+8e-3
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="204.0998">
+1e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="138.79971">
+1.2e-2
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+brocc
+</text>
+<circle class="poloto0fill" cx="685" cy="81.25" r="5"/>
+<circle class="poloto0fill" cx="150" cy="101.03241" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.44394" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.58722" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.144806" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.56424" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.33679" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.131836" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.46826" r="3"/>
+<circle class="poloto0fill" cx="150" cy="101.10666" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.509094" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.86432" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.21054" r="3"/>
+<circle class="poloto0fill" cx="150" cy="101.1991" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.87689" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100" r="3"/>
+<circle class="poloto0fill" cx="150" cy="101.192474" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.92093" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.52197" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.55353" r="3"/>
+<circle class="poloto0fill" cx="150" cy="100.65231" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.93405" r="3"/>
+<circle class="poloto0fill" cx="200" cy="251.17442" r="3"/>
+<circle class="poloto0fill" cx="200" cy="247.25922" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.54988" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.98582" r="3"/>
+<circle class="poloto0fill" cx="200" cy="251.00392" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.7834" r="3"/>
+<circle class="poloto0fill" cx="200" cy="251.23195" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.87941" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.9578" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.94563" r="3"/>
+<circle class="poloto0fill" cx="200" cy="251.45421" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.89801" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.87624" r="3"/>
+<circle class="poloto0fill" cx="200" cy="251.16937" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.85666" r="3"/>
+<circle class="poloto0fill" cx="200" cy="251.05424" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.471" r="3"/>
+<circle class="poloto0fill" cx="200" cy="250.33641" r="3"/>
+<circle class="poloto0fill" cx="200" cy="251.26653" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.79904" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.9417" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.49997" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.71793" r="3"/>
+<circle class="poloto0fill" cx="250" cy="272.55023" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.39728" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.31424" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.79007" r="3"/>
+<circle class="poloto0fill" cx="250" cy="272.51965" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.64673" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.0964" r="3"/>
+<circle class="poloto0fill" cx="250" cy="272.8618" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.26074" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.34665" r="3"/>
+<circle class="poloto0fill" cx="250" cy="274.03912" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.84064" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.53076" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.84412" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.38553" r="3"/>
+<circle class="poloto0fill" cx="250" cy="273.78802" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.64432" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.52545" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.6186" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.5056" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.71185" r="3"/>
+<circle class="poloto0fill" cx="300" cy="338.8423" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.32196" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.13544" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.57248" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.45734" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.4008" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.84833" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.65942" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.297" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.48572" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.55374" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.39227" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.1237" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.394" r="3"/>
+<circle class="poloto0fill" cx="300" cy="339.51178" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.35236" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.49936" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.68457" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.8073" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.89618" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.89838" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.95456" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.91345" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.05725" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.0084" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.21146" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.3894" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.27332" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.3878" r="3"/>
+<circle class="poloto0fill" cx="350" cy="355.47333" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.43085" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.65018" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.81165" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.9012" r="3"/>
+<circle class="poloto0fill" cx="350" cy="354.7317" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.20355" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.864" r="3"/>
+<circle class="poloto0fill" cx="400" cy="386.08362" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.756" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.41254" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.75146" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.5165" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.33978" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.5629" r="3"/>
+<circle class="poloto0fill" cx="400" cy="386.17618" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.54327" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.55698" r="3"/>
+<circle class="poloto0fill" cx="400" cy="383.3455" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.563" r="3"/>
+<circle class="poloto0fill" cx="400" cy="384.1935" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.09222" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.89505" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.62473" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.34082" r="3"/>
+<circle class="poloto0fill" cx="400" cy="385.12408" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.55713" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.5256" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.53387" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.4488" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.68204" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.6998" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.69034" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.8063" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.96527" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.90903" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.63583" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.715" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.73642" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.51804" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.74423" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.50406" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.5962" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.31186" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.50513" r="3"/>
+<circle class="poloto0fill" cx="450" cy="396.8029" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.37946" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.76517" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.737" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.72064" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.39325" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.5517" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.77905" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.70566" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.34592" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.48068" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.53894" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.6048" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.74637" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.68713" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.94803" r="3"/>
+<circle class="poloto0fill" cx="500" cy="400" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.65073" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.84915" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.55115" r="3"/>
+<circle class="poloto0fill" cx="500" cy="399.48495" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.58362" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.38165" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.42374" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.50134" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.6106" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.39444" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.43774" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.4656" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.42453" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.6618" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.58826" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.28506" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.2957" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.5043" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.25125" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.26453" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.81912" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.52393" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.37173" r="3"/>
+<circle class="poloto0fill" cx="550" cy="392.32086" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.2497" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.6044" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.13477" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.57135" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.42816" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.60904" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.46655" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.74954" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.6839" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.59412" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.73605" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.48044" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.17245" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.5213" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.51846" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.59137" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.8009" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.37793" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.36496" r="3"/>
+<circle class="poloto0fill" cx="600" cy="373.6361" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.41595" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.29828" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.45026" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.56528" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.41852" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.30295" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.08368" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.63" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.6195" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.34378" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.371" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.32755" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.10437" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.67395" r="3"/>
+<circle class="poloto0fill" cx="650" cy="355.7047" r="3"/>
+<circle class="poloto0fill" cx="650" cy="355.9959" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.24637" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.37576" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.73334" r="3"/>
+<circle class="poloto0fill" cx="650" cy="356.11285" r="3"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Bench of differing num elem per node with abspiral(10000,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Tree Height
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of Comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
 <h3><a class="header" href="#odd-vs-even-height-trees" id="odd-vs-even-height-trees">ODD vs Even height trees.</a></h3>
 <p>You can see that the even heights are barely better than the odds for sub optimal heights. With odd trees, the direction that the root nodes aabbs are sorted is the same as the leaves. If its even they are different. When the direction's match, we can use sweep and prune to speed things up. When the directions don't match, the sorted property can't be exploited since they are in different dimensions even though some pruning can still be done
 based off of the bounding rectangles of the dividers. In 'normal' looking trees where the aabbs arn't extremely clumped up, these two methods seem to be around the same speed. In degenerate cases, not enough aabbs can be exluded using the dividers bounding box for the perpendicular cases. </p>
 <p>The below chart compares the empirically best height against the height that our heuristic tree height function produces. </p>
-<img alt="Height Heuristic vs Optimal" src="graphs/height_heuristic_vs_optimal.svg" class="center" style="width: 100%;" />
+<style>
+.test .poloto0fill{
+    stroke:var(--pplot_color0);
+    stroke-width:7;
+}
+</style>
+<div class="test">
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+1e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="254.16667" y="440">
+2e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="358.33334" y="440">
+3e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="462.5" y="440">
+4e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="566.6667" y="440">
+5e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+2e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="340">
+4e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="280">
+6e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="220">
+8e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="160">
+1e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+Optimal
+</text>
+<circle class="poloto0fill" cx="685" cy="81.25" r="5"/>
+<circle class="poloto0fill" cx="170.83333" cy="250" r="3"/>
+<circle class="poloto0fill" cx="191.66667" cy="190" r="3"/>
+<circle class="poloto0fill" cx="212.5" cy="190" r="3"/>
+<circle class="poloto0fill" cx="233.33334" cy="190" r="3"/>
+<circle class="poloto0fill" cx="254.16667" cy="160" r="3"/>
+<circle class="poloto0fill" cx="275" cy="160" r="3"/>
+<circle class="poloto0fill" cx="295.83334" cy="160" r="3"/>
+<circle class="poloto0fill" cx="316.6667" cy="160" r="3"/>
+<circle class="poloto0fill" cx="337.5" cy="130" r="3"/>
+<circle class="poloto0fill" cx="358.33334" cy="130" r="3"/>
+<circle class="poloto0fill" cx="379.1667" cy="130" r="3"/>
+<circle class="poloto0fill" cx="400" cy="130" r="3"/>
+<circle class="poloto0fill" cx="420.83334" cy="130" r="3"/>
+<circle class="poloto0fill" cx="441.6667" cy="130" r="3"/>
+<circle class="poloto0fill" cx="462.5" cy="130" r="3"/>
+<circle class="poloto0fill" cx="483.33334" cy="130" r="3"/>
+<circle class="poloto0fill" cx="504.1667" cy="130" r="3"/>
+<circle class="poloto0fill" cx="525" cy="130" r="3"/>
+<circle class="poloto0fill" cx="545.8334" cy="100" r="3"/>
+<circle class="poloto0fill" cx="566.6667" cy="100" r="3"/>
+<circle class="poloto0fill" cx="587.5" cy="100" r="3"/>
+<circle class="poloto0fill" cx="608.3334" cy="100" r="3"/>
+<circle class="poloto0fill" cx="629.1667" cy="100" r="3"/>
+<circle class="poloto0fill" cx="650" cy="100" r="3"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+Heuristic
+</text>
+<circle class="poloto1fill" cx="685" cy="131.25" r="5"/>
+<circle class="poloto1fill" cx="150" cy="400" r="3"/>
+<circle class="poloto1fill" cx="170.83333" cy="250" r="3"/>
+<circle class="poloto1fill" cx="191.66667" cy="220" r="3"/>
+<circle class="poloto1fill" cx="212.5" cy="190" r="3"/>
+<circle class="poloto1fill" cx="233.33334" cy="190" r="3"/>
+<circle class="poloto1fill" cx="254.16667" cy="160" r="3"/>
+<circle class="poloto1fill" cx="275" cy="160" r="3"/>
+<circle class="poloto1fill" cx="295.83334" cy="160" r="3"/>
+<circle class="poloto1fill" cx="316.6667" cy="160" r="3"/>
+<circle class="poloto1fill" cx="337.5" cy="130" r="3"/>
+<circle class="poloto1fill" cx="358.33334" cy="130" r="3"/>
+<circle class="poloto1fill" cx="379.1667" cy="130" r="3"/>
+<circle class="poloto1fill" cx="400" cy="130" r="3"/>
+<circle class="poloto1fill" cx="420.83334" cy="130" r="3"/>
+<circle class="poloto1fill" cx="441.6667" cy="130" r="3"/>
+<circle class="poloto1fill" cx="462.5" cy="130" r="3"/>
+<circle class="poloto1fill" cx="483.33334" cy="130" r="3"/>
+<circle class="poloto1fill" cx="504.1667" cy="100" r="3"/>
+<circle class="poloto1fill" cx="525" cy="100" r="3"/>
+<circle class="poloto1fill" cx="545.8334" cy="100" r="3"/>
+<circle class="poloto1fill" cx="566.6667" cy="100" r="3"/>
+<circle class="poloto1fill" cx="587.5" cy="100" r="3"/>
+<circle class="poloto1fill" cx="608.3334" cy="100" r="3"/>
+<circle class="poloto1fill" cx="629.1667" cy="100" r="3"/>
+<circle class="poloto1fill" cx="650" cy="100" r="3"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Bench of optimal vs heuristic with abspiral(x,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Number of ELements
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Tree Height
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
+</div>
 
                     </main>
 

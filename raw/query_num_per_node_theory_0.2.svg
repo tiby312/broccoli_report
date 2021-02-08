@@ -1,0 +1,210 @@
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+0e0
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="229.36508" y="440">
+2e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="308.73016" y="440">
+4e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="388.0952" y="440">
+6e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="467.4603" y="440">
+8e1
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="546.8254" y="440">
+1e2
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="626.1904" y="440">
+1.2e2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+2e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="354.8872">
+4e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="309.77444">
+6e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="264.66165">
+8e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="219.54889">
+1e2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="174.4361">
+1.2e2
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="129.3233">
+1.4e2
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+query
+</text>
+<rect class="poloto0fill" height="7.5" rx="5" ry="5" width="50" x="680" y="76.25"/>
+<rect class="poloto0fill" height="0" width="3" x="150" y="400"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="153.96825" y="386.46616"/>
+<rect class="poloto0fill" height="22.556396" width="3" x="157.93651" y="377.4436"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="161.90475" y="361.65414"/>
+<rect class="poloto0fill" height="29.323303" width="3" x="165.87302" y="370.6767"/>
+<rect class="poloto0fill" height="6.7669067" width="3" x="169.84126" y="393.2331"/>
+<rect class="poloto0fill" height="45.112793" width="3" x="173.80952" y="354.8872"/>
+<rect class="poloto0fill" height="47.36841" width="3" x="177.77777" y="352.6316"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="181.74603" y="386.46616"/>
+<rect class="poloto0fill" height="15.789459" width="3" x="185.71428" y="384.21054"/>
+<rect class="poloto0fill" height="36.09021" width="3" x="189.68254" y="363.9098"/>
+<rect class="poloto0fill" height="36.09021" width="3" x="193.65079" y="363.9098"/>
+<rect class="poloto0fill" height="27.067657" width="3" x="197.61905" y="372.93234"/>
+<rect class="poloto0fill" height="22.556396" width="3" x="201.5873" y="377.4436"/>
+<rect class="poloto0fill" height="58.646606" width="3" x="205.55556" y="341.3534"/>
+<rect class="poloto0fill" height="112.78195" width="3" x="209.5238" y="287.21805"/>
+<rect class="poloto0fill" height="18.045105" width="3" x="213.49207" y="381.9549"/>
+<rect class="poloto0fill" height="4.5112915" width="3" x="217.46031" y="395.4887"/>
+<rect class="poloto0fill" height="31.578949" width="3" x="221.42856" y="368.42105"/>
+<rect class="poloto0fill" height="51.8797" width="3" x="225.39682" y="348.1203"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="229.36508" y="361.65414"/>
+<rect class="poloto0fill" height="15.789459" width="3" x="233.33333" y="384.21054"/>
+<rect class="poloto0fill" height="60.902252" width="3" x="237.30157" y="339.09775"/>
+<rect class="poloto0fill" height="42.857147" width="3" x="241.26984" y="357.14285"/>
+<rect class="poloto0fill" height="27.067657" width="3" x="245.2381" y="372.93234"/>
+<rect class="poloto0fill" height="11.278198" width="3" x="249.20634" y="388.7218"/>
+<rect class="poloto0fill" height="47.36841" width="3" x="253.17459" y="352.6316"/>
+<rect class="poloto0fill" height="45.112793" width="3" x="257.14285" y="354.8872"/>
+<rect class="poloto0fill" height="42.857147" width="3" x="261.1111" y="357.14285"/>
+<rect class="poloto0fill" height="22.556396" width="3" x="265.07935" y="377.4436"/>
+<rect class="poloto0fill" height="74.4361" width="3" x="269.0476" y="325.5639"/>
+<rect class="poloto0fill" height="117.29321" width="3" x="273.01587" y="282.7068"/>
+<rect class="poloto0fill" height="4.5112915" width="3" x="276.98413" y="395.4887"/>
+<rect class="poloto0fill" height="18.045105" width="3" x="280.9524" y="381.9549"/>
+<rect class="poloto0fill" height="29.323303" width="3" x="284.92062" y="370.6767"/>
+<rect class="poloto0fill" height="31.578949" width="3" x="288.8889" y="368.42105"/>
+<rect class="poloto0fill" height="24.812042" width="3" x="292.85712" y="375.18796"/>
+<rect class="poloto0fill" height="15.789459" width="3" x="296.82538" y="384.21054"/>
+<rect class="poloto0fill" height="49.624054" width="3" x="300.79364" y="350.37595"/>
+<rect class="poloto0fill" height="54.135345" width="3" x="304.7619" y="345.86465"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="308.73016" y="386.46616"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="312.69843" y="386.46616"/>
+<rect class="poloto0fill" height="33.834595" width="3" x="316.66666" y="366.1654"/>
+<rect class="poloto0fill" height="51.8797" width="3" x="320.63492" y="348.1203"/>
+<rect class="poloto0fill" height="42.857147" width="3" x="324.60315" y="357.14285"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="328.5714" y="386.46616"/>
+<rect class="poloto0fill" height="65.41354" width="3" x="332.53967" y="334.58646"/>
+<rect class="poloto0fill" height="126.315796" width="3" x="336.50793" y="273.6842"/>
+<rect class="poloto0fill" height="15.789459" width="3" x="340.4762" y="384.21054"/>
+<rect class="poloto0fill" height="11.278198" width="3" x="344.44446" y="388.7218"/>
+<rect class="poloto0fill" height="36.09021" width="3" x="348.4127" y="363.9098"/>
+<rect class="poloto0fill" height="56.39099" width="3" x="352.38095" y="343.609"/>
+<rect class="poloto0fill" height="49.624054" width="3" x="356.34918" y="350.37595"/>
+<rect class="poloto0fill" height="11.278198" width="3" x="360.31744" y="388.7218"/>
+<rect class="poloto0fill" height="67.66919" width="3" x="364.2857" y="332.3308"/>
+<rect class="poloto0fill" height="47.36841" width="3" x="368.25397" y="352.6316"/>
+<rect class="poloto0fill" height="27.067657" width="3" x="372.22223" y="372.93234"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="376.1905" y="386.46616"/>
+<rect class="poloto0fill" height="47.36841" width="3" x="380.15872" y="352.6316"/>
+<rect class="poloto0fill" height="58.646606" width="3" x="384.12698" y="341.3534"/>
+<rect class="poloto0fill" height="58.646606" width="3" x="388.0952" y="341.3534"/>
+<rect class="poloto0fill" height="15.789459" width="3" x="392.06348" y="384.21054"/>
+<rect class="poloto0fill" height="81.203" width="3" x="396.03174" y="318.797"/>
+<rect class="poloto0fill" height="300" width="3" x="400" y="100"/>
+<rect class="poloto0fill" height="18.045105" width="3" x="403.96826" y="381.9549"/>
+<rect class="poloto0fill" height="4.5112915" width="3" x="407.9365" y="395.4887"/>
+<rect class="poloto0fill" height="29.323303" width="3" x="411.90475" y="370.6767"/>
+<rect class="poloto0fill" height="42.857147" width="3" x="415.87302" y="357.14285"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="419.84125" y="361.65414"/>
+<rect class="poloto0fill" height="9.0225525" width="3" x="423.8095" y="390.97745"/>
+<rect class="poloto0fill" height="54.135345" width="3" x="427.77777" y="345.86465"/>
+<rect class="poloto0fill" height="40.6015" width="3" x="431.74603" y="359.3985"/>
+<rect class="poloto0fill" height="18.045105" width="3" x="435.71426" y="381.9549"/>
+<rect class="poloto0fill" height="4.5112915" width="3" x="439.68253" y="395.4887"/>
+<rect class="poloto0fill" height="31.578949" width="3" x="443.6508" y="368.42105"/>
+<rect class="poloto0fill" height="63.157898" width="3" x="447.61905" y="336.8421"/>
+<rect class="poloto0fill" height="45.112793" width="3" x="451.58728" y="354.8872"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="455.55554" y="386.46616"/>
+<rect class="poloto0fill" height="67.66919" width="3" x="459.5238" y="332.3308"/>
+<rect class="poloto0fill" height="112.78195" width="3" x="463.49207" y="287.21805"/>
+<rect class="poloto0fill" height="24.812042" width="3" x="467.4603" y="375.18796"/>
+<rect class="poloto0fill" height="6.7669067" width="3" x="471.42856" y="393.2331"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="475.39682" y="361.65414"/>
+<rect class="poloto0fill" height="42.857147" width="3" x="479.36508" y="357.14285"/>
+<rect class="poloto0fill" height="33.834595" width="3" x="483.3333" y="366.1654"/>
+<rect class="poloto0fill" height="22.556396" width="3" x="487.30157" y="377.4436"/>
+<rect class="poloto0fill" height="63.157898" width="3" x="491.26984" y="336.8421"/>
+<rect class="poloto0fill" height="63.157898" width="3" x="495.2381" y="336.8421"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="499.20633" y="361.65414"/>
+<rect class="poloto0fill" height="13.533844" width="3" x="503.1746" y="386.46616"/>
+<rect class="poloto0fill" height="58.646606" width="3" x="507.14285" y="341.3534"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="511.1111" y="361.65414"/>
+<rect class="poloto0fill" height="36.09021" width="3" x="515.07935" y="363.9098"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="519.0476" y="361.65414"/>
+<rect class="poloto0fill" height="81.203" width="3" x="523.01587" y="318.797"/>
+<rect class="poloto0fill" height="137.594" width="3" x="526.98413" y="262.406"/>
+<rect class="poloto0fill" height="15.789459" width="3" x="530.9524" y="384.21054"/>
+<rect class="poloto0fill" height="6.7669067" width="3" x="534.92065" y="393.2331"/>
+<rect class="poloto0fill" height="29.323303" width="3" x="538.8889" y="370.6767"/>
+<rect class="poloto0fill" height="60.902252" width="3" x="542.8571" y="339.09775"/>
+<rect class="poloto0fill" height="31.578949" width="3" x="546.8254" y="368.42105"/>
+<rect class="poloto0fill" height="24.812042" width="3" x="550.79364" y="375.18796"/>
+<rect class="poloto0fill" height="65.41354" width="3" x="554.7619" y="334.58646"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="558.7301" y="361.65414"/>
+<rect class="poloto0fill" height="33.834595" width="3" x="562.69836" y="366.1654"/>
+<rect class="poloto0fill" height="2.2556458" width="3" x="566.6666" y="397.74435"/>
+<rect class="poloto0fill" height="42.857147" width="3" x="570.6349" y="357.14285"/>
+<rect class="poloto0fill" height="56.39099" width="3" x="574.60315" y="343.609"/>
+<rect class="poloto0fill" height="45.112793" width="3" x="578.5714" y="354.8872"/>
+<rect class="poloto0fill" height="22.556396" width="3" x="582.5397" y="377.4436"/>
+<rect class="poloto0fill" height="76.69171" width="3" x="586.50793" y="323.3083"/>
+<rect class="poloto0fill" height="112.78195" width="3" x="590.4762" y="287.21805"/>
+<rect class="poloto0fill" height="27.067657" width="3" x="594.44446" y="372.93234"/>
+<rect class="poloto0fill" height="20.30075" width="3" x="598.4127" y="379.69925"/>
+<rect class="poloto0fill" height="56.39099" width="3" x="602.381" y="343.609"/>
+<rect class="poloto0fill" height="24.812042" width="3" x="606.3492" y="375.18796"/>
+<rect class="poloto0fill" height="22.556396" width="3" x="610.31744" y="377.4436"/>
+<rect class="poloto0fill" height="40.6015" width="3" x="614.2857" y="359.3985"/>
+<rect class="poloto0fill" height="72.18045" width="3" x="618.25397" y="327.81955"/>
+<rect class="poloto0fill" height="69.924805" width="3" x="622.22217" y="330.0752"/>
+<rect class="poloto0fill" height="42.857147" width="3" x="626.1904" y="357.14285"/>
+<rect class="poloto0fill" height="6.7669067" width="3" x="630.1587" y="393.2331"/>
+<rect class="poloto0fill" height="58.646606" width="3" x="634.12695" y="341.3534"/>
+<rect class="poloto0fill" height="58.646606" width="3" x="638.0952" y="341.3534"/>
+<rect class="poloto0fill" height="45.112793" width="3" x="642.0635" y="354.8872"/>
+<rect class="poloto0fill" height="38.345856" width="3" x="646.03174" y="361.65414"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Num per node with abspiral(3000,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+DFS inorder iteration
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Number of comparisons
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>

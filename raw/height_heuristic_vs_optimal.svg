@@ -1,0 +1,125 @@
+<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
+<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
+<style>
+.poloto {
+font-family: "Arial";
+stroke-width:2;
+}
+.poloto_text{fill: var(--poloto_fg_color,black);  }
+.poloto_axis_lines{stroke: var(--poloto_fg_color,black);stoke-width:3;fill:none}
+.poloto_background{fill: var(--poloto_bg_color,aliceblue); }
+.poloto0stroke{stroke:  var(--poloto_color0,blue); }
+.poloto1stroke{stroke:  var(--poloto_color1,red); }
+.poloto2stroke{stroke:  var(--poloto_color2,green); }
+.poloto3stroke{stroke:  var(--poloto_color3,gold); }
+.poloto4stroke{stroke:  var(--poloto_color4,aqua); }
+.poloto5stroke{stroke:  var(--poloto_color5,brown); }
+.poloto6stroke{stroke:  var(--poloto_color6,lime); }
+.poloto7stroke{stroke:  var(--poloto_color7,chocolate); }
+.poloto0fill{fill:var(--poloto_color0,blue);}
+.poloto1fill{fill:var(--poloto_color1,red);}
+.poloto2fill{fill:var(--poloto_color2,green);}
+.poloto3fill{fill:var(--poloto_color3,gold);}
+.poloto4fill{fill:var(--poloto_color4,aqua);}
+.poloto5fill{fill:var(--poloto_color5,brown);}
+.poloto6fill{fill:var(--poloto_color6,lime);}
+.poloto7fill{fill:var(--poloto_color7,chocolate);}
+</style>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
+1e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="254.16667" y="440">
+2e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="358.33334" y="440">
+3e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="462.5" y="440">
+4e4
+</text>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="566.6667" y="440">
+5e4
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
+2e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="340">
+4e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="280">
+6e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="220">
+8e0
+</text>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="160">
+1e1
+</text>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
+Optimal
+</text>
+<circle class="poloto0fill" cx="685" cy="81.25" r="5"/>
+<circle class="poloto0fill" cx="170.83333" cy="250" r="3"/>
+<circle class="poloto0fill" cx="191.66667" cy="190" r="3"/>
+<circle class="poloto0fill" cx="212.5" cy="190" r="3"/>
+<circle class="poloto0fill" cx="233.33334" cy="190" r="3"/>
+<circle class="poloto0fill" cx="254.16667" cy="160" r="3"/>
+<circle class="poloto0fill" cx="275" cy="160" r="3"/>
+<circle class="poloto0fill" cx="295.83334" cy="160" r="3"/>
+<circle class="poloto0fill" cx="316.6667" cy="160" r="3"/>
+<circle class="poloto0fill" cx="337.5" cy="130" r="3"/>
+<circle class="poloto0fill" cx="358.33334" cy="130" r="3"/>
+<circle class="poloto0fill" cx="379.1667" cy="130" r="3"/>
+<circle class="poloto0fill" cx="400" cy="130" r="3"/>
+<circle class="poloto0fill" cx="420.83334" cy="130" r="3"/>
+<circle class="poloto0fill" cx="441.6667" cy="130" r="3"/>
+<circle class="poloto0fill" cx="462.5" cy="130" r="3"/>
+<circle class="poloto0fill" cx="483.33334" cy="130" r="3"/>
+<circle class="poloto0fill" cx="504.1667" cy="130" r="3"/>
+<circle class="poloto0fill" cx="525" cy="130" r="3"/>
+<circle class="poloto0fill" cx="545.8334" cy="100" r="3"/>
+<circle class="poloto0fill" cx="566.6667" cy="100" r="3"/>
+<circle class="poloto0fill" cx="587.5" cy="100" r="3"/>
+<circle class="poloto0fill" cx="608.3334" cy="100" r="3"/>
+<circle class="poloto0fill" cx="629.1667" cy="100" r="3"/>
+<circle class="poloto0fill" cx="650" cy="100" r="3"/>
+<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="150">
+Heuristic
+</text>
+<circle class="poloto1fill" cx="685" cy="131.25" r="5"/>
+<circle class="poloto1fill" cx="150" cy="400" r="3"/>
+<circle class="poloto1fill" cx="170.83333" cy="250" r="3"/>
+<circle class="poloto1fill" cx="191.66667" cy="220" r="3"/>
+<circle class="poloto1fill" cx="212.5" cy="190" r="3"/>
+<circle class="poloto1fill" cx="233.33334" cy="190" r="3"/>
+<circle class="poloto1fill" cx="254.16667" cy="160" r="3"/>
+<circle class="poloto1fill" cx="275" cy="160" r="3"/>
+<circle class="poloto1fill" cx="295.83334" cy="160" r="3"/>
+<circle class="poloto1fill" cx="316.6667" cy="160" r="3"/>
+<circle class="poloto1fill" cx="337.5" cy="130" r="3"/>
+<circle class="poloto1fill" cx="358.33334" cy="130" r="3"/>
+<circle class="poloto1fill" cx="379.1667" cy="130" r="3"/>
+<circle class="poloto1fill" cx="400" cy="130" r="3"/>
+<circle class="poloto1fill" cx="420.83334" cy="130" r="3"/>
+<circle class="poloto1fill" cx="441.6667" cy="130" r="3"/>
+<circle class="poloto1fill" cx="462.5" cy="130" r="3"/>
+<circle class="poloto1fill" cx="483.33334" cy="130" r="3"/>
+<circle class="poloto1fill" cx="504.1667" cy="100" r="3"/>
+<circle class="poloto1fill" cx="525" cy="100" r="3"/>
+<circle class="poloto1fill" cx="545.8334" cy="100" r="3"/>
+<circle class="poloto1fill" cx="566.6667" cy="100" r="3"/>
+<circle class="poloto1fill" cx="587.5" cy="100" r="3"/>
+<circle class="poloto1fill" cx="608.3334" cy="100" r="3"/>
+<circle class="poloto1fill" cx="629.1667" cy="100" r="3"/>
+<circle class="poloto1fill" cx="650" cy="100" r="3"/>
+<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
+Bench of optimal vs heuristic with abspiral(x,0.2)
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
+Number of ELements
+</text>
+<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
+Tree Height
+</text>
+<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
+</svg>
