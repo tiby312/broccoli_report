@@ -164,8 +164,8 @@
                 <div id="content" class="content">
                     <main>
                         <h3><a class="header" href="#test-setup" id="test-setup">Test Setup</a></h3>
-<p>Before we can measure and compare performance of this algorithm, we have to come up with a good way to test it. We often want to see how performance degrades as the size of the problem increases, but we also do not want to influence other variables.</p>
-<p>For our tests lets use an archimedean spiral distribution. It gives us a lot of variation in how the aabbs intersects, and allows us to grow the size of the problem without affecting density too much. </p>
+<p>Before we can measure and compare performance of broccoli to other broad-phase strategies, we have to come up with a good way to test it. We often want to see how performance degrades as the size of the problem increases, but we also do not want to influence other variables.</p>
+<p>For our tests lets use an archimedean spiral distribution. It gives us a lot of variation in how the aabbs intersects, and allows us to grow the size of the problem without affecting density too much by simply adding aabbs to the end of a spiral. </p>
 <p>If all the aabbs were distributed along only one dimension then that would also skew our results. For example, sweep and prune will perform very well if all the aabbs are spaced out along the axis we are sweeping.</p>
 <p>Lets make a archimedean spiral function that takes 3 inputs and produces an archimedean spiral.: </p>
 <ul>
@@ -174,7 +174,7 @@
 <li>grow rate: the rate at which the spiral grow outward from the center.</li>
 </ul>
 <p>We increase n to increase the size of the problem.
-We can increase the grow rate to decrease the number of aabbs intersecting.</p>
+We can increase the grow rate to increase the number of aabbs intersecting.</p>
 <link rel="stylesheet" href="css/poloto.css">
 <svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
 <rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
@@ -203,53 +203,61 @@ stroke-width:2;
 .poloto6fill{fill:var(--poloto_color6,lime);}
 .poloto7fill{fill:var(--poloto_color7,chocolate);}
 </style>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
--6e1
+<line class="poloto_axis_lines" stroke="black" x1="212.23631" x2="212.23631" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="212.23631" y="440">
+-60
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="218.21341" y="440">
--4e1
+<line class="poloto_axis_lines" stroke="black" x1="280.44974" x2="280.44974" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="280.44974" y="440">
+-40
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="286.42682" y="440">
--2e1
+<line class="poloto_axis_lines" stroke="black" x1="348.66315" x2="348.66315" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="348.66315" y="440">
+-20
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="354.64026" y="440">
-0e0
+<line class="poloto_axis_lines" stroke="black" x1="416.8766" x2="416.8766" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="416.8766" y="440">
+0
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="422.85367" y="440">
-2e1
+<line class="poloto_axis_lines" stroke="black" x1="485.09" x2="485.09" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="485.09" y="440">
+20
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="491.0671" y="440">
-4e1
+<line class="poloto_axis_lines" stroke="black" x1="553.3034" x2="553.3034" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="553.3034" y="440">
+40
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="559.2805" y="440">
-6e1
+<line class="poloto_axis_lines" stroke="black" x1="621.51685" x2="621.51685" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="621.51685" y="440">
+60
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="627.4939" y="440">
-8e1
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="362.24872" y2="362.24872"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="362.24872">
+-60
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
--6e1
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="321.23367" y2="321.23367"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="321.23367">
+-40
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="358.985">
--4e1
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="280.21866" y2="280.21866"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="280.21866">
+-20
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="317.96997">
--2e1
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="239.20364" y2="239.20364"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="239.20364">
+0
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="276.95496">
-0e0
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="198.18863" y2="198.18863"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="198.18863">
+20
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="235.93994">
-2e1
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="157.17358" y2="157.17358"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="157.17358">
+40
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="194.9249">
-4e1
-</text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="153.90988">
-6e1
-</text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="112.89487">
-8e1
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="116.1586" y2="116.1586"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="116.1586">
+60
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 visual
@@ -281,8 +289,7 @@ y
 <li>aabb radius=constant (5)</li>
 </ul>
 <p>The constants are just arbitrary values. We just want all the elements to have some bounding box size and to influence how many of them are intersecting. This just makes things simpler since for most of the benches, we can typically show trends what we want to show by only influencing these two variables, so we might as well pick constants for the other variables and imbue that in the meaning of abspiral() itself.</p>
-<p>The below chart shows how influencing the spiral_grow affects the number of bot intersections for abspiral(). This shows that we can influence the spiral grow to see how the performance of the tree degrades. We could influence how many aabbs are colliding by changing the separation, but the relationship to the grow rate and the number of intersection pairs makes a nice smooth downward graph.</p>
-<p>It is not entirely smooth, but it is smooth enough that we can use this function to change the load on the broccoli without having to sample multiple times.</p>
+<p>The below chart shows how influencing the spiral_grow affects the number of bot intersections for abspiral(). This shows that we can influence the spiral grow to see how the performance of the tree degrades. We could influence how many aabbs are colliding by changing the separation, but the relationship to the grow rate and the number of intersection pairs makes a smooth downward graph. It is not entirely smooth, but it is smooth enough that we can use this function to change the load on the broccoli without having to sample multiple times.</p>
 <p>Its also clearly not linear, but all that really matters is that we have a way to increase/decrease
 the number of collisions easily. We just need something that will allow us to definitively see
 trends in how the algorithms stack up against each other.</p>
@@ -313,44 +320,53 @@ stroke-width:2;
 .poloto6fill{fill:var(--poloto_color6,lime);}
 .poloto7fill{fill:var(--poloto_color7,chocolate);}
 </style>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
-5e-1
+<line class="poloto_axis_lines" stroke="black" x1="225.75757" x2="225.75757" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="225.75757" y="440">
+0.5
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="276.26263" y="440">
-1e0
+<line class="poloto_axis_lines" stroke="black" x1="352.0202" x2="352.0202" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="352.0202" y="440">
+1.0
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="402.52527" y="440">
-1.5e0
+<line class="poloto_axis_lines" stroke="black" x1="478.2828" x2="478.2828" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="478.2828" y="440">
+1.5
 </text>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="528.78784" y="440">
-2e0
+<line class="poloto_axis_lines" stroke="black" x1="604.5454" x2="604.5454" y1="400" y2="405"/>
+<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="604.5454" y="440">
+2.0
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
-2e4
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="365.07504" y2="365.07504"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="365.07504">
+20000
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="364.9594">
-4e4
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="330.03445" y2="330.03445"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="330.03445">
+40000
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="329.91882">
-6e4
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="294.99387" y2="294.99387"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="294.99387">
+60000
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="294.87823">
-8e4
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="259.95328" y2="259.95328"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="259.95328">
+80000
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="259.83765">
-1e5
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="224.91269" y2="224.91269"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="224.91269">
+100000
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="224.79706">
-1.2e5
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="189.8721" y2="189.8721"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="189.8721">
+120000
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="189.75647">
-1.4e5
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="154.83151" y2="154.83151"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="154.83151">
+140000
 </text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="154.71588">
-1.6e5
-</text>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="119.67529">
-1.8e5
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="119.790924" y2="119.790924"/>
+<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="119.790924">
+160000
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 intersections
@@ -404,44 +420,57 @@ stroke-width:2;
 .poloto6fill{fill:var(--poloto_color6,lime);}
 .poloto7fill{fill:var(--poloto_color7,chocolate);}
 </style>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="150" y1="400" y2="405"/>
 <text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
-0e0
+0
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="275.06253" x2="275.06253" y1="400" y2="405"/>
 <text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="275.06253" y="440">
-5e2
+500
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="400.12506" x2="400.12506" y1="400" y2="405"/>
 <text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="400.12506" y="440">
-1e3
+1000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="525.18756" x2="525.18756" y1="400" y2="405"/>
 <text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="525.18756" y="440">
-1.5e3
+1500
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="400" y2="400"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="400">
-0e0
+0
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="363.75937" y2="363.75937"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="363.75937">
-2e3
+2000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="327.51874" y2="327.51874"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="327.51874">
-4e3
+4000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="291.27808" y2="291.27808"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="291.27808">
-6e3
+6000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="255.03745" y2="255.03745"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="255.03745">
-8e3
+8000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="218.79681" y2="218.79681"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="218.79681">
-1e4
+10000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="182.55618" y2="182.55618"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="182.55618">
-1.2e4
+12000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="146.31554" y2="146.31554"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="146.31554">
-1.4e4
+14000
 </text>
+<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="110.07489" y2="110.07489"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="110.07489">
-1.6e4
+16000
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 intersections
