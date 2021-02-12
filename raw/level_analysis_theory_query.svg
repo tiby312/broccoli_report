@@ -43,23 +43,23 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="375.1304" y2="375.1304"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="375.1304">
-100000
+1.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="318.41522" y2="318.41522"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="318.41522">
-200000
+2.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="261.70007" y2="261.70007"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="261.70007">
-300000
+3.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="204.9849" y2="204.9849"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="204.9849">
-400000
+4.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="148.26971" y2="148.26971"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="148.26971">
-500000
+5.00e5
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 Level 0

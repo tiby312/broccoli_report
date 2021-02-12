@@ -55,15 +55,15 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="324.48145" y2="324.48145"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="324.48145">
-500000
+5.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="248.96289" y2="248.96289"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="248.96289">
-1000000
+1.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="173.44437" y2="173.44437"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="173.44437">
-1500000
+1.50e6
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 brocc_constr

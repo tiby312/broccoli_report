@@ -43,39 +43,39 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="389.64188" y2="389.64188"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="389.64188">
-2000000
+2.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="353.5106" y2="353.5106"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="353.5106">
-4000000
+4.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="317.3793" y2="317.3793"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="317.3793">
-6000000
+6.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="281.248" y2="281.248"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="281.248">
-8000000
+8.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="245.1167" y2="245.1167"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="245.1167">
-10000000
+1.00e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="208.98541" y2="208.98541"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="208.98541">
-12000000
+1.20e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="172.85413" y2="172.85413"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="172.85413">
-14000000
+1.40e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="136.72284" y2="136.72284"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="136.72284">
-16000000
+1.60e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="100.59155" y2="100.59155"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="100.59155">
-18000000
+1.80e7
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 broccoli

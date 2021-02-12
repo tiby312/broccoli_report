@@ -43,23 +43,23 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="361.79474" y2="361.79474"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="361.79474">
-5000000
+5.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="309.00647" y2="309.00647"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="309.00647">
-10000000
+1.00e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="256.21814" y2="256.21814"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="256.21814">
-15000000
+1.50e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="203.42984" y2="203.42984"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="203.42984">
-20000000
+2.00e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="150.64154" y2="150.64154"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="150.64154">
-25000000
+2.50e7
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 brocc_constr

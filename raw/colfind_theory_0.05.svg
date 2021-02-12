@@ -63,23 +63,23 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="346.05627" y2="346.05627"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="346.05627">
-20000000
+2.00e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="292.11258" y2="292.11258"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="292.11258">
-40000000
+4.00e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="238.16885" y2="238.16885"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="238.16885">
-60000000
+6.00e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="184.22516" y2="184.22516"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="184.22516">
-80000000
+8.00e7
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="130.28143" y2="130.28143"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="130.28143">
-100000000
+1.00e8
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 broccoli

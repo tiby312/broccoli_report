@@ -51,39 +51,39 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="399.44522" y2="399.44522"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="399.44522">
-1000000
+1.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="363.2471" y2="363.2471"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="363.2471">
-1500000
+1.50e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="327.04895" y2="327.04895"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="327.04895">
-2000000
+2.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="290.85083" y2="290.85083"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="290.85083">
-2500000
+2.50e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="254.65271" y2="254.65271"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="254.65271">
-3000000
+3.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="218.45456" y2="218.45456"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="218.45456">
-3500000
+3.50e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="182.25641" y2="182.25641"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="182.25641">
-4000000
+4.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="146.0583" y2="146.0583"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="146.0583">
-4500000
+4.50e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="109.86017" y2="109.86017"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="109.86017">
-5000000
+5.00e6
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 brocc

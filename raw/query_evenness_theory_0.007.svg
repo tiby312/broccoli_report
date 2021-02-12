@@ -59,27 +59,27 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="356.7598" y2="356.7598"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="356.7598">
-500000
+5.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="313.5196" y2="313.5196"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="313.5196">
-1000000
+1.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="270.27942" y2="270.27942"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="270.27942">
-1500000
+1.50e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="227.03918" y2="227.03918"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="227.03918">
-2000000
+2.00e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="183.79901" y2="183.79901"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="183.79901">
-2500000
+2.50e6
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="140.5588" y2="140.5588"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="140.5588">
-3000000
+3.00e6
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 query

@@ -59,11 +59,11 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="247.4263" y2="247.4263"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="247.4263">
-100000
+1.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="170.55371" y2="170.55371"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="170.55371">
-150000
+1.50e5
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 query

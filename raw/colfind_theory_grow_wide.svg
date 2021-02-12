@@ -59,35 +59,35 @@ stroke-width:2;
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="365.22528" y2="365.22528"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="365.22528">
-100000
+1.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="330.4506" y2="330.4506"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="330.4506">
-200000
+2.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="295.67587" y2="295.67587"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="295.67587">
-300000
+3.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="260.90118" y2="260.90118"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="260.90118">
-400000
+4.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="226.12646" y2="226.12646"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="226.12646">
-500000
+5.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="191.35175" y2="191.35175"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="191.35175">
-600000
+6.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="156.57706" y2="156.57706"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="156.57706">
-700000
+7.00e5
 </text>
 <line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="121.80234" y2="121.80234"/>
 <text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="121.80234">
-800000
+8.00e5
 </text>
 <text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
 broccoli
