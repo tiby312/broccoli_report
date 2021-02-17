@@ -1,7 +1,4 @@
-<svg class="poloto" height="500" viewBox="0 0 800 500" width="800" xmlns="http://www.w3.org/2000/svg">
-<rect class="poloto_background" fill="white" height="500" width="800" x="0" y="0"/>
-<style>
-.poloto {
+<svg class='poloto' height='500' width='800' viewBox='0 0 800 500' xmlns='http://www.w3.org/2000/svg'><rect class='poloto_background' fill='white' x='0' y='0' width='800' height='500'/><style>.poloto {
 font-family: "Arial";
 stroke-width:2;
 }
@@ -23,90 +20,5 @@ stroke-width:2;
 .poloto4fill{fill:var(--poloto_color4,aqua);}
 .poloto5fill{fill:var(--poloto_color5,brown);}
 .poloto6fill{fill:var(--poloto_color6,lime);}
-.poloto7fill{fill:var(--poloto_color7,chocolate);}
-</style>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="150" y1="400" y2="405"/>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="150" y="440">
-2
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="250" x2="250" y1="400" y2="405"/>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="250" y="440">
-4
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="350" x2="350" y1="400" y2="405"/>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="350" y="440">
-6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="450" x2="450" y1="400" y2="405"/>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="450" y="440">
-8
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="550" x2="550" y1="400" y2="405"/>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="550" y="440">
-10
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="650" x2="650" y1="400" y2="405"/>
-<text alignment-baseline="start" class="poloto_text" text-anchor="middle" x="650" y="440">
-12
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="399.44522" y2="399.44522"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="399.44522">
-1.00e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="363.2471" y2="363.2471"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="363.2471">
-1.50e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="327.04895" y2="327.04895"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="327.04895">
-2.00e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="290.85083" y2="290.85083"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="290.85083">
-2.50e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="254.65271" y2="254.65271"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="254.65271">
-3.00e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="218.45456" y2="218.45456"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="218.45456">
-3.50e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="182.25641" y2="182.25641"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="182.25641">
-4.00e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="146.0583" y2="146.0583"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="146.0583">
-4.50e6
-</text>
-<line class="poloto_axis_lines" stroke="black" x1="150" x2="144" y1="109.86017" y2="109.86017"/>
-<text alignment-baseline="middle" class="poloto_text" text-anchor="end" x="120" y="109.86017">
-5.00e6
-</text>
-<text alignment-baseline="middle" class="poloto_text" font-size="large" text-anchor="start" x="675" y="100">
-brocc
-</text>
-<rect class="poloto0fill" height="7.5" rx="5" ry="5" width="50" x="680" y="76.25"/>
-<rect class="poloto0fill" height="300" width="47" x="150" y="100"/>
-<rect class="poloto0fill" height="134.58502" width="47" x="200" y="265.41498"/>
-<rect class="poloto0fill" height="131.44714" width="47" x="250" y="268.55286"/>
-<rect class="poloto0fill" height="55.841064" width="47" x="300" y="344.15894"/>
-<rect class="poloto0fill" height="52.829956" width="47" x="350" y="347.17004"/>
-<rect class="poloto0fill" height="16.166168" width="47" x="400" y="383.83383"/>
-<rect class="poloto0fill" height="15.247894" width="47" x="450" y="384.7521"/>
-<rect class="poloto0fill" height="0" width="47" x="500" y="400"/>
-<rect class="poloto0fill" height="1.6435547" width="47" x="550" y="398.35645"/>
-<rect class="poloto0fill" height="2.941681" width="47" x="600" y="397.05832"/>
-<text alignment-baseline="start" class="poloto_text" font-size="x-large" text-anchor="middle" x="400" y="37.5">
-Complexity of differing num elem per node with abspiral(10000,0.2)
-</text>
-<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" x="400" y="481.25">
-Tree Height
-</text>
-<text alignment-baseline="start" class="poloto_text" font-size="large" text-anchor="middle" transform="rotate(-90,37.5,250)" x="37.5" y="250">
-Number of Comparisons
-</text>
-<path class="poloto_axis_lines" d="M150,100 L150,400 L650,400" stroke="black"/>
-</svg>
+.poloto7fill{fill:var(--poloto_color7,chocolate);}</style><line x1='150' x2='150' y1='400' y2='405' stroke='black' class='poloto_axis_lines'/><text x='150' y='440' alignment-baseline='start' text-anchor='middle' class='poloto_text'>2</text><line x1='250' x2='250' y1='400' y2='405' stroke='black' class='poloto_axis_lines'/><text x='250' y='440' alignment-baseline='start' text-anchor='middle' class='poloto_text'>4</text><line x1='350' x2='350' y1='400' y2='405' stroke='black' class='poloto_axis_lines'/><text x='350' y='440' alignment-baseline='start' text-anchor='middle' class='poloto_text'>6</text><line x1='450' x2='450' y1='400' y2='405' stroke='black' class='poloto_axis_lines'/><text x='450' y='440' alignment-baseline='start' text-anchor='middle' class='poloto_text'>8</text><line x1='550' x2='550' y1='400' y2='405' stroke='black' class='poloto_axis_lines'/><text x='550' y='440' alignment-baseline='start' text-anchor='middle' class='poloto_text'>10</text><line x1='650' x2='650' y1='400' y2='405' stroke='black' class='poloto_axis_lines'/><text x='650' y='440' alignment-baseline='start' text-anchor='middle' class='poloto_text'>12</text><line x1='150' x2='144' y1='399.44522' y2='399.44522' stroke='black' class='poloto_axis_lines'/><text x='120' y='399.44522' alignment-baseline='middle' text-anchor='end' class='poloto_text'>1.00e6</text><line x1='150' x2='144' y1='363.2471' y2='363.2471' stroke='black' class='poloto_axis_lines'/><text x='120' y='363.2471' alignment-baseline='middle' text-anchor='end' class='poloto_text'>1.50e6</text><line x1='150' x2='144' y1='327.04895' y2='327.04895' stroke='black' class='poloto_axis_lines'/><text x='120' y='327.04895' alignment-baseline='middle' text-anchor='end' class='poloto_text'>2.00e6</text><line x1='150' x2='144' y1='290.85083' y2='290.85083' stroke='black' class='poloto_axis_lines'/><text x='120' y='290.85083' alignment-baseline='middle' text-anchor='end' class='poloto_text'>2.50e6</text><line x1='150' x2='144' y1='254.65271' y2='254.65271' stroke='black' class='poloto_axis_lines'/><text x='120' y='254.65271' alignment-baseline='middle' text-anchor='end' class='poloto_text'>3.00e6</text><line x1='150' x2='144' y1='218.45456' y2='218.45456' stroke='black' class='poloto_axis_lines'/><text x='120' y='218.45456' alignment-baseline='middle' text-anchor='end' class='poloto_text'>3.50e6</text><line x1='150' x2='144' y1='182.25641' y2='182.25641' stroke='black' class='poloto_axis_lines'/><text x='120' y='182.25641' alignment-baseline='middle' text-anchor='end' class='poloto_text'>4.00e6</text><line x1='150' x2='144' y1='146.0583' y2='146.0583' stroke='black' class='poloto_axis_lines'/><text x='120' y='146.0583' alignment-baseline='middle' text-anchor='end' class='poloto_text'>4.50e6</text><line x1='150' x2='144' y1='109.86017' y2='109.86017' stroke='black' class='poloto_axis_lines'/><text x='120' y='109.86017' alignment-baseline='middle' text-anchor='end' class='poloto_text'>5.00e6</text><text x='675' y='100' alignment-baseline='middle' text-anchor='start' font-size='large' class='poloto_text'>brocc</text><rect class='poloto0fill' x='680' y='76.25' width='50' height='7.5' rx='5' ry='5'/><rect class='poloto0fill' x='150' y='100' width='47' height='300'/><rect class='poloto0fill' x='200' y='265.41498' width='47' height='134.58502'/><rect class='poloto0fill' x='250' y='268.55286' width='47' height='131.44714'/><rect class='poloto0fill' x='300' y='344.15894' width='47' height='55.841064'/><rect class='poloto0fill' x='350' y='347.17004' width='47' height='52.829956'/><rect class='poloto0fill' x='400' y='383.83383' width='47' height='16.166168'/><rect class='poloto0fill' x='450' y='384.7521' width='47' height='15.247894'/><rect class='poloto0fill' x='500' y='400' width='47' height='0'/><rect class='poloto0fill' x='550' y='398.35645' width='47' height='1.6435547'/><rect class='poloto0fill' x='600' y='397.05832' width='47' height='2.941681'/><text x='400' y='37.5' alignment-baseline='start' text-anchor='middle' font-size='x-large' class='poloto_text'>Complexity of differing num elem per node with abspiral(10000,0.2)</text><text x='400' y='481.25' alignment-baseline='start' text-anchor='middle' font-size='large' class='poloto_text'>Tree Height</text>
+        <text x='37.5' y='250' alignment-baseline='start' text-anchor='middle' transform='rotate(-90,37.5,250)' font-size='large' class='poloto_text'>Number of Comparisons</text><path stroke='black' class='poloto_axis_lines' d='M 150 100 L 150 400 L 650 400 '/></svg>
