@@ -205,7 +205,7 @@
 <g id="node15" class="node">
 <title>n61</title>
 <ellipse fill="none" stroke="black" cx="541.79" cy="-234" rx="64.19" ry="18"/>
-<text text-anchor="middle" x="541.79" y="-230.3" font-family="Times,serif" font-size="14.00">syn v1.0.63</text>
+<text text-anchor="middle" x="541.79" y="-230.3" font-family="Times,serif" font-size="14.00">syn v1.0.64</text>
 </g>
 <!-- n61&#45;&gt;n58 -->
 <g id="edge17" class="edge">
