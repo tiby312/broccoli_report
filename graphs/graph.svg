@@ -175,7 +175,7 @@
 <g id="node13" class="node">
 <title>n58</title>
 <ellipse fill="none" stroke="black" cx="447.79" cy="-90" rx="106.68" ry="18"/>
-<text text-anchor="middle" x="447.79" y="-86.3" font-family="Times,serif" font-size="14.00">proc&#45;macro2 v1.0.24</text>
+<text text-anchor="middle" x="447.79" y="-86.3" font-family="Times,serif" font-size="14.00">proc&#45;macro2 v1.0.26</text>
 </g>
 <!-- n164 -->
 <g id="node17" class="node">
@@ -205,7 +205,7 @@
 <g id="node15" class="node">
 <title>n61</title>
 <ellipse fill="none" stroke="black" cx="541.79" cy="-234" rx="64.19" ry="18"/>
-<text text-anchor="middle" x="541.79" y="-230.3" font-family="Times,serif" font-size="14.00">syn v1.0.64</text>
+<text text-anchor="middle" x="541.79" y="-230.3" font-family="Times,serif" font-size="14.00">syn v1.0.69</text>
 </g>
 <!-- n61&#45;&gt;n58 -->
 <g id="edge17" class="edge">
