@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html" class="active"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-bounds-checking.html"><strong aria-hidden="true">10.</strong> Bounds Checking</a></li><li class="chapter-item expanded "><a href="ch9-primitive-types.html"><strong aria-hidden="true">11.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch10-api-design.html"><strong aria-hidden="true">12.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch11-algorithm-in-depth.html"><strong aria-hidden="true">13.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch12-improvements.html"><strong aria-hidden="true">14.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch13-how-to-make-aabb.html"><strong aria-hidden="true">15.</strong> How to make Aabb</a></li><li class="chapter-item expanded "><a href="ch14-code-layout.html"><strong aria-hidden="true">16.</strong> Code Layout</a></li><li class="chapter-item expanded "><a href="ch15-general-thoughts.html"><strong aria-hidden="true">17.</strong> General Thoughts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="overview.html" class="active"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="ch0-analysis-method.html"><strong aria-hidden="true">2.</strong> Analysis Method</a></li><li class="chapter-item expanded "><a href="ch1-broccoli-vs-other.html"><strong aria-hidden="true">3.</strong> Comparison to other Algs</a></li><li class="chapter-item expanded "><a href="ch2-construction-vs-query.html"><strong aria-hidden="true">4.</strong> Construction vs Query</a></li><li class="chapter-item expanded "><a href="ch3-level-analysis.html"><strong aria-hidden="true">5.</strong> Tree Level Load</a></li><li class="chapter-item expanded "><a href="ch4-aabb-data-layout.html"><strong aria-hidden="true">6.</strong> AABB Data Layout</a></li><li class="chapter-item expanded "><a href="ch5-tree-data-layout.html"><strong aria-hidden="true">7.</strong> Tree Data Layout</a></li><li class="chapter-item expanded "><a href="ch6-choosing-optimal-height.html"><strong aria-hidden="true">8.</strong> Optimal Tree Height</a></li><li class="chapter-item expanded "><a href="ch7-parallelism.html"><strong aria-hidden="true">9.</strong> Parallelism</a></li><li class="chapter-item expanded "><a href="ch8-primitive-types.html"><strong aria-hidden="true">10.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="ch9-api-design.html"><strong aria-hidden="true">11.</strong> API Design</a></li><li class="chapter-item expanded "><a href="ch10-algorithm-in-depth.html"><strong aria-hidden="true">12.</strong> Algorithm In-Depth</a></li><li class="chapter-item expanded "><a href="ch11-improvements.html"><strong aria-hidden="true">13.</strong> Improvements</a></li><li class="chapter-item expanded "><a href="ch12-how-to-make-aabb.html"><strong aria-hidden="true">14.</strong> How to make Aabb</a></li><li class="chapter-item expanded "><a href="ch13-code-layout.html"><strong aria-hidden="true">15.</strong> Code Layout</a></li><li class="chapter-item expanded "><a href="ch14-general-thoughts.html"><strong aria-hidden="true">16.</strong> General Thoughts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -136,13 +136,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -163,12 +165,12 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h3><a class="header" href="#for-the-reader" id="for-the-reader">For the reader</a></h3>
+                        <h3 id="for-the-reader"><a class="header" href="#for-the-reader">For the reader</a></h3>
 <p>In this book I'll go over a bunch of design problems/decisions while developing the <a href="https://crates.io/crates/broccoli">broccoli crate</a> with performance analysis to back it up. </p>
 <p>The source code for this book is the repo <a href="https://github.com/tiby312/broccoli">broccoli</a> on github.</p>
-<h3><a class="header" href="#graphs" id="graphs">Graphs</a></h3>
+<h3 id="graphs"><a class="header" href="#graphs">Graphs</a></h3>
 <p>The graphs are made using <a href="https://github.com/tiby312/poloto">poloto</a> on github.</p>
-<h3><a class="header" href="#disclaimer" id="disclaimer">Disclaimer</a></h3>
+<h3 id="disclaimer"><a class="header" href="#disclaimer">Disclaimer</a></h3>
 <p>All the benches in the graphs were generated on my laptop which is a quad-core dell linux laptop and all the commentary was made against those graphs. However, you can pull down <a href="https://github.com/tiby312/broccoli.git">github repo</a> and generate out the benches and this book again to get results specific to your platform. But keep in mind the commentary might not make sense then. </p>
 
                     </main>
