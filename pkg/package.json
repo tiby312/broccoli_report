@@ -1,0 +1,12 @@
+{
+  "name": "demo_web",
+  "version": "0.1.0",
+  "files": [
+    "demo_web_bg.wasm",
+    "demo_web.js",
+    "demo_web.d.ts"
+  ],
+  "module": "demo_web.js",
+  "types": "demo_web.d.ts",
+  "sideEffects": false
+}
