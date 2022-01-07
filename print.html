@@ -144,15 +144,16 @@
                 <div id="content" class="content">
                     <main>
                         <h3 id="web-demo"><a class="header" href="#web-demo">Web Demo</a></h3>
+<link rel="stylesheet" href="css/web_demo.css">
 <script type=module>
     import { default as init } from './pkg/demo_web.js';
     var w=await init('pkg/demo_web_bg.wasm');
     await w.main_entry();
 </script>
 <div>
-<canvas id="mycanvas" style="border-style: dotted" width="800" height="600"></canvas>
-<button id="nextbutton">next</button>
-<button id="shutdownbutton">shutdown</button>
+<canvas id="mycanvas" style="border-style: dotted;width:100%" width="800" height="600"></canvas>
+<button id="nextbutton" class="mybutton">next</button>
+<button id="shutdownbutton" class="mybutton">shutdown</button>
 </div>
 <h3 id="for-the-reader"><a class="header" href="#for-the-reader">For the reader</a></h3>
 <p>In this book I'll go over a bunch of design problems/decisions while developing the <a href="https://crates.io/crates/broccoli">broccoli crate</a> with performance analysis to back it up. </p>
